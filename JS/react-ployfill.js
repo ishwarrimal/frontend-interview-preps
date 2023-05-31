@@ -1,5 +1,5 @@
 /**
- * Custom implementation of React-like library.
+ * Custom implementation of React-like library. -> https://www.youtube.com/watch?v=RnwqU9dqTr4
  *
  * @namespace React
  */
