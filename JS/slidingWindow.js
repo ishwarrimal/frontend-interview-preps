@@ -1,4 +1,8 @@
 //Whenver we've to find contigious subarry, use this method
+//1. Max sum subarray of size k
+//2. Smallest subarry from a given set
+//3. Fruits in a basket
+//4. Longest substring
 
 //1. Max sum subarray of size k
 
@@ -77,3 +81,25 @@ function fruitsInBasket(arr) {
 }
 
 console.log(fruitsInBasket(["A", "B", "C", "B", "B", "C"]));
+
+//Longest substring
+// Input: String="aabccbb"
+// Output: 3
+// Explanation: The longest substring without any repeating characters is "abc".
+
+function longestSubstring(str) {
+  let maxLen = 0;
+  let start = 0;
+  let charIndexMap = {};
+  for (let i = 0; i < str.length; i++) {
+    let char = str[i];
+    if (char in charIndexMap) {
+      start = Math.max(start, charIndexMap[char] + 1);
+    }
+    charIndexMap[char] = i;
+    maxLen = Math.max(maxLen, i - start + 1);
+  }
+  return maxLen;
+}
+
+console.log(longestSubstring("aabaab!bb"));
