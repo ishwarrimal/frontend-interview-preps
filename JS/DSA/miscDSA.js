@@ -124,19 +124,55 @@ function sortZerosAndOnes(arr) {
 }
 
 //Merge two arrays
-function mergeTowArrays(arr1, arr2){
-  let reslt = []
+function mergeTowArrays(arr1, arr2) {
+  let reslt = [];
   //compare the 0th index of both arr and remove the smallest and push on reuslt
   //Do this till one of the array is empty
-  while(arr1.length && arr2.length){
-    const val = arr1[0] < arr2[0] ? arr1.shift() : arr2.shift()
-    result.push(val)
+  while (arr1.length && arr2.length) {
+    const val = arr1[0] < arr2[0] ? arr1.shift() : arr2.shift();
+    result.push(val);
   }
-  while(arr1.length){
-    result.push(arr1.shift())
+  while (arr1.length) {
+    result.push(arr1.shift());
   }
-  while(arr2.length){
-    result.push(arr2.shift())
+  while (arr2.length) {
+    result.push(arr2.shift());
   }
-  return result
+  return result;
 }
+
+//Find Max in rotated array
+//IP : [3,4,5,1,2]
+//OP: 5
+function findMaxInArray(nums) {
+  let left = 0;
+  let right = nums.length - 1;
+  while (left < right) {
+    let mid = Math.floor((left + right) / 2);
+    if (nums[mid] > nums[mid + 1]) {
+      right = mid;
+    } else {
+      left = mid + 1;
+    }
+  }
+  return nums[left];
+}
+console.log(findMaxInArray([3, 4, 5, 1, 2]));
+
+//Find Min in rotated array
+//IP : [3,4,5,1,2]
+//OP: 1
+function findMinInArray(nums) {
+  let left = 0;
+  let right = nums.length - 1;
+  while (left < right) {
+    const mid = Math.floor((left + right) / 2);
+    if (nums[mid] > nums[right]) {
+      left = mid + 1;
+    } else {
+      right = mid;
+    }
+  }
+  return nums[left];
+}
+console.log(findMinInArray([3, 4, 5, 1, 2]));
