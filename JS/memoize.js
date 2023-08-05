@@ -6,7 +6,7 @@ function memoize(expensiveFn) {
       cb(cache[key]);
     } else {
       expensiveFn((res) => {
-        cache[key] = res;
+        cache[key] = res
         cb(res);
       });
     }
