@@ -1,3 +1,4 @@
+//Polyfill for New
 function myNew(consFunc) {
   const obj = {};
   consFunc.call(obj);
