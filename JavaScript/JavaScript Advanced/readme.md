@@ -69,7 +69,7 @@ Here's a simple example to illustrate the concept:
 ```javascript
 function fetchData(callback) {
   setTimeout(function () {
-    const data = { name: "Ish", age: 30 };
+    const data = { name: "John", age: 30 };
     callback(data);
   }, 1000); // Simulating an asynchronous operation
 }
@@ -300,6 +300,43 @@ If I try to access the prototype of the object person, I get following results:
 
 You can view the prototype of any object using `person.__proto__` (which is depricated, we can instead make use of Object.getPrototypeOf(person))
 
+**Prototype of a function**
+
+- Every function has a property called `prototype` .
+
+```javascript
+function fruit() {}
+console.log(fruit.prorotype);
+//Output
+{
+  constructor: ƒ;
+}
+```
+
+As we can see above, the `prototype` of a function is an object which has a key called `constructor`
+
+- Now let's check the value of `constructor`
+
+```javascript
+console.log(fruit.prototype.constructor);
+//Output
+ƒ fruit(){}
+```
+
+As we can see above, the `constructor` references to the same function called `fruit` (the original function)
+
+The following holds true,
+
+```javascript
+function Person() {}
+console.log(Person.prototype.constructor === Person); // Outputs: true
+const person = new Person();
+console.log(person.constructor === Person); // Outputs: true
+```
+
+Hence the object created using constructor function has information about it's constructor.
+**Note**: We will discuss more about this while discussing constructor funciton
+
 **Shadowing properties:**
 Only check the prototype if the property doesn't exist in the current object.
 
@@ -321,5 +358,91 @@ me.greet(); //Hello
 
 # Inheritance
 
-- JavaScript only supports Prototype Based Inheritance.
--
+- Inheritance in JavaScript refers to the mechanism by which objects can inherit properties and methods from other objects.
+- By now we're aware that JavaScript supports only Prototype Based Inheritance (ES6 introduced class, after which JS supports even class based inheritance).
+
+# Constuctor Function
+
+Constructor Functions can be used to create objects and achieve inheritance (prototypical inheritance) as discussed above.
+
+```javascript
+function Person(name) {
+  this.name = name;
+}
+const Ish = new Person("Ish");
+```
+
+- Using the above syntax, we can create a new object using a `Person` constructor.
+- The newly created object has a property (in it's prototype) called constructor, which holds the information of the Function/Constructor which was used to create this object.
+
+```javascript
+console.log(Object.getPrototypeOf(Ish))
+//Output ->
+{constructor: ƒ}
+//which epands to
+1.  constructor: ƒ Person(name)
+2.  [[Prototype]]: Object
+```
+
+We can check the constructor of the Ish using `Ish.constructor` which returns me `Person` cosntructor.
+
+```javascript
+console.log(Ish.constructor)
+//Output ->
+ƒ Person(name){
+    this.name = name
+}
+```
+
+### Achieving inheritance using constructor funciton
+
+Let's write a code to achieve this:
+
+```javascript
+// A base Constructor
+function Animal(name) {
+  this.name = name;
+}
+//Creating a function on the prototype of the constructor
+Animal.prototype.getName = function () {
+  console.log(this.name);
+};
+
+//A new constructor which inherits Animal base constructor (cat is animal...right?)
+function Cat(type) {
+  this.type = type;
+  Animal.call(this, "Catty");
+}
+```
+
+We did the basic stuff required to achieve inheritance (or did we?)
+let's check few things below
+
+```javascript
+const myCat = new Cat("Fluffy");
+console.log(myCat.type); // Flyffy
+console.log(myCat.name); // Catty
+//Yaeeey
+
+console.log(myCat.getName()); //Uncaught TypeError: myCat.getName is not a function 🤷🏼‍♂️
+```
+
+As we can see above, `myCat.type` is giving me correct type, and even `myCat.name` is giving me corrent name, which it is getting from it's prototype.
+But why is `getName` not a function?
+
+Because even though we did `Animal.call()` inside Cat, it is still not inheriting the prototype of the `Animal` constructor.
+To do that, we need to inherit even the prototype of the Animal.
+
+```javascript
+Cat.prototype = Object.create(Animal.prototype);
+```
+
+Using the above code, we are assigning the prototype of Animal constructor to the prototype of `Cat` constructor.
+
+### But why did we even create the function `getName` in the prototype and not directly inside the Construcor?
+
+Every object created using the Construcor Function gets a copy of all the properties persent in the constructor. This may not be a good idea in some cases.
+Like it makes sense that every object get's a differnet name, but why a different `getName` function? We can just make use of the same function `reference` in each and every object isn't it?
+Yes, we're doing the exact same thing.
+
+(Overwhelmed? I can't simplify this more in text, maybe my youtube video on the same will be helpful)
