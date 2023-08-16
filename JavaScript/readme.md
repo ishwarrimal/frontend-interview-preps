@@ -52,3 +52,5 @@ Each of these parts will have following concepts in it:
 - Promise / PromiseAll
 - Call, Bind, Apply
 - ForEach, Map, Reduce
+
+You will also find few `JavaScript` code that you can refer to get some context.
