@@ -69,7 +69,7 @@ Here's a simple example to illustrate the concept:
 ```javascript
 function fetchData(callback) {
   setTimeout(function () {
-    const data = { name: "John", age: 30 };
+    const data = { name: "Ish", age: 30 };
     callback(data);
   }, 1000); // Simulating an asynchronous operation
 }
