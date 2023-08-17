@@ -48,8 +48,8 @@ Each of these parts will have following concepts in it:
 - [Object.defineProperty](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/JavaScript/JavaScript%20Advanced#objectdefineproperty)
 - [Generator functions](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/JavaScript/JavaScript%20Advanced#generator-functions)
 - Polyfill
-- Promise / PromiseAll
-- Call, Bind, Apply
-- ForEach, Map, Reduce
+  - Promise / PromiseAll
+  - Call, Bind, Apply
+  - ForEach, Map, Reduce
 
 You will also find few `JavaScript` code that you can refer to get some context.
