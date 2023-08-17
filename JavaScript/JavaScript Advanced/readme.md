@@ -446,3 +446,62 @@ Like it makes sense that every object get's a differnet name, but why a differen
 Yes, we're doing the exact same thing.
 
 (Overwhelmed? I can't simplify this more in text, maybe my youtube video on the same will be helpful)
+
+# Class
+
+- ES6 introduced class to JavaScript
+- You can make use of class to create an object.
+
+**Fratures**
+
+1. **Syntactic Sugar**: Classes are syntactic sugar over constructor functions and prototypes.
+2. **Constructor Method**: The `constructor` method initializes object properties when a new instance is created.
+3. **Instance Creation**: Objects are created using the `new` keyword followed by the class name.
+4. **`this` Context**: Inside class methods, `this` refers to the instance the method is called on.
+5. **Inheritance**: Classes can extend other classes using the `extends` keyword for inheritance.
+6. **`super` Keyword**: The `super` keyword is used to call methods from the parent class.
+7. **Constructor Property**: Instances have a `constructor` property pointing back to the class.
+
+Same example as above with classes:
+
+```javascript
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+  getName() {
+    console.log(this.name);
+  }
+}
+
+class Cat extends Animal {
+  constructor(type) {
+    super("Catty");
+    this.type = type;
+  }
+  getType() {
+    console.log(this.type);
+  }
+}
+
+const myCat = new Cat("Fluffy");
+console.log(myCat.type); // Flyffy
+console.log(myCat.name); // Catty
+console.log(myCat.getName()); //Catty
+```
+
+**Constructor Method**
+Properties declared inside the constructor method will be copied to every instance(object) that's created using the class.
+
+1.  Properties defined inside the constructor method using `this.propertyName` are unique to each instance created from the class.
+2.  When you create a new instance using the `new` keyword, the constructor is executed, and properties defined within the constructor are initialized for that specific instance.
+3.  Each instance has its own set of properties, and changes made to these properties on one instance do not affect other instances.
+
+**Non constructor methods**
+
+1.  When you create a class using the `class` syntax, the methods defined inside the class are added to the class's prototype.
+2.  When you create an instance of the class using the `new` keyword, the instance has an internal reference (`[[Prototype]]` or `.__proto__` depending on how you access it) to the class's prototype.
+3.  When you call a method on an instance, JavaScript looks up the prototype chain to find the method in the prototype. It doesn't copy the method to the instance itself.
+4.  This behavior is what allows for memory-efficient sharing of methods among instances.
+
+**NOTE** We achieved the same in Constructor Function by defining the methods in the prorotype of the construcor rather than directly defining inside it.
