@@ -445,6 +445,25 @@ Every object created using the Construcor Function gets a copy of all the proper
 Like it makes sense that every object get's a differnet name, but why a different `getName` function? We can just make use of the same function `reference` in each and every object isn't it?
 Yes, we're doing the exact same thing.
 
+### How does a construcor function work internally?
+
+When you call a constructor function in JavaScript using the `new` keyword, following steps are taken internally to create a new object instance and initialize its properties:
+
+1.  A new empty object is created. This new object will become the instance of the constructor.
+2.  The constructor function is called with `this` set to the newly created object. This allows the constructor to initialize the object's properties and set up its initial state.
+3.  The newly created object's internal `[[Prototype]]` (or `.__proto__`) property is set to the prototype property of the constructor function. This establishes the prototype chain for inheritance.
+
+```javascript
+function MyNew(constructorFn) {
+  const obj = {}; //Step 1
+  constructorFn.call(obj); //Step 2
+  obj.__proto__ = constructorFn.prototype; //Step 3
+  return obj;
+}
+```
+
+**NOTE** If the constructor does not explicitly return an object, the newly created object is returned. If the constructor returns an object, that object takes precedence over the default object created in step 1.
+
 (Overwhelmed? I can't simplify this more in text, maybe my youtube video on the same will be helpful)
 
 # Class
@@ -505,3 +524,83 @@ Properties declared inside the constructor method will be copied to every instan
 4.  This behavior is what allows for memory-efficient sharing of methods among instances.
 
 **NOTE** We achieved the same in Constructor Function by defining the methods in the prorotype of the construcor rather than directly defining inside it.
+
+## `this`
+
+- `this` in JavaScript refers to the context within which a function is executed.
+- Value depends on how a function is called.
+
+Here are a few key points to understand about `this` in JavaScript:
+
+1.  **Global Context**: In the global context (outside of any function), "this" refers to the global object, which is often the "window" object in a browser environment or the "global" object in Node.js.
+
+```javascript
+console.log(this === window); // In a browser, true
+```
+
+2.  **Function Context**: In a regular function (not an arrow function), "this" is determined by how the function is called. It can be influenced by the object the function is a property of (the calling object) or by how the function is invoked using methods like "call", "apply", or "bind". By default `this` refers to the global window object in a regular funciton.
+
+```javascript
+let name = "Global Ish";
+function myName() {
+  let name = "Ish";
+  console.log(this.name);
+}
+myName(); //This will refer to the global name Global Ish.
+```
+
+3.  **Method Invocation**: When a function is called as a method of an object, "this" refers to the object that the method belongs to. In this case, "this" points to the object to the left of the dot when calling the method.
+
+```javascript
+let name = "Global Ish";
+const person = {
+  name: "Ish",
+  greet: function () {
+    console.log(`Hello, my name is ${this.name}`);
+  },
+};
+person.greet(); // Hello, my name is Ish
+let x = person.greet;
+x(); // Hello, my name is Global Ish
+```
+
+4.  **Constructor Functions**: When a function is used as a constructor using the "new" keyword, "this" refers to the newly created instance of the object.
+
+```javascript
+function Person(name) {
+  this.name = name;
+  this.greet = function () {
+    console.log(`Hello, my name is ${this.name}`);
+  };
+}
+const person1 = new Person("Bob");
+person1.greet(); // "this" refers to the instance "person1"
+```
+
+5.  **Arrow Functions**: Arrow functions do not have their own "this" context; they inherit the "this" value from the surrounding code.
+
+```javascript
+let name = "Global Ish";
+const person = {
+  name: "Ish",
+  getName: () => {
+    console.log(`Hello, my name is ${this.name}`);
+  },
+};
+person.getName(); // Hello, my name is Global Ish
+```
+
+This might be a bit tricky to comprehend. It was very confusing for me.
+
+As stated above, arrow function inherit the "this" value from the surrounding code. In this case, the sorrounding code is person object, which in turn is in the global scope.
+Remember from the main definition: `this` in JavaScript refers to the context within which a function(not object) is executed
+
+7.  **Explicit Binding**: Functions like "call", "apply", and "bind" can be used to explicitly set the value of "this" for a function.
+
+```javascript
+function sayHi() {
+  console.log(`Hi, ${this.name}`);
+}
+const user = { name: "Ish" };
+sayHi.call(user); // "this" refers to the "user" object
+```
