@@ -42,11 +42,11 @@ Each of these parts will have following concepts in it:
 - [Symbol](https://github.com/ishwarrimal/frontend-interview-preps/blob/main/JavaScript/JavaScript%20Advanced/readme.md#symbol)
 - [Memory leaks](https://github.com/ishwarrimal/frontend-interview-preps/blob/main/JavaScript/JavaScript%20Advanced/readme.md#memory-leaks)
 - [Garbage collection](https://github.com/ishwarrimal/frontend-interview-preps/blob/main/JavaScript/JavaScript%20Advanced/readme.md#garbage-collection)
-- Curring
-- Cascading
-- Object freeze vs seal
-- Object.defineProperty
-- Generator functions
+- [Curring](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/JavaScript/JavaScript%20Advanced#currying)
+- [Cascading](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/JavaScript/JavaScript%20Advanced#cascading)
+- [Object freeze vs seal](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/JavaScript/JavaScript%20Advanced#object-freeze-vs-seal)
+- [Object.defineProperty](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/JavaScript/JavaScript%20Advanced#objectdefineproperty)
+- [Generator functions]()
 - Polyfill
 - Promise / PromiseAll
 - Call, Bind, Apply

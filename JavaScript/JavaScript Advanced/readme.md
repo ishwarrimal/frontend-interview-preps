@@ -741,127 +741,161 @@ Memory leaks in JavaScript can occur when references to objects are retained, pr
 3. Time based: Based on some fixed time.
 
 ## Currying
+
 - A function returning a function that can be called again.
+
 ```javascript
 //Without currying
-function add(x,y,z){
-	return x+y+z
+function add(x, y, z) {
+  return x + y + z;
 }
-add(1,2,3) // 6
+add(1, 2, 3); // 6
 
 //With currying
-function add(x){
-	return function(y){
-		return function(z){
-			return x+y+z;
-		}
-	}
+function add(x) {
+  return function (y) {
+    return function (z) {
+      return x + y + z;
+    };
+  };
 }
-add(1)(2)(3)
+add(1)(2)(3);
 ```
 
 ## Cascading
+
 - A function returns it's context (this) using which any other method can be called again.
 - aka Method Chaining.
 - Cascading by definition means: **_pass (something) on to a succession of others._** And that's exactly what it does.
 - If you've used `jQuery` , you must be familiar with this kind of expressions: `$("#container").fadeOut().html("Welcome, Sir").fadeIn();`
 
 ```javascript
-fetchData('api.example.com').then().then().catch().finally()
+fetchData("api.example.com").then().then().catch().finally();
 ```
 
 ## Object freeze vs seal
+
 - Both allows to control the mutability of the object.
 
 ### `Object.freeze()`
--   **Purpose**: `Object.freeze()` is used to completely freeze an object, making it both non-extensible (no new properties can be added) and non-writable (existing properties cannot be modified).    
--   **Extensibility**: The object becomes non-extensible, which means you cannot add new properties to it.
--   **Property Writability**: All existing properties become non-writable, meaning you cannot modify their values.
--   **Property Configurability**: All properties become non-configurable, meaning you cannot delete or reconfigure them.
--   **Effect on Nested Objects**: If the object contains nested objects, those nested objects are also deeply frozen.
-```javascript
-const person = { name: 'Ish' }; 
-Object.freeze(person); 
 
-person.age = 30; // Won't add the 'age' property 
-person.name = 'Rimal'; // Won't modify the 'name' property  
+- **Purpose**: `Object.freeze()` is used to completely freeze an object, making it both non-extensible (no new properties can be added) and non-writable (existing properties cannot be modified).
+- **Extensibility**: The object becomes non-extensible, which means you cannot add new properties to it.
+- **Property Writability**: All existing properties become non-writable, meaning you cannot modify their values.
+- **Property Configurability**: All properties become non-configurable, meaning you cannot delete or reconfigure them.
+- **Effect on Nested Objects**: If the object contains nested objects, those nested objects are also deeply frozen.
+
+```javascript
+const person = { name: "Ish" };
+Object.freeze(person);
+
+person.age = 30; // Won't add the 'age' property
+person.name = "Rimal"; // Won't modify the 'name' property
 delete person.name; // Won't delete the 'name' property
 ```
 
 ### `Object.seal()`
 
--   **Purpose**: `Object.seal()` is used to seal an object, making it non-extensible and making existing properties non-configurable (can't be deleted or reconfigured).
--   **Extensibility**: The object becomes non-extensible, which means you cannot add new properties to it.
--   **Property Writability**: Existing properties can still be modified. 
--   **Property Configurability**: Existing properties become non-configurable, meaning you cannot delete or reconfigure them.
--   **Effect on Nested Objects**: If the object contains nested objects, they are not affected and can still be modified.
+- **Purpose**: `Object.seal()` is used to seal an object, making it non-extensible and making existing properties non-configurable (can't be deleted or reconfigured).
+- **Extensibility**: The object becomes non-extensible, which means you cannot add new properties to it.
+- **Property Writability**: Existing properties can still be modified.
+- **Property Configurability**: Existing properties become non-configurable, meaning you cannot delete or reconfigure them.
+- **Effect on Nested Objects**: If the object contains nested objects, they are not affected and can still be modified.
 
 ```javascript
-const person = { name: 'Ish' }; 
-Object.seal(person); 
+const person = { name: "Ish" };
+Object.seal(person);
 
-person.age = 30; // Won't add the 'age' property 
-person.name = 'Rimal'; // Can modify the 'name' property  
+person.age = 30; // Won't add the 'age' property
+person.name = "Rimal"; // Can modify the 'name' property
 delete person.name; // Won't delete the 'name' property
 ```
 
-| Operation | Freeze | Seal
-| -------- | -------- | -------- | 
-| Create | Not Allowed | Allowed 
-| Read | Allowed | Allowed
-|Update | Not Allowed | Not Allowed
-| Delete | Not Allowed | Not Allowed
+| Operation | Freeze      | Seal        |
+| --------- | ----------- | ----------- |
+| Create    | Not Allowed | Allowed     |
+| Read      | Allowed     | Allowed     |
+| Update    | Not Allowed | Not Allowed |
+| Delete    | Not Allowed | Not Allowed |
 
 ## Object.defineProperty
+
 Define or modify properties of an object with more control.
 Every property of an object can have 3 peroperty attributes, which can be used to provide some property.
+
 1. **`writable`**:
--   Determines if a property's value can be changed using assignment.
--   If set to `true`, the value of the property can be modified.
--   If set to `false`, the value of the property cannot be modified after initialization.
+
+- Determines if a property's value can be changed using assignment.
+- If set to `true`, the value of the property can be modified.
+- If set to `false`, the value of the property cannot be modified after initialization.
 
 ```javascript
-const obj = {}; 
-Object.defineProperty(obj, 'readOnlyProp', { 
-	value: 42, 
-	writable: false  // Cannot be changed after initialization 
-}); 
+const obj = {};
+Object.defineProperty(obj, "readOnlyProp", {
+  value: 42,
+  writable: false, // Cannot be changed after initialization
+});
 
 obj.readOnlyProp = 100; // No effect due to writable: false
 ```
 
 2. **`enumerable`**:
 
--   Controls whether a property is included when looping through object properties using methods like `for...in`, `Object.keys()`, and others.
--   If set to `true`, the property is enumerable and will be included in iterations.
--   If set to `false`, the property is non-enumerable and won't be included in iterations.
+- Controls whether a property is included when looping through object properties using methods like `for...in`, `Object.keys()`, and others.
+- If set to `true`, the property is enumerable and will be included in iterations.
+- If set to `false`, the property is non-enumerable and won't be included in iterations.
 
 ```javascript
-const obj = { a: 1, b: 2 }; 
-Object.defineProperty(obj, 'hiddenProp', { 
-	value: 42, 
-	enumerable: false  // Won't show up in iterations 
-}); 
-for (const prop in obj) { 
-	console.log(prop); // Outputs: "a" and "b", not "hiddenProp" 
+const obj = { a: 1, b: 2 };
+Object.defineProperty(obj, "hiddenProp", {
+  value: 42,
+  enumerable: false, // Won't show up in iterations
+});
+for (const prop in obj) {
+  console.log(prop); // Outputs: "a" and "b", not "hiddenProp"
 }
 ```
+
 3. **`configurable`**:
 
--   Controls whether a property's attributes can be changed and whether the property can be deleted.
--   If set to `true`, the property's attributes (writable, enumerable, configurable) can be modified, and the property can be deleted.
--   If set to `false`, the property's attributes cannot be modified, and the property cannot be deleted.
+- Controls whether a property's attributes can be changed and whether the property can be deleted.
+- If set to `true`, the property's attributes (writable, enumerable, configurable) can be modified, and the property can be deleted.
+- If set to `false`, the property's attributes cannot be modified, and the property cannot be deleted.
 
 ```javascript
-const obj = {}; 
-Object.defineProperty(obj, 'configurableProp', { 
-	value: 42, 
-	configurable: false  // Attributes cannot be modified, property cannot be deleted 
-}); 
+const obj = {};
+Object.defineProperty(obj, "configurableProp", {
+  value: 42,
+  configurable: false, // Attributes cannot be modified, property cannot be deleted
+});
 
 delete obj.configurableProp; // No effect due to configurable: false
 
-Object.defineProperty(obj, 'configurableProp', { 
-	enumerable: true 
+Object.defineProperty(obj, "configurableProp", {
+  enumerable: true,
 }); // Error due to non-configurable property
+```
+
+## Generator Functions
+
+- Return multiple times form a same function.
+- Generators can be paused and resumed.
+- It is denoted by an asterisk (`*`) after the `function` keyword.
+- It make use of the `yield` keyword to produce values.
+
+Example-
+
+```javascript
+function* numberGenerator() {
+  yield 1;
+  yield 2;
+  yield 3;
+}
+
+const generator = numberGenerator();
+
+console.log(generator.next().value); // Outputs: 1
+console.log(generator.next().value); // Outputs: 2
+console.log(generator.next().value); // Outputs: 3
+console.log(generator.next().value); // Outputs: undefined
 ```
