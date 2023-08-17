@@ -27,21 +27,21 @@ Each of these parts will have following concepts in it:
 
 ## **Advanced**
 
-- Mutability vs Immutability
-- Callback and Callback hell
-- Promises
-- Async Await
-- Classes
-- Inheritence
-- Constructor Function
-- Prototype / **proto**
-- `this` and identifying it's value
-- Overwriting this -> call/bind/apply
-- Pure functions
-- Proxy
-- Symbol
-- Memory leaks
-- Garbage collection
+- [Mutability vs Immutability](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/JavaScript/JavaScript%20Basics#memoization)
+- [Callback and Callback hell](https://github.com/ishwarrimal/frontend-interview-preps/blob/main/JavaScript/JavaScript%20Advanced/readme.md#callback-and-callback-hell)
+- [Promises](https://github.com/ishwarrimal/frontend-interview-preps/blob/main/JavaScript/JavaScript%20Advanced/readme.md#promise)
+- [Async Await](https://github.com/ishwarrimal/frontend-interview-preps/blob/main/JavaScript/JavaScript%20Advanced/readme.md#async-await)
+- [Prototype / **proto**](https://github.com/ishwarrimal/frontend-interview-preps/blob/main/JavaScript/JavaScript%20Advanced/readme.md#prototype)
+- [Inheritence](https://github.com/ishwarrimal/frontend-interview-preps/blob/main/JavaScript/JavaScript%20Advanced/readme.md#inheritance)
+- [Constructor Function](https://github.com/ishwarrimal/frontend-interview-preps/blob/main/JavaScript/JavaScript%20Advanced/readme.md#constuctor-function)
+- [Classes](https://github.com/ishwarrimal/frontend-interview-preps/blob/main/JavaScript/JavaScript%20Advanced/readme.md#class)
+- []`this` and identifying it's value](https://github.com/ishwarrimal/frontend-interview-preps/blob/main/JavaScript/JavaScript%20Advanced/readme.md#this)
+- [Overwriting this -> call/bind/apply](https://github.com/ishwarrimal/frontend-interview-preps/blob/main/JavaScript/JavaScript%20Advanced/readme.md#this)
+- [Pure functions](https://github.com/ishwarrimal/frontend-interview-preps/blob/main/JavaScript/JavaScript%20Advanced/readme.md#pure-functions)
+- [Proxy](https://github.com/ishwarrimal/frontend-interview-preps/blob/main/JavaScript/JavaScript%20Advanced/readme.md#proxy)
+- [Symbol](https://github.com/ishwarrimal/frontend-interview-preps/blob/main/JavaScript/JavaScript%20Advanced/readme.md#symbol)
+- [Memory leaks](https://github.com/ishwarrimal/frontend-interview-preps/blob/main/JavaScript/JavaScript%20Advanced/readme.md#memory-leaks)
+- [Garbage collection](https://github.com/ishwarrimal/frontend-interview-preps/blob/main/JavaScript/JavaScript%20Advanced/readme.md#garbage-collection)
 - Curring
 - Cascading
 - Object freeze vs seal
