@@ -9,7 +9,7 @@ Topics I will be covering:
 
 ## About Me
 
-Hi everyone, I am _Ishwar Rimal_
+Hi, I am _Ishwar Rimal_
 I have close to **8 years** of experience in the software industry. I've been wokring mostly at startups and have recently joined a product based MNC.
 I have been working predominantly in the frontend tech stacks with some basics hands on experience on backend as well.
 
@@ -23,7 +23,7 @@ There are 5 different folders in this repo:
 
 1. **CSS**
 2. **DSA**
-3. **JavaScript**
+3. [**JavaScript**](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/JavaScript)
 4. **React**
 5. **Web Fundamentals**
    Each folder contains information about the content.

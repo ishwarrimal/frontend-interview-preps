@@ -604,3 +604,138 @@ function sayHi() {
 const user = { name: "Ish" };
 sayHi.call(user); // "this" refers to the "user" object
 ```
+
+# Pure functions
+
+1.  **Output Deterministic**: Pure functions always produce the same output for the same input, making them predictable.
+2.  **No Side Effects**: Pure functions do not modify external state or have observable side effects.
+3.  **Caching Benefits**: Pure functions can be cached or memoized for performance optimization.
+4.  **Maintainable Code**: Using pure functions promotes cleaner, more maintainable code.
+
+```javascript
+// Pure function: Adds two numbers without side effects
+const add = (a, b) => a + b;
+```
+
+Below is an example of a function that's not pure
+
+```javascript
+let total = 0;
+function addToTotal(value) {
+  total += value; // Modifies external state (side effect)
+}
+addToTotal(10); // Side effect: Modifies "total" variable
+console.log(total); // Outputs: 10
+```
+
+As you can see above, every time you call the funciton `addToTotal` , it updates the external value, hence causing side effect.
+
+# Proxy
+
+A promise is a **proxy** of a value that is not yet recieved.
+Proxy is a built-in object that allows you to intercept and customize the fundamental operations of another object, known as the target object.
+
+- **Creating a Proxy**: You can create a Proxy using the `Proxy` constructor by providing the target object and a handler object that defines the custom behavior for various operations.
+
+```javascript
+//A basic Proxy with no handler object
+const target = {
+  name: "Ish",
+  age: 30,
+};
+const person = new Proxy(target, {});
+console.log(person.name); //Ish
+```
+
+- **Handler Object**: The handler object is a collection of functions (known as "traps") that define how the Proxy should respond to different operations, such as `get`, `set`, `apply`, `construct`, and more.
+- **Interception of Operations**: When you interact with the Proxy, the corresponding trap in the handler object is invoked, allowing you to intercept and customize the behavior of the target object.
+
+```javascript
+const  target  = {
+	name:  "Ish",
+	age:  30,
+};
+const  person  =  new  Proxy(target, {
+	//overwrite the get method of an object
+	get(target, property) {
+		return  `I am ${target[property]}`;
+	}
+)
+person.name = "Ish"
+console.log(person.name); // I am Ish
+```
+
+- **Use Cases**: Proxies are useful for implementing features like **data validation**, logging, access control, and more.
+
+# Symbol
+
+In JavaScript, a Symbol is a primitive data type introduced in ECMAScript 6 (ES6) that represents a unique and immutable value.
+Symbols are often used as keys for object properties to avoid naming conflicts and ensure that property names won't accidentally collide.
+
+1. **Uniqueness**: Each Symbol value is unique, even if the symbols have the same description. This uniqueness makes them useful for creating private or hidden object properties.
+2. **Hidden Properties**: Symbols can be used to define properties that are not easily accessible using iteration or reflection mechanisms like `for...in` loops or `Object.keys()`.
+
+### Symbol.iterator
+
+The Symbol.iterator is a well-known symbol in JavaScript that allows you to define custom iteration behavior for objects. This symbol is used to implement the iterable protocol, which enables objects to be used with the `for...of` loop and other built-in iteration methods.
+
+```javascript
+const range = {
+  start: 1,
+  end: 5,
+  [Symbol.iterator]() {
+    let current = this.start;
+    return {
+      next: () => {
+        if (current <= this.end) {
+          return {
+            value: current++,
+            done: false,
+          };
+        } else {
+          return {
+            done: true,
+          };
+        }
+      },
+    };
+  },
+};
+
+for (const num of range) {
+  console.log(num);
+}
+//Output
+1;
+2;
+3;
+4;
+5;
+```
+
+# Memory Leaks
+
+Memory leaks in JavaScript can occur when references to objects are retained, preventing the JavaScript garbage collector from properly reclaiming memory that is no longer needed.
+
+1.  **Unintentional Global Variables**: Variables declared without the `var`, `let`, or `const` keywords (implicitly global variables) can cause memory leaks if they hold references to objects that should be garbage collected.
+2.  **Closures**: Closures that capture references to variables outside their scope can lead to memory leaks if the closures are not properly managed.
+3.  **Event Listeners**: Forgetting to remove event listeners when they are no longer needed can result in objects (such as DOM elements) being held in memory even after they are no longer reachable.
+4.  **Circular References**: Objects that reference each other in a circular manner can prevent the garbage collector from reclaiming memory.
+5.  **Timers and Intervals**: Not clearing or disposing of timers or intervals can cause objects associated with them to remain in memory.
+6.  **DOM References**: Keeping references to DOM elements that are no longer needed can lead to memory leaks, especially in single-page applications.
+
+# Garbage collection
+
+- Removing unreachable objects from memory to free up resources
+- GC happens automatically in JavaScript.
+
+**Mark and Sweep Algorithm**: The most common garbage collection algorithm used is the "mark and sweep" algorithm. It involves two main phases: marking and sweeping.
+
+- **Marking**: The garbage collector starts from a set of known root objects (e.g., global variables, function parameters) and traces references through the object graph, marking all **reachable** objects as "in use."
+- **Sweeping**: Once marking is complete, the garbage collector sweeps through the memory, identifying and freeing memory occupied by objects that were not marked as reachable. These unreferenced objects are considered garbage and are eligible for collection.
+
+### Triggers
+
+1. Memory Pressure : When available memory is low.
+2. Allocation threshold: When the no of allocated objects exceed the set threshold.
+3. Time based: Based on some fixed time.

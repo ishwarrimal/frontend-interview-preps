@@ -2,8 +2,8 @@
 
 The content on JavaScript is divided into two parts:
 
-1. **Basics**
-2. **Advanced**
+1. [**Basics**](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/JavaScript/JavaScript%20Basics)
+2. [**Advanced**](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/JavaScript/JavaScript%20Advanced)
 
 Each of these parts will have following concepts in it:
 
