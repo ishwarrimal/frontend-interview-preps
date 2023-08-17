@@ -2,7 +2,7 @@
 
 Topics I will be covering:
 
-1. **JavaScript** : Basic and Advance.
+1. [**JavaScript**](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/JavaScript) : Basic and Advance.
 2. **React** : Commonly asked questions and core concepts.
 3. **CSS** : Commonly asked questions and a few concepts.
 4. **Web Fundamentals** : A lot of important topics.

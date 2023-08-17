@@ -9,22 +9,21 @@ Each of these parts will have following concepts in it:
 
 ## Basics
 
-- Hoisting
-- Let vs Const vs Var
-- Scope
-- Strict Mode
-- Data Types
-- Regular Function vs Arrow Function
-- Arguments in a function
-- Event Listeners
-- Event Propagation
-- Event Delegation
-- DOM Manipulation
-- EVAL
-- Template literal
-- IIFE
-- Error Handling - Try...catch
-- Memoization
+- [Hoisting](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/JavaScript/JavaScript%20Basics#hoisting)
+- [Let vs Const vs Var](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/JavaScript/JavaScript%20Basics#let-vs-const-vs-var)
+- [Scope](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/JavaScript/JavaScript%20Basics#scope)
+- [Strict Mode](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/JavaScript/JavaScript%20Basics#strict-mode)
+- [Data Types](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/JavaScript/JavaScript%20Basics#data-types)
+- [Regular Function vs Arrow Function](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/JavaScript/JavaScript%20Basics#regular-function-vs-arrow-functions)
+- [Arguments in a function](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/JavaScript/JavaScript%20Basics#arguments-in-a-function)
+- [Event Listeners](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/JavaScript/JavaScript%20Basics#event-listeners)
+- [Event Propagation](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/JavaScript/JavaScript%20Basics#event-propagation)
+- [Event Delegation](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/JavaScript/JavaScript%20Basics#event-delegation)
+- [DOM Manipulation](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/JavaScript/JavaScript%20Basics#dom-manipulation)
+- [EVAL](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/JavaScript/JavaScript%20Basics#eval)
+- [Template literal](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/JavaScript/JavaScript%20Basics#template-literal) -[IIFE](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/JavaScript/JavaScript%20Basics#iife)
+- [Error Handling - Try...catch](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/JavaScript/JavaScript%20Basics#error-handling---try-catch)
+- [Memoization](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/JavaScript/JavaScript%20Basics#memoization)
 
 ## **Advanced**
 
