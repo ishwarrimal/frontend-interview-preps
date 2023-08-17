@@ -46,7 +46,7 @@ Each of these parts will have following concepts in it:
 - [Cascading](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/JavaScript/JavaScript%20Advanced#cascading)
 - [Object freeze vs seal](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/JavaScript/JavaScript%20Advanced#object-freeze-vs-seal)
 - [Object.defineProperty](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/JavaScript/JavaScript%20Advanced#objectdefineproperty)
-- [Generator functions]()
+- [Generator functions](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/JavaScript/JavaScript%20Advanced#generator-functions)
 - Polyfill
 - Promise / PromiseAll
 - Call, Bind, Apply
