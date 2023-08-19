@@ -6,7 +6,7 @@ Some new features doesn't work on older browser, we write polyfill of such funct
 **Why do you need to know to write polyfill? **
 It gives you better understanding of the prgramming.
 
-### Promise
+## Promise
 
 Let's see how you write an actual promise in JavaScript
 
@@ -101,3 +101,5 @@ MPromise.then((data) => {
 
 This is a simple promise polyfill that takes care of most of the cases except for **chaining then and catch**
 Please folllow this video [Writing Polyfill for Promise in JavaScript]() to get a better understanding.
+
+## Promise All

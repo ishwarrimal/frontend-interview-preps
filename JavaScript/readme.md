@@ -47,9 +47,12 @@ Each of these parts will have following concepts in it:
 - [Object freeze vs seal](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/JavaScript/JavaScript%20Advanced#object-freeze-vs-seal)
 - [Object.defineProperty](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/JavaScript/JavaScript%20Advanced#objectdefineproperty)
 - [Generator functions](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/JavaScript/JavaScript%20Advanced#generator-functions)
-- [Polyfill](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/JavaScript/Polyfills#polyfills)
-  - Promise / PromiseAll
-  - Call, Bind, Apply
-  - ForEach, Map, Reduce
+
+## [Polyfill](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/JavaScript/Polyfills#polyfills)
+
+- [Promise](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/JavaScript/Polyfills#promise)
+- PromiseAll.
+- Call, Bind, Apply
+- ForEach, Map, Reduce
 
 You will also find few `JavaScript` code that you can refer to get some context.
