@@ -100,6 +100,6 @@ MPromise.then((data) => {
 ```
 
 This is a simple promise polyfill that takes care of most of the cases except for **chaining then and catch**
-Please folllow this video [Writing Polyfill for Promise in JavaScript]() to get a better understanding.
+Please folllow this video [Writing Polyfill for Promise in JavaScript](https://www.youtube.com/watch?v=lKdFKuttdfM) to get a better understanding.
 
 ## Promise All
