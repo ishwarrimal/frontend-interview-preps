@@ -54,3 +54,187 @@ const element = <h1>Hello, JSX!</h1>;
 const name = "JS";
 const greeting = "Hello, " + name + "!";
 ```
+
+## [Lifecycle](https://ishwar-rimal.medium.com/execution-sequence-of-hooks-in-react-functional-components-b4a2ef69f9b0)
+
+## Hooks
+
+Hooks are nothign but functions that allow you to access and use certain internal methods and features of React in functional components. Hooks provide a way to "hook into" React's core functionality without the need for class components.
+
+### useState
+
+This hook allows functional components to manage state. It provides a way to declare state variables and their initial values, as well as methods to update those values.
+
+```javascript
+import React, { useState } from "react";
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+    </div>
+  );
+}
+```
+
+### useEffect
+
+This hook is used to perform a side effect when certain thig like mounting or state update happens for a component.
+We use this hook to perform operations(side effect) such as data fetching, DOM Manipulation, etc once some operation happen.
+Syntax:
+
+```javascript
+import React, { useEffect } from "react";
+function MyComponent() {
+  //some state declaration
+  useEffect(callback, dependencies);
+  //callback is a callback funciton
+  // dependencies are list of dependency variables
+}
+```
+
+**Note:** Dependencies are optional, if no dependency is provided, this effect will get triggered with every re render of component.
+
+**How is lifecycle handled by useEffect?**
+
+- _`ComponentDidMount`_
+  useEffect with or without dependencies are equivalent to `componentDidUpdate`. No matter what dependencies are, this will get triggerred at least once. If you want this effect to run just once, provide `[]` empty array as a dependency.
+- _`ComponentDidUpdate`_
+  useEffect with list of dependency is considered equivalent to `componentDidUpdate`. That is whenever the the dependency variable is updated, this effect gets triggered. (If dependency is omitted, the effect will run with every re render)
+- _`ComponentDidUnmount`_
+  The return function placed inside a useEffect is considered equivalient to `componentDidUnmount`. That is whenever the component gets unmounted (removed) from the DOM, this method get's triggered.
+
+```javascript
+import React, { useState, useEffect } from "react";
+
+function DataFetching() {
+  const [students, setStudents] = useState([]);
+
+  useEffect(() => {
+    // Fetch data here and update state
+    fetch("https://api.example.com/data")
+      .then((response) => response.json())
+      .then((data) => setData(data));
+    return () => {
+      //Is executed when the component umounts
+      console.log("Component is unmounted");
+    };
+  }, []);
+
+  return (
+    <div>
+      <ul>
+        {students.map((student) => (
+          <li key={student.id}>{student.name}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+```
+
+[Relevant content](https://ishwar-rimal.medium.com/execution-sequence-of-hooks-in-react-functional-components-b4a2ef69f9b0)
+
+### useMemo
+
+- Used to memoize a value.
+- Used as a **performance enhanement** by memoizing the result of expensive computation.
+- It prevents unnecessary recalculations of values that don't change between renders.
+  Syntax:
+
+```javascript
+const memoizedValue = useMemo(memoizationFunction, [dependencies]);
+```
+
+Here's a breakdown of how the `useMemo` hook works:
+
+1.  You provide a function that computes a value. This function is known as the "memoization function."
+2.  The memoizationFunction returns the computed value.
+3.  The `useMemo` hook takes this function as its first argument.
+4.  The second argument to `useMemo` is an array of dependencies. These dependencies are variables that, when changed, will trigger a re-computation of the memoized value. If the dependencies don't change between renders, the memoized value remains the same.
+5.  The `useMemo` hook returns the memoized value, which you can then use in your component.
+
+Example:
+
+```javascript
+import React, { useState, useMemo } from "react";
+
+function ExampleComponent() {
+  const [count, setCount] = useState(0);
+
+  // Using useMemo to compute a value based on the count
+  const squaredCount = useMemo(() => {
+    console.log("Computing squared count");
+    return count * count;
+  }, [count]); // Recompute only when count changes
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <p>Squared Count: {squaredCount}</p>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+    </div>
+  );
+}
+```
+
+### useCallback
+
+Similar to useMemo, useCallback is used to memoize a function.
+**Why do we need to memoize a function anyways?**
+Functions defined within the component are **recreated** on each render. [Read more...](https://ishwar-rimal.medium.com/execution-sequence-of-hooks-in-react-functional-components-b4a2ef69f9b0)
+
+```javascript
+import React, { useState, useCallback } from "react";
+
+function ExampleComponent() {
+  const [count, setCount] = useState(0);
+
+  // Using useCallback to memoize a callback function
+  const handleIncrement = useCallback(() => {
+    setCount((prevCount) => prevCount + 1);
+  }, []);
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={handleIncrement}>Increment</button>
+    </div>
+  );
+}
+```
+
+### useRef
+
+- useRef is a quite interesting hook which usually is not utilized to it's full potential.
+- useRef is used to define a local variable in a component, but unlike useState, updating the useRef variable doesn't cause re render of the component.
+
+**Usage of useRef**
+There are two usage of useRef
+
+1. Primarily it is used for accessing the underlying DOM nodes, managing focus, or performing a dom operation on any element.
+
+```javascript
+import React, { useRef, useState } from "react";
+function FocusInput() {
+  const inputRef = useRef(null);
+  const handleFocus = () => {
+    inputRef.current.focus();
+  };
+
+  return (
+    <div>
+      <input ref={inputRef} type="text" />
+      <button onClick={handleFocus}>Focus Input</button>
+    </div>
+  );
+}
+```
+
+In the above example, we make use of `inputRef` to access the input element and prodivde focus on that.
+
+2. The second use case of useRef is to preserve value of something across renders:
+   When it comes to preserving a value that is not affected by the re-render, we sometimes think of global variables, as it is not affected by the re-render. But using `useRef` we can achieve the same.
