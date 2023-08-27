@@ -11,7 +11,7 @@ In React, we will be covering the following topics:
 - [useRef](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/React/ReactInterview#useref)
 
 5. [Basic SSR and behaviour of useEffect in SSR](https://ishwar-rimal.medium.com/execution-sequence-of-hooks-in-react-functional-components-b4a2ef69f9b0)
-6. Pure Components
+6. [Pure Components](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/React/ReactInterview#purecomponents)
 7. Higher Order Components
 8. Render Props
 9. Handling Error

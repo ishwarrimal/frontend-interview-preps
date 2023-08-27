@@ -107,6 +107,8 @@ function MyComponent() {
 - _`ComponentDidUnmount`_
   The return function placed inside a useEffect is considered equivalient to `componentDidUnmount`. That is whenever the component gets unmounted (removed) from the DOM, this method get's triggered.
 
+There is also an equivalent of `shouldComponentUpate` [readMore](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/React/ReactInterview#purecomponents)
+
 ```javascript
 import React, { useState, useEffect } from "react";
 
@@ -238,3 +240,52 @@ In the above example, we make use of `inputRef` to access the input element and 
 
 2. The second use case of useRef is to preserve value of something across renders:
    When it comes to preserving a value that is not affected by the re-render, we sometimes think of global variables, as it is not affected by the re-render. But using `useRef` we can achieve the same.
+
+## Pure Components
+
+Pure Components in react are similar to [Pure Functions](https://github.com/ishwarrimal/frontend-interview-preps/blob/main/JavaScript/JavaScript%20Advanced/readme.md#pure-functions) in JavaScript
+
+- Pure components re-renders only when the state or the props changes.
+- Does a shallow comparison of the props and state to determine whether an update is needed.
+- use `React.pureComponent` or `React.memo`
+
+```javascript
+//React.pureComponent
+import React, { PureComponent } from "react";
+class PureExample extends PureComponent {
+  render() {
+    // Component rendering logic
+  }
+}
+
+//React.memo
+import React from "react";
+const MemoizedExample = React.memo(function MemoizedExample(props) {
+  // Component rendering logic
+});
+```
+
+**Note:** React.memo is different from React.useMemo
+**React.memo** Is a HOC to wrap a functional component. It optimizes the rendering performance of a component by preventing unnecessary re-renders.
+
+- You can pass second parament to React.memo which is a funciton.
+- This function is commonly referred to as the "areEqual" function or the "props comparison" function.
+- If you don't provide this parameter, `React.memo` uses a default shallow equality comparison for props.
+
+```javascript
+React.memo(component, areEqual);
+```
+
+- `areEqual` is similar to `shouldComponentUpdate` in class components.
+- The `areEqual` function takes two arguments: the previous props and the new props. It should return a boolean value indicating whether the component should re-render (`true`) or not (`false`).
+
+```javascript
+import React from "react";
+function arePropsEqual(prevProps, nextProps) {
+  // Custom logic to compare props
+  return prevProps.id === nextProps.id;
+}
+const MemoizedComponent = React.memo(function MyComponent(props) {
+  // Component rendering logic
+}, arePropsEqual);
+```
