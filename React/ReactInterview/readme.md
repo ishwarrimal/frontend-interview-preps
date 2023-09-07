@@ -397,3 +397,60 @@ As you can see in the above example, the logic to handle the increment and decre
 - **Render Props**:
   - Render props involve passing a function as a prop to a component. This function is used by the component to render part of its UI.
   - Render props are implemented by passing a function as a prop to a component, which the component then invokes.
+
+## Error Handling
+
+Apart from using the regular `try...catch`, react provides inbuild methods to handle the error states.
+React exposes two methods to handle the error state:
+
+1. componentDidCatch.
+2. getDerivedStateFromError.
+
+Thing to note here is that these methods are supported only in a `class` based component and is not yet supported in `function` based component.
+
+- This implementation is also called as creating an **error boundary.**
+- This component can catch error that occur in any of the child component.
+- You can have other functional component wrapped in this class component.
+
+Example:
+
+```javascript
+import React, { Component } from "react";
+
+class ErrorBoundary extends Component {
+  state = { hasError: false };
+  static getDerivedStateFromError(error) {
+    // Update state to indicate an error has 	occurred
+    return { hasError: true, error };
+  }
+
+  componentDidCatch(error, errorInfo) {
+    // Log the error or send it to an error tracking service
+    console.error(error, errorInfo);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      // Render an error message or a fallback UI
+      return <div>Something went wrong.</div>;
+    }
+    return this.props.children;
+  }
+}
+
+export default ErrorBoundary;
+```
+
+Here's a summary of the sequence:
+
+1.  An error occurs within a component wrapped by an error boundary.
+2.  React calls the static `getDerivedStateFromError` method of the error boundary component, passing the error as an argument. If this method returns an object with updated state (e.g., setting `hasError` to `true`), the component's state is updated.
+3.  After state is updated, React calls the instance method `componentDidCatch` of the error boundary component, passing both the error and the error info as arguments.
+
+Both methods serve distinct purposes:
+
+- `getDerivedStateFromError` is used for updating the component's state based on the error. It's a static method and should not have side effects. It's primarily used for setting a flag (e.g., `hasError`) in the state.
+- `componentDidCatch` is used for performing additional actions or side effects in response to the error. It can be used to log the error, send it to an error tracking service, or customize the rendering of an error message.
+
+**Why do we need to handle error in react?**
+In React, When an error occurs and it's not handled gracefully, users may see a blank or broken page, leading to frustration and confusion.
