@@ -289,3 +289,51 @@ const MemoizedComponent = React.memo(function MyComponent(props) {
   // Component rendering logic
 }, arePropsEqual);
 ```
+
+## Higher Order Component
+
+- Higher-Order Component (HOC) is a design pattern used for enhancing the functionality or behavior of a component by wrapping it in another component.
+- Higher Order Component in react are similar to Higher Order Functions in JavaScript.
+- Higher-order functions are functions that can accept other functions as arguments or return functions as their results, similarly, Higher-order components are components that can accept other compoentnts as arguments or return components as their results.
+- Example of Higher Order Functions
+  - Array.Map
+  - Array.Reduce
+  - etc
+
+Example in react:
+
+```javascript
+import React from "react";
+
+// Define a Higher-Order Component (HOC)
+const withLogger = (WrappedComponent) => {
+  return function WithLogger(props) {
+    console.log(`Component ${WrappedComponent.name} is rendering.`);
+    return <WrappedComponent {...props} />;
+  };
+};
+
+// Functional component
+function Greeting1(props) {
+  return <div>Hello, {props.name}!</div>;
+}
+
+function Greeting2(props) {
+  return <div>Hey, {props.name}!</div>;
+}
+
+// Wrap the Greeting component with the withLogger HOC
+const Greeting1WithLogger = withLogger(Greeting1);
+const Greeting2WithLogger = withLogger(Greeting2);
+
+export { Greeting1WithLogger, Greeting2WithLogger };
+```
+
+We use HOC mostly when same logic is resued/required in more than one component.  
+In the above example, as you can see, the logic to `console log` is common for both the component, hence we use HOC for this.
+Some usage of HOC includes:
+
+1.  **Code Reuse**: You can use HOCs to extract common logic from multiple components into a single reusable HOC.
+2.  **State and Props Manipulation**: HOCs can modify or add props to the wrapped component based on some conditions or data from a data source like Redux or a context provider.
+3.  **Authentication and Authorization**: You can use HOCs to handle authentication and authorization logic, ensuring that only authorized users can access certain components or routes.
+4.  **Logging and Analytics**: HOCs can be used to log events or send analytics data whenever a component renders or performs a specific action.
