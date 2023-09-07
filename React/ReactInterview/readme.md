@@ -337,3 +337,63 @@ Some usage of HOC includes:
 2.  **State and Props Manipulation**: HOCs can modify or add props to the wrapped component based on some conditions or data from a data source like Redux or a context provider.
 3.  **Authentication and Authorization**: You can use HOCs to handle authentication and authorization logic, ensuring that only authorized users can access certain components or routes.
 4.  **Logging and Analytics**: HOCs can be used to log events or send analytics data whenever a component renders or performs a specific action.
+
+## Render Props
+
+As the name suggests, when you pass `render` function as a `props` to a Component, you achieve render props.
+
+```javascript
+<MyComponent render={someRenderFunction} />
+```
+
+- Similar to HOC, this is also a design pattern that focuses on reusability of code.
+- A component after executing it's local logic, invokes the passed render function in the props to render a component.
+  ```javascript
+  	...
+  	return props.render(someState)
+  }
+  ```
+
+Example:
+
+```javascript
+import React from "react";
+
+// A functional component that takes a render function as a prop
+function Counter(props) {
+  const [count, setCount] = React.useState(0);
+
+  // Call the render function and pass the current count
+  return props.render(count, setCount);
+}
+
+// Usage of the Counter component
+function App() {
+  return (
+    <div>
+      <h1>Counter Example</h1>
+      <Counter
+        render={(count, setCount) => (
+          <div>
+            <p>Count: {count}</p>
+            <button onClick={() => setCount(count + 1)}>Increment</button>
+            <button onClick={() => setCount(count - 1)}>Decrement</button>
+          </div>
+        )}
+      />
+    </div>
+  );
+}
+export default App;
+```
+
+As you can see in the above example, the logic to handle the increment and decrement is handled by the Counter component.
+
+**Difference between HOC and render props**
+
+- **HOC (Higher-Order Component)**:
+  - HOCs are functions that accept a component as an argument and return a new component with added or modified behavior.
+  - They are implemented as wrapper components that encapsulate the logic and state management.
+- **Render Props**:
+  - Render props involve passing a function as a prop to a component. This function is used by the component to render part of its UI.
+  - Render props are implemented by passing a function as a prop to a component, which the component then invokes.
