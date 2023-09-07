@@ -24,11 +24,11 @@ In React, we will be covering the following topics:
 
 6. [Pure Components](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/React/ReactInterview#pure-components)
 
-7. Higher Order Components
+7. [Higher Order Components](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/React/ReactInterview#higher-order-component)
 
-8. Render Props
+8. [Render Props](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/React/ReactInterview#render-props)
 
-9. Handling Error
+9. [Handling Error](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/React/ReactInterview#error-handling)
 
 10. React Fiber
 
