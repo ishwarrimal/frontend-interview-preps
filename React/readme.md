@@ -30,30 +30,28 @@ In React, we will be covering the following topics:
 
 9. [Handling Error](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/React/ReactInterview#error-handling)
 
-10. React Fiber
+10. [Virtual Dom](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/React/ReactInterview#virtual-dom)
 
-- Reconcilliation and Diffing
+11. [React Reconciliation, Fiber and Diffing](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/React/ReactInterview#react-reconciliation-and-react-fiber)
 
-- Diffing Phase
-
-11. Flux and Redux
+12. Flux and Redux
 
 - middleware in redux
 
-12. Context API
+13. Context API
 
-13. useReducer
+14. useReducer
 
-14. Controlled vs Uncontrolled Components
+15. Controlled vs Uncontrolled Components
 
-15. Strict Mode
+16. Strict Mode
 
-16. Fragment
+17. Fragment
 
-17. Suspense
+18. Suspense
 
-18. Profiler
+19. Profiler
 
-19. [Additional Concepts](https://ishwar-rimal.medium.com/react-concepts-a5cf39bdd5d)
+20. [Additional Concepts](https://ishwar-rimal.medium.com/react-concepts-a5cf39bdd5d)
 
 Watch this awesome video on what are react components/elements, render tree and reconciliation https://www.youtube.com/watch?v=7YhdqIR2Yzo
