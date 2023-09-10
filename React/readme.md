@@ -2,7 +2,7 @@
 
 In React, we will be covering the following topics:
 
-1.[Why React?](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/React/ReactInterview#why-react)
+1. [Why React?](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/React/ReactInterview#why-react)
 
 2. [JSX vs JS](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/React/ReactInterview#jsx-vs-js)
 
