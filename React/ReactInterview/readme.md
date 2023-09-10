@@ -454,3 +454,41 @@ Both methods serve distinct purposes:
 
 **Why do we need to handle error in react?**
 In React, When an error occurs and it's not handled gracefully, users may see a blank or broken page, leading to frustration and confusion.
+
+## Virtual DOM
+
+- Virtual DOM or VDOM is a representation of the actual DOM that React maintains to optimize the render and re render of the UI.
+- It's a concept and data structure that React uses to optimize the process of updating the actual DOM when changes occur in a web application.
+- When the update in any state or props happen, React first updates the Virtual DOM and then goes on updating the actual DOM.
+- This might seem like an extra work compared to updating the DOM directly, but when the changes happen in a batch, this way turns out to be efficient than updating the actual DOM.
+- We will diecuss more about how React does optimizes the UI re render in the following topic on React Reconciliation and React fiber.
+
+## React Reconciliation and React Fiber
+
+**What is react reconciler?**
+React reconciler is a core process that React uses to efficiently update the UI when any change in state or props is encountered.
+
+**What is react fiber?**
+In concrete terms, a fiber is a JavaScript object that contains information about a component, its input, and its output. This object is the internal representation of the Components, which contains of type, keys, child, sibling, etc, of the component.
+Using this, React can efficiently identifies the change in DOM and achieve performance optimization.
+
+**When was react fiber introduced?**
+React fiber was introduced in React v16, which was released on September 26, 2017.
+
+**What was used by reconciler before react fiber?**
+Before react fiber, React used stack-based approach for reconciliation, was also called stack reconciler. This approach has **Limited Concurrency**, it use dot **Blocking Main Thread** and hence was slow.
+
+**How does React reconciliation work?**
+
+1. During the initial render, React creates a **Virtual DOM**. This is a replica of the actual DOM (This is not part of reconcilliation).
+2. When any **update** happens of the state or props, react re-renders the affected component and generates a new VDOM.
+3. React then compares the new VDOM with the older VDOM. React uses **Diffing Algorithm** to achieve this. (more on diffing algorithm here)
+4. React aims to find the minimum number of changes required to update the actual DOM to match the new virtual DOM.
+5. Once React has identified the difference, it efficiently updates the acutal DOM.
+
+There are 2 phases in which all of these happens. Read about them [here](https://medium.com/@ishwar-rimal/execution-sequence-of-hooks-in-react-functional-components-b4a2ef69f9b0)
+
+## More on Diffing Algorithm:
+
+- Diffing algorithm has time complexity of O(n) compared to traditional O(n3).
+- The Diffing algorithem works on following assumptions: 1. **Tree Structure Assumption**: React assumes that the structure of the virtual DOM tree remains relatively stable between renders. This means that if a parent and child component have not changed, React can make the assumption that their children have not changed either, allowing it to skip unnecessary checks. 2. **Component Type Assumption**: React assumes that components of the same type represent the same logical element across renders. This is why it compares elements of the same type by their position in the tree and their props. 3. **Keyed Elements Assumption**: When rendering lists of elements, React assumes that elements within the list have a unique "key" prop that identifies them across renders. Using keys helps React determine which elements have been added, removed, or changed within a list efficiently. 4. **Depth-First Search**: React's diffing algorithm performs a depth-first traversal of the virtual DOM tree. It starts at the root and compares elements as it goes deeper into the tree. This approach helps React identify differences in the tree structure efficiently. 5. **Element Key Assumption**: React assumes that the "key" prop is stable across renders for the same element. If the key of an element changes between renders, React treats it as a new element, which can result in unnecessary updates.
