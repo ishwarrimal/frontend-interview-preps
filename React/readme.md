@@ -34,24 +34,24 @@ In React, we will be covering the following topics:
 
 11. [React Reconciliation, Fiber and Diffing](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/React/ReactInterview#react-reconciliation-and-react-fiber)
 
-12. Flux and Redux
+12. [Flux](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/React/ReactInterview#flux) and [Redux](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/React/ReactInterview#redux)
 
-- middleware in redux
-
-13. Context API
+13. [Middleware in redux](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/React/ReactInterview#middlewares-in-redux)
 
 14. useReducer
 
-15. Controlled vs Uncontrolled Components
+15. Context API
 
-16. Strict Mode
+16. Controlled vs Uncontrolled Components
 
-17. Fragment
+17. Strict Mode
 
-18. Suspense
+18. Fragment
 
-19. Profiler
+19. Suspense
 
-20. [Additional Concepts](https://ishwar-rimal.medium.com/react-concepts-a5cf39bdd5d)
+20. Profiler
+
+21. [Additional Concepts](https://ishwar-rimal.medium.com/react-concepts-a5cf39bdd5d)
 
 Watch this awesome video on what are react components/elements, render tree and reconciliation https://www.youtube.com/watch?v=7YhdqIR2Yzo
