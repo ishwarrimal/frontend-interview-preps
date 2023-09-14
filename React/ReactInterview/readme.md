@@ -533,7 +533,7 @@ _Note: I assume that you know the syntax and usage of redux, if not please follo
 1. **Predictability**: This predictability is crucial in Redux because it ensures that given the same state and action, a reducer will consistently produce the same new state.
 2. **Immutability:** Reducers typically return a new state object rather than modifying the existing one. This promotes immutability, a practice that helps prevent unintended side effects and makes it easier to track changes in the application's state over time.
 
-**Middlewares in redux**
+## Middlewares in redux
 
 - Middleware in general is a software layer or component that sits between different part of an application.
 - Middleware serves as a bridge that enables communication, data processing, and additional functionality between these components or layers.
