@@ -497,3 +497,47 @@ There are 2 phases in which all of these happens. Read about them [here](https:/
   3. **Keyed Elements Assumption**: When rendering lists of elements, React assumes that elements within the list have a unique "key" prop that identifies them across renders. Using keys helps React determine which elements have been added, removed, or changed within a list efficiently.
   4. **Depth-First Search**: React's diffing algorithm performs a depth-first traversal of the virtual DOM tree. It starts at the root and compares elements as it goes deeper into the tree. This approach helps React identify differences in the tree structure efficiently.
   5. **Element Key Assumption**: React assumes that the "key" prop is stable across renders for the same element. If the key of an element changes between renders, React treats it as a new element, which can result in unnecessary updates.
+
+## Flux
+
+- Flux is an architectural pattern for managing the flow of data in a web applicaiton.
+- Flux is based on unidirection flow of data.
+- In a complex web application, the state of the app is stored in one single place called "STORE".
+- All the components of the application susbscribe to the data in the "STORE"
+- Follows the following sequence
+  - User interacts with the UI.
+  - It triggers an actions.
+  - Actions notifies the "STORE" about the action.
+  - Stores update their data and notify all the components about the update.
+  - UI re-render based on the udpated data.
+
+## REDUX
+
+_Note: I assume that you know the syntax and usage of redux, if not please follow [this article](https://redux.js.org/introduction/examples)_
+
+- Redux is a state management library commonly used in React. It is based on flux architecure.
+- Redux is especially useful in complex React applications where multiple components need access to shared data.
+
+**Core Concepts of Redux (similar to that of flux):**
+
+1.  **Store:** The central piece of Redux is the store. It holds the entire state of your application in a single JavaScript object. Consider store as a global state, a source of truth for your application. (learn more aobut state [here](https://medium.com/@ishwar-rimal/what-the-hell-is-state-in-web-applications-f529aa4cf6e1) )
+
+2.  **Actions:** Actions are plain JavaScript objects that describe events or changes in your application. The job of action is to inform reducer that some action has been triggered and also pass some relavant data. They have a `type` property that indicates the type of action and can also carry additional data.
+
+3.  **Reducers:** Reducers are functions that specify how the application's state should change in response to actions. They take the current state and an action as input and return a new state. Reducers are pure functions, meaning they produce the same output for the same input and have no side effects.
+4.  **Dispatch:** To trigger a state change, you dispatch an action to the store. The store then forwards the action to the reducers, which calculate the new state based on the action's type and payload.
+5.  **Subscribe:** Your components subscribe to the store to listen for changes in the state. When the state changes, the subscribed components are notified, allowing them to update their views accordingly.
+
+**Why are Reducer pure funcitons?**
+
+1. **Predictability**: This predictability is crucial in Redux because it ensures that given the same state and action, a reducer will consistently produce the same new state.
+2. **Immutability:** Reducers typically return a new state object rather than modifying the existing one. This promotes immutability, a practice that helps prevent unintended side effects and makes it easier to track changes in the application's state over time.
+
+**Middlewares in redux**
+
+- Middleware in general is a software layer or component that sits between different part of an application.
+- Middleware serves as a bridge that enables communication, data processing, and additional functionality between these components or layers.
+- In Redux, middleware is a crucial part of the store's dispatch process that allows you to intercept, modify, or augment actions and state changes.
+- Middleware sits between the dispatching of an action and the moment it reaches the reducers, giving you the ability to add custom behavior to your Redux application.
+- **Thunk** middleware is commonly used in Redux applications to handle asynchronous actions.
+- The primary use of thunk middleware is to delay the dispatching of an action until a certain condition is met or an asynchronous operation is completed. It enables you to have more control over the flow of your Redux actions and handle complex asynchronous logic.
