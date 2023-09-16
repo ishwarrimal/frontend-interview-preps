@@ -785,3 +785,38 @@ More about these in the following section
   3.  Check for the use of any depricated API. [read more](https://react.dev/reference/react/StrictMode#fixing-deprecation-warnings-enabled-by-strict-mode)
 
 NOTE that this will be enabled only during development.
+
+## `<Fragment />`
+
+- Often used via `<>...</>` syntax, lets you group elements without a wrapper node.
+- As react supports returning only one element, at cases when there are more than one elements, it requires you to wrap the elements within some other element like div.
+- To avoid using `<div>` or any other such element as a wrapper, you can use Fragment.
+
+## `<Suspense />`
+
+- Lets you display an alternate UI (fallback) until its children have finished loading.
+
+Exampl:
+
+```javascript
+import { Suspense } from "react";
+import Albums from "./Albums.js";
+
+export default function ArtistPage({ artist }) {
+  return (
+    <>
+      <h1>{artist.name}</h1>
+      <Suspense fallback={<Loading />}>
+        <Albums artistId={artist.id} />
+      </Suspense>
+    </>
+  );
+}
+
+function Loading() {
+  return <h2>🌀 Loading...</h2>;
+}
+```
+
+Note:  
+`<Suspense />` is mostly used while lazy laoding the component.
