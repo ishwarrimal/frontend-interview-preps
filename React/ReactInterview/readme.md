@@ -703,9 +703,11 @@ export default App;
 
 ## Controlled vs Uncontrolled Components.
 
-There are no strict technical term for controlled or uncontrolled compoents, but it is highly recommendted to understand when a component becomes controlled and when it becomes uncontrolled.
+- There are no strict technical term for controlled or uncontrolled compoents, but it is highly recommendted to understand when a component becomes controlled and when it becomes
+  uncontrolled.
+- When a component handles it's own local state, then it can be called as `uncontrolled component` and in the case when a parent component handles the state of it's child componenet, then the child component can be called as a `controlled component`
 
-- Controlled and uncontrolled components are two different approaches to managing form inputs in React.
+Controlled and uncontrolled components are usually easier to understand when managing form inputs in React.
 
 **Controlled Components:**
 
