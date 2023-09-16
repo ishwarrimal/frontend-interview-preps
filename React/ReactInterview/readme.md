@@ -535,9 +535,38 @@ _Note: I assume that you know the syntax and usage of redux, if not please follo
 
 ## Middlewares in redux
 
+**Common use of middleware -> Updating store asynchronously**
+Suppose on clicking a button, you want to make an API call and then update the store based on the response, you do the following:
+
+1. Dispatch action from the view for the click of button.
+2. This action doesn't immediately update the store, i.e. doens't reach reducer immeidately.
+3. You make use of middleware like `redux-thunk` to make the api call and call the reducer once you receive the response.
+
+Step 3 is an asychchronous process.
+
 - Middleware in general is a software layer or component that sits between different part of an application.
-- Middleware serves as a bridge that enables communication, data processing, and additional functionality between these components or layers.
-- In Redux, middleware is a crucial part of the store's dispatch process that allows you to intercept, modify, or augment actions and state changes.
+- Middleware allows you to intercept, modify, or augment actions and state changes.
 - Middleware sits between the dispatching of an action and the moment it reaches the reducers, giving you the ability to add custom behavior to your Redux application.
 - **Thunk** middleware is commonly used in Redux applications to handle asynchronous actions.
 - The primary use of thunk middleware is to delay the dispatching of an action until a certain condition is met or an asynchronous operation is completed. It enables you to have more control over the flow of your Redux actions and handle complex asynchronous logic.
+
+Example:
+
+```javascript
+export const FETCH_DATA_REQUEST = "FETCH_DATA_REQUEST";
+export const FETCH_DATA_SUCCESS = "FETCH_DATA_SUCCESS";
+export const FETCH_DATA_FAILURE = "FETCH_DATA_FAILURE";
+// Action creator with Redux Thunk
+export const fetchData = () => {
+  return async (dispatch) => {
+    dispatch({ type: FETCH_DATA_REQUEST });
+    try {
+      const response = await fetch("https://api.example.com/data");
+      const data = await response.json();
+      dispatch({ type: FETCH_DATA_SUCCESS, payload: data });
+    } catch (error) {
+      dispatch({ type: FETCH_DATA_FAILURE, payload: error.message });
+    }
+  };
+};
+```
