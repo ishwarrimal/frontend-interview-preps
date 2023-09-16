@@ -624,3 +624,79 @@ export default Counter;
 ```
 
 [Read more about useReducer](https://react.dev/reference/react/useReducer)
+
+## Context API
+
+- Context API comes into picture in situations where a data needs to be passed from one component to it's children and further below on it's hierarchy.
+- `Props Drilling` is one of the naive way to achieve this, in which a component passes a data to it's child as a prop and that child passed it to it's child as it's prop and so on.
+  ```javascript
+  function SomeComponent(){
+  	const [data,] = useState('Apple')
+  	//Data originates here
+  	return <Component1 data={data}>
+  			<Child data={data}>
+  				<Child2 data={data}>
+  					//This component actually uses the data
+  				</Child2>
+  			</Child>
+  		</Component1 />
+  ```
+- Other way to achieve this is by using `redux`, in which you dispatch and subscribe to the central store from within a component.
+- `useContext` is a built in hook in react that helps you achieve this without having to use any other complex methods.
+
+Key features and components of the Context API include:
+
+1.  **`createContext`:** The `createContext` function is used to create a new context object. This context object has two components associated with it: `Provider` and `Consumer`.
+2.  **`Provider`:** The `Provider` component is used to wrap a portion of your component tree and makes the context data (state) available to all components within that tree. It accepts a `value` prop, which specifies the data that should be shared.
+3.  **`Consumer`:** The `Consumer` component allows you to access the context data within your components. You can use the `Consumer` component either as a render prop or as a function component with a context value.
+4.  **`useContext `:** Within `Consumer` you have to make use of `useContex` hook to access the passed data.
+
+Example:
+(Again, this is not a tutorial, so I assume you know the syntax. This is just a preperation guide for interview)
+
+```javascript
+import React, { createContext, useContext, useState } from "react";
+
+// Create a new context
+const MyContext = createContext();
+
+// Define a provider component
+function MyProvider({ children }) {
+  const [count, setCount] = useState(0);
+
+  const increment = () => {
+    setCount(count + 1);
+  };
+
+  return (
+    <MyContext.Provider value={{ count, increment }}>
+      {children}
+    </MyContext.Provider>
+  );
+}
+
+// Example component that uses context
+function Counter() {
+  const { count, increment } = useContext(MyContext);
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={increment}>Increment</button>
+    </div>
+  );
+}
+
+// App component
+function App() {
+  return (
+    <MyProvider>
+      <Counter />
+    </MyProvider>
+  );
+}
+
+export default App;
+```
+
+**Note** : By using `useReducer` and `Context API` you can eliminate the use of `Redux` to manage state even in a complex applications.
