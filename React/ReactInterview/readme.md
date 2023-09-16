@@ -570,3 +570,57 @@ export const fetchData = () => {
   };
 };
 ```
+
+## useReducer
+
+useReducer is an inbuilt hook provided by `React` to handle the complex state management previously done using external library like `Redux`.
+It is often used as an alternative to `useState` when you need to handle more advanced state management scenarios.
+Here's a table comparing `useReducer` and Redux across various aspects:
+
+| Aspect                   | `useReducer`                                  | Redux                                         |
+| ------------------------ | --------------------------------------------- | --------------------------------------------- |
+| **Type**                 | React built-in hook                           | External state management library             |
+| **Local vs. Global**     | Typically used for local component state      | Designed for global state management          |
+| **Use Case**             | Small to medium-sized apps, local state       | Large and complex apps, global state          |
+| **Setup**                | No external dependencies required             | Requires installing Redux and middleware      |
+| **Component Coupling**   | Tends to couple state logic with components   | Promotes decoupling of state and components   |
+| **State Access**         | State is local to the component               | State is globally accessible across app       |
+| **Asynchronous Actions** | Not built for handling async actions directly | Supports middleware for async action handling |
+| **Complexity**           | Simpler and lightweight                       | More structured, suited for complexity        |
+| **Boilerplate**          | Less boilerplate code required                | More boilerplate, but structured              |
+| **Development Tools**    | No built-in dev tools                         | Redux DevTools for state inspection           |
+
+Example:
+
+```javascript
+import React, { useReducer } from "react";
+
+// Define a reducer function
+const reducer = (state, action) => {
+  switch (action.type) {
+    case "INCREMENT":
+      return { count: state.count + 1 };
+    case "DECREMENT":
+      return { count: state.count - 1 };
+    default:
+      return state;
+  }
+};
+
+function Counter() {
+  // Initialize state using useReducer
+  const [state, dispatch] = useReducer(reducer, { count: 0 });
+
+  return (
+    <div>
+      <p>Count: {state.count}</p>
+      <button onClick={() => dispatch({ type: "INCREMENT" })}>Increment</button>
+      <button onClick={() => dispatch({ type: "DECREMENT" })}>Decrement</button>
+    </div>
+  );
+}
+
+export default Counter;
+```
+
+[Read more about useReducer](https://react.dev/reference/react/useReducer)
