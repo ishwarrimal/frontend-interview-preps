@@ -44,14 +44,16 @@ In React, we will be covering the following topics:
 
 16.[Controlled vs Uncontrolled Components](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/React/ReactInterview#controlled-vs-uncontrolled-components)
 
-17. Strict Mode
+17. [Built in React Components](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/React/ReactInterview#built-in-react-components)
 
-18. Fragment
+18. [Strict Mode](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/React/ReactInterview#usestrict-)
 
-19. Suspense
+19. [Fragment](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/React/ReactInterview#fragment-)
 
-20. Profiler
+20. [Suspense](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/React/ReactInterview#suspense-)
 
-21. [Additional Concepts](https://ishwar-rimal.medium.com/react-concepts-a5cf39bdd5d)
+21. [Profiler](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/React/ReactInterview#profiler-)
+
+22. [Additional Concepts](https://ishwar-rimal.medium.com/react-concepts-a5cf39bdd5d)
 
 Watch this awesome video on what are react components/elements, render tree and reconciliation https://www.youtube.com/watch?v=7YhdqIR2Yzo
