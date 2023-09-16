@@ -758,3 +758,30 @@ function UncontrolledInput() {
 ```
 
 Benefit: Uncontrolled components can be simpler to set up for simple scenarios where you don't need to manage the input's value through React state. They can also be faster since there's no need to re-render the component on each input change.
+
+## Built-in React Components
+
+React provides 4 built in components namely:
+
+1. `<StrictMode />`
+2. `<Profiler />`
+3. `<Suspense />`
+4. `<Fragment />`
+
+More about these in the following section
+
+## `<UseStrict />`
+
+- Similar to `strict mode` in JavaScript, this component helps you find bugs early during development.
+- You have to wrap your component within `<UseStrict /> ` to enale strict mode.
+- There are 3 features enabled by UseStrict
+  1.  `re-render` the component to make sure that there are no imupurities:
+      - React expects all functional component to be a pure functions.
+      - During th re-render it checks if the output of first and the second render are same or not, if not, it gives warning as it's not the expeted behaviour
+      - Read more [here](https://react.dev/reference/react/StrictMode#fixing-bugs-found-by-double-rendering-in-development)
+  2.  re-run Effects an extra time to find bugs caused by missing Effect cleanup.
+      - During the second setup, it makes sure that the cleanup of first effect has taken place, if not, it will throw warning.
+      - Read more [here](https://react.dev/reference/react/StrictMode#fixing-bugs-found-by-re-running-effects-in-development)
+  3.  Check for the use of any depricated API. [read more](https://react.dev/reference/react/StrictMode#fixing-deprecation-warnings-enabled-by-strict-mode)
+
+NOTE that this will be enabled only during development.
