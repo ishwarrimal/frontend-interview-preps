@@ -42,7 +42,7 @@ In React, we will be covering the following topics:
 
 15. [Context API](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/React/ReactInterview#context-api)
 
-16. Controlled vs Uncontrolled Components
+16.[Controlled vs Uncontrolled Components](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/React/ReactInterview#controlled-vs-uncontrolled-components)
 
 17. Strict Mode
 
