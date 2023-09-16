@@ -705,11 +705,13 @@ export default App;
 
 There are no strict technical term for controlled or uncontrolled compoents, but it is highly recommendted to understand when a component becomes controlled and when it becomes uncontrolled.
 
+- Controlled and uncontrolled components are two different approaches to managing form inputs in React.
+
 **Controlled Components:**
 
-1.  **State Managed by React:** In controlled components, the value of the form input is controlled by React state. You initialize the input element with a value prop and maintain its value in the component's state.
-2.  **Event Handlers:** You typically use event handlers like `onChange` to update the state whenever the user interacts with the input element.
-3.  **Example:**
+- When you make use of `React's` internal implementation to handle the update in the state of the input, it becomes a controlled component.
+
+**Example:**
 
 ```javascript
 import React, { useState } from "react";
@@ -725,13 +727,13 @@ function ControlledInput() {
 }
 ```
 
-4. **Benefits:** Controlled components allow you to have full control over the input's value and its behavior. You can validate, manipulate, or perform actions based on the input value easily.
-5. **Usage:** Use controlled components when you need to have precise control over the input's value and behavior, such as validation or dynamic updates.
+Benefits: You can validate, manipulate, or perform actions based on the input value easily.
 
 **Uncontrolled Components:**
 
-1.  **State Managed by the DOM:** In uncontrolled components, the form input's value is managed by the DOM itself. React does not control the value; instead, it relies on the DOM to handle the state.
-2.  **Ref Usage:** Uncontrolled components often use React `refs` to access the DOM element directly and read its value when needed.
+- When the value of the input field is managed by the DOM itself, then it becomes uncontrolled component.
+- Uncontrolled components often use React `refs` to access the DOM element directly and read its value when needed.
+
 3.  **Example:**
 
 ```javascript
@@ -753,5 +755,4 @@ function UncontrolledInput() {
 }
 ```
 
-4. **Benefits:** Uncontrolled components can be simpler to set up for simple scenarios where you don't need to manage the input's value through React state. They can also be faster since there's no need to re-render the component on each input change.
-5. **Usage:** Use uncontrolled components when you have simple forms and want to reduce the complexity of managing state in your React components.
+Benefit: Uncontrolled components can be simpler to set up for simple scenarios where you don't need to manage the input's value through React state. They can also be faster since there's no need to re-render the component on each input change.
