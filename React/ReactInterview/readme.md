@@ -535,7 +535,7 @@ _Note: I assume that you know the syntax and usage of redux, if not please follo
 
 ## Middlewares in redux
 
-**Common use of middleware -> Updating store asynchronously**
+**Common use of middleware -> Updating store asynchronously**  
 Suppose on clicking a button, you want to make an API call and then update the store based on the response, you do the following:
 
 1. Dispatch action from the view for the click of button.
