@@ -38,9 +38,9 @@ In React, we will be covering the following topics:
 
 13. [Middleware in redux](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/React/ReactInterview#middlewares-in-redux)
 
-14. useReducer
+14. [useReducer](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/React/ReactInterview#usereducer)
 
-15. Context API
+15. [Context API](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/React/ReactInterview#context-api)
 
 16. Controlled vs Uncontrolled Components
 
