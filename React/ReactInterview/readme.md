@@ -60,7 +60,7 @@ const greeting = "Hello, " + name + "!";
 
 ## Hooks
 
-Hooks are nothign but functions that allow you to access and use certain internal methods and features of React in functional components. Hooks provide a way to "hook into" React's core functionality without the need for class components.
+Hooks are nothing but functions that allow you to access and use certain internal methods and features of React in functional components. Hooks provide a way to "hook into" React's core functionality without the need for class components.
 
 ### useState
 
