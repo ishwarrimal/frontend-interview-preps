@@ -4,7 +4,7 @@ Topics I will be covering:
 
 1. [**JavaScript**](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/JavaScript) : Basic and Advance.
 2. [**React**](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/React) : Commonly asked questions and core concepts.
-3. **CSS** : Commonly asked questions and a few concepts.
+3. [**CSS**](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/CSS) : Commonly asked questions and a few concepts.
 4. [**Web Fundamentals**](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/Web%20Fundamentals) : A lot of important topics.
 
 ## About Me
@@ -21,7 +21,7 @@ With my experience as a candiate and also an interviewer who has been taking int
 
 There are 5 different folders in this repo:
 
-1. **CSS**
+1. [**CSS**](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/CSS)
 2. **DSA**
 3. [**JavaScript**](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/JavaScript)
 4. [**React**](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/React)
