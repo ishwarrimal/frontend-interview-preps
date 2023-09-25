@@ -6,7 +6,7 @@ In web fundamentals, we will be covering following topics:
 2. [Working of a Browser:](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/Web%20Fundamentals/Basics#working-of-a-browser)
    - [DNS Resolution](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/Web%20Fundamentals/Basics#dns-resolution)
    - [Routing](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/Web%20Fundamentals/Basics#routing)
-   - Rendering in the browser
+   - [Rendering in the browser](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/Web%20Fundamentals/Basics#rendering-in-the-browser)
 3. Event Loop - JS Enginer
    - Macro Vs Micro task queue
 4. Web APIs in browser and C++ API in Nodejs
