@@ -1,9 +1,3 @@
-# Web Fundamentals
-
-## What are states?
-
-I have explained this in detail here: [What the hell is state in web applicaiton](https://ishwar-rimal.medium.com/what-the-hell-is-state-in-web-applications-f529aa4cf6e1) Please go throught it.
-
 ## Working of a browser
 
 Majorly there are 4 events that happen when you type google.com in your browser!
@@ -17,6 +11,7 @@ Let's learn about each in brief:
 
 ## DNS Resolution
 
+DNS Resolution is a process of converting the human redable domain name into numerical IP Address of your remote server.
 This can happen in 3 places:
 
 1. Browser's cache - Cached in a recent request.
