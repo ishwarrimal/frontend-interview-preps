@@ -24,3 +24,13 @@ If no resolution happens in the above 3 stages, the following steps are performe
 - Contact the TLD DNS server to resolve the Autohrative DNS; The TLD DNS server responds with the IP address of the authoritative DNS server for the specific domain (e.g., google.com).
 - The authoritative DNS server for the domain provides the IP address associated with the requested domain (e.g., the IP address of Google's servers). This information is sent back to the DNS resolver.
 - The DNS resolver caches the IP address for future reference and sends the IP address to your web browser.
+
+## Routing
+
+Once the IP address is dertermined and a connection is made to the server, the server decides what content to respond based on the data present along with the IP address like port number and requested resource url.
+
+- Load Balancer :
+  The server may implement load balancer to redriect incoming traffic to different server.
+- The server uses it's routing logic to reidrect the request within it's sytem.
+- The server sends the response back to the client.
+- The client now process and dispalys the content.
