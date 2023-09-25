@@ -794,6 +794,7 @@ More about these in the following section
 - Similar to `strict mode` in JavaScript, this component helps you find bugs early during development.
 - You have to wrap your component within `<UseStrict /> ` to enale strict mode.
 - There are 3 features enabled by UseStrict
+- [Video Reference](https://www.youtube.com/watch?v=UjWz2cWstZI&t=11s)
 
 1.  `re-render` the component to make sure that there are no imupurities:
 
