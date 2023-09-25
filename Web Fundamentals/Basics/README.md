@@ -34,3 +34,20 @@ Once the IP address is dertermined and a connection is made to the server, the s
 - The server uses it's routing logic to reidrect the request within it's sytem.
 - The server sends the response back to the client.
 - The client now process and dispalys the content.
+
+## Rendering in the browser
+
+When the browser recieves content from the server, following steps take place (Note: we will be discussing only about HTML content right here)
+
+- **Character Encoding** : Converting the incoming binary data into character stream. This is based on the encoding format like UTF-8 (other format ASCII, UTF8, UTF32, ISCII, Unicode)
+- **Tokenizing** : Convering character stream to HTML blocks.
+- **HTML Parsing** : Converting raw HTML into DOM content based on the rule of HTML specification (commonly HTML5)
+- **DOM Construction** : Construct a hiererchal structure called DOM tree with all the attributes added to the DOM node.
+- **CSSOM Construction** : Simiar to DOM tree, a CSSOM tree is constructed for the CSS. (We will be covering the part of loading external CSS and external script separately)
+- **Render Tree** : Another tree is constructed by combining the DOM and CSSOM. This tree consists of only the elements visible to the Actual User. Elements having styles like `display: none` etc are not part fo this tree, though it's part of the DOM Tree.
+- **Layout** : Calcualte the exact position and geometry of the element on the web page based on the provided styles. It determines where the element should be placed on the screen.
+- **Painting** : Paing the element on the screen.
+- **Compositing**: Compositing, which combines various layers or elements to create the final image, takes into account the stacking order within stacking contexts (z-index)
+- **Continuous Rendering**: Browsers continuously render and update content as needed, especially for web pages with animations, scrolling, or dynamic changes. This ensures that the user sees the most up-to-date and responsive content.
+
+If you want to learn more aobut this, I recommend reading this blog by google [inside look of modern browser](https://developer.chrome.com/blog/inside-browser-part1/)
