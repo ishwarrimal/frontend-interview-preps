@@ -7,47 +7,50 @@ In web fundamentals, we will be covering following topics:
    - [DNS Resolution](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/Web%20Fundamentals/Basics#dns-resolution)
    - [Routing](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/Web%20Fundamentals/Basics#routing)
    - [Rendering in the browser](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/Web%20Fundamentals/Basics#rendering-in-the-browser)
-3. Event Loop - JS Enginer
+3. [Event Loop](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/Web%20Fundamentals/Basics#event-loop)
+4. [JS Runtime](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/Web%20Fundamentals/Basics#javascript-runtime)
    - Macro Vs Micro task queue
-4. Web APIs in browser and C++ API in Nodejs
-5. Sync vs Async Works
-6. Web Storage
+5. Web APIs in browser and C++ API in Nodejs
+6. Sync vs Async Works
+7. Web Storage
    - Session Storage
    - Local Storage
    - IndexedDB
-7. Cookies - Server side Vs Client side
-8. CORS
-9. HTTP Caching
-   - Different Caching Strategies
-10. Workers:
+8. Cookies - Server side Vs Client side
+9. CORS
+10. HTTP Caching
+
+- Different Caching Strategies
+
+11. Workers:
     - Web Worker vs Service Worker
-11. PWA
-12. XMLHttpRequest - API Calls
-13. Web Sockets
-14. Authentication
+12. PWA
+13. XMLHttpRequest - API Calls
+14. Web Sockets
+15. Authentication
     - Token based vs Session Based
     - Working of JWT in detail
-15. Web Security
+16. Web Security
     - XSS
     - CSRF
     - SQL Injection
     - CSP
-16. Internationalization
-17. Accessibility
-18. Bundling App - Webpack
-19. Deployment
-20. Freezing the browser
+17. Internationalization
+18. Accessibility
+19. Bundling App - Webpack
+20. Deployment
+21. Freezing the browser
     - setInterval with 0 vs while true
-21. SPA vs MPA
-22. Micro Frontend
-23. Performance
+22. SPA vs MPA
+23. Micro Frontend
+24. Performance
     - Compression
     - Optimizing images
     - Lazy Loading
     - Code Splitting
     - Async/Defer external resources
     - Prefetch / Preload / dns Prefetch
-24. Web Vitals:
+25. Web Vitals:
     - LCP
     - FID
     - CLS
