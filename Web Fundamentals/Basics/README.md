@@ -82,8 +82,8 @@ If you want to learn more aobut this, I recommend reading this blog by google [i
 
 ## Event Loop
 
-When talking about Event Loop, usually the interviewer wants to know about the overall working of the JS Runtime and not just the Event Loop part of it.
-Event loop in particulra is a fundamental concept that governs the execution of asynchronous code by continuously checking the callback qu...(Ruko Jara, Sabar Karo) but going deeper into that, let's first understand what is JavaScript runtime.
+When talking about Event Loop, usually the interviewer wants to know about the overall working of the JS Runtime and not just the Event Loop part of it.  
+Event loop in particulra is a fundamental concept that is responsible for the execution of asynchronous code by continuously checking the callback qu...(Ruko Jara, Sabar Karo) but before going deeper into that, let's first understand what is a JavaScript runtime.
 
 ## JavaScript Runtime
 
