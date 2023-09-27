@@ -79,3 +79,21 @@ When the browser recieves content from the server, following steps take place (N
 - **Continuous Rendering**: Browsers continuously render and update content as needed, especially for web pages with animations, scrolling, or dynamic changes. This ensures that the user sees the most up-to-date and responsive content.
 
 If you want to learn more aobut this, I recommend reading this blog by google [inside look of modern browser](https://developer.chrome.com/blog/inside-browser-part1/)
+
+## Event Loop
+
+When talking about Event Loop, usually the interviewer wants to know about the overall working of the JS Runtime and not just the Event Loop part of it.
+Event loop in particulra is a fundamental concept that governs the execution of asynchronous code by continuously checking the callback qu...(Ruko Jara, Sabar Karo) but going deeper into that, let's first understand what is JavaScript runtime.
+
+## JavaScript Runtime
+
+Runtime is nothing but an environment in which the program runs. And any environment having the capability to run a JavaScript code is a JS runtime. To understand what a JavaScript Runtime is, please read [this short article](https://ishwar-rimal.medium.com/a-javascript-runtime-what-is-it-1b3aa5514aa4)
+In the context of this article, we will be discussin only about how the working of JS Runtime.
+A JS runtime has following component to it:
+
+1. Call Stack.
+2. Memory Heap.
+3. Web APIs.
+4. Callback/Task Queue.
+5. Event Loop.
+6. Microtask and Promise Queue.
