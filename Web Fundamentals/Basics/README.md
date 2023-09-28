@@ -97,3 +97,39 @@ A JS runtime has following component to it:
 4. Callback/Task Queue.
 5. Event Loop.
 6. Microtask and Promise Queue.
+
+### CallStack
+
+- Responsible for all the sycnhronous work in JavaScript.
+- It is a stack data structure which operates in a Last-In-First-Out (LIFO) manner, meaning the most recently added function is the first one to be removed when it returns.
+- Example:
+
+```javascript
+function functionC(){
+	...
+}
+function functionB(){
+	functionC()
+	...
+}
+function functionA(){
+	functionB()
+	...
+}
+functionA()
+```
+
+When the above code is executed, the following happens:
+
+1.  `functionA` is called, and it is pushed onto the call stack.
+    - Call Stack: `[functionA]`
+2.  `functionA` calls `functionB`, so `functionB` is added to the call stack.
+    - Call Stack: `[functionA, functionB]`
+3.  `functionB` calls `functionC`, so `functionC` is added to the call stack.
+    - Call Stack: `[functionA, functionB, functionC]`
+4.  `functionC` completes its execution and logs. It is removed from the call stack.
+    - Call Stack: `[functionA, functionB]`
+5.  `functionB` completes its execution and returns. It is removed from the call stack.
+    - Call Stack: `[functionA]`
+6.  Finally, `functionA` completes its execution and returns. It is removed from the call stack.
+    - Call Stack: `[]`
