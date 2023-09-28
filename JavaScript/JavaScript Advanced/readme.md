@@ -19,7 +19,7 @@ Once a primitive value is created, it cannot be changed, although the variable t
 Immutable types are _pass by value_ meaning when you copy the value of a primitive data, it's value is stored in a new memory location.
 
 ```javascript
-let.x = 10;
+let x = 10;
 let y = x;
 ```
 
@@ -103,7 +103,7 @@ This causes multiple issues in terms of readability, error handnling and scalabi
 
 # Promise
 
-- A _promise_ is a proxy of value that is not necessarily know at the time of cration of the promise. (what is proxy? Will discuss later)
+- A _promise_ is a proxy of value that is not necessarily know at the time of creation of the promise. (what is proxy? Will discuss later)
 - It can be in 3 states: Pending, Fulfilled, Rejected.
 - Promises can be chained.
 - It has 3 methods: `then`, `catch` and `finally`
@@ -154,7 +154,7 @@ myPromise()
 #### Three methods
 
 - then : In case of resolved promise, control comes to then block.
-- catch : In case of a failed promise, control comes to the cach block.
+- catch : In case of a failed promise, control comes to the catch block.
 - finally : In every case, finally will always be executed at last.
 
 NOTE: Each `.then()` returns a newly generated promise object, which can optionally be used for chaining; for example:
@@ -306,7 +306,7 @@ You can view the prototype of any object using `person.__proto__` (which is depr
 
 ```javascript
 function fruit() {}
-console.log(fruit.prorotype);
+console.log(fruit.prototype);
 //Output
 {
   constructor: ƒ;
@@ -441,11 +441,11 @@ Using the above code, we are assigning the prototype of Animal constructor to th
 
 ### But why did we even create the function `getName` in the prototype and not directly inside the Construcor?
 
-Every object created using the Construcor Function gets a copy of all the properties persent in the constructor. This may not be a good idea in some cases.
+Every object created using the Constructor Function gets a copy of all the properties persent in the constructor. This may not be a good idea in some cases.
 Like it makes sense that every object get's a differnet name, but why a different `getName` function? We can just make use of the same function `reference` in each and every object isn't it?
 Yes, we're doing the exact same thing.
 
-### How does a construcor function work internally?
+### How does a constructor function work internally?
 
 When you call a constructor function in JavaScript using the `new` keyword, following steps are taken internally to create a new object instance and initialize its properties:
 
