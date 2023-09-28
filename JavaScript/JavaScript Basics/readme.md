@@ -9,7 +9,7 @@ Hoisting is a concept in JavaScript where variable and function declarations are
    console.log(x);
    var x = 10; // Prints undefined
    ```
-   he code above is transformed as follows:
+   The code above is transformed as follows:
    ```javascript
    var x; //declaration is hoisted and initialized with undefined
    console.log(x); //undefined
@@ -117,10 +117,10 @@ typeof new Set(); // "object"
 **Map**
 
 - Map is a key value pair just like Object, where key can be of any type.
-- Order is preserved in Map unline Object.
+- Order is preserved in Map unlike Object.
 - No need to handle hasOwnProperty
 - Easy to iterate
-- Lookup is 0(1)
+- Lookup is O(1)
 
 ```javascript
 //Object
