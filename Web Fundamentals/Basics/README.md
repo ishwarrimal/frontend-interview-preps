@@ -88,7 +88,7 @@ Event loop in particulra is a fundamental concept that is responsible for the ex
 ## JavaScript Runtime
 
 Runtime is nothing but an environment in which the program runs. And any environment having the capability to run a JavaScript code is a JS runtime. To understand what a JavaScript Runtime is, please read [this short article](https://ishwar-rimal.medium.com/a-javascript-runtime-what-is-it-1b3aa5514aa4)
-In the context of this article, we will be discussin only about how the working of JS Runtime.
+In the context of this article, we will be discussin only about the working of JS Runtime.
 A JS runtime has following component to it:
 
 1. Call Stack.
@@ -133,3 +133,25 @@ When the above code is executed, the following happens:
     - Call Stack: `[functionA]`
 6.  Finally, `functionA` completes its execution and returns. It is removed from the call stack.
     - Call Stack: `[]`
+
+### Memory Heap
+
+- The memory heap is a region of memory where objects, variables, and function closures are allocated and stored.
+- JavaScript objects are allocated in the heap, and references to these objects are managed on the stack.
+
+### Web API
+
+Ever wondered how `document.getElementById` or APIs like this work in the browser?  
+This is not part of the JavaScript language itself, but rather it's supported by web browsers as part of the browser's runtime environment.  
+This allows JavaScript to interact with the browser and the web page's Document Object Model (DOM).
+
+Features supported by Web API
+
+- DOM
+- Make network requests
+- Set timers
+- Handle events, etc.
+
+For the same reason, you will not be able to acess DOM api in other JS Runtime like Node.
+
+For Node, there is a separate `C++` API that helps us with things like making network call, settting timers, etc.
