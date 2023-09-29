@@ -9,6 +9,12 @@ In web fundamentals, we will be covering following topics:
    - [Rendering in the browser](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/Web%20Fundamentals/Basics#rendering-in-the-browser)
 3. [Event Loop](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/Web%20Fundamentals/Basics#event-loop)
 4. [JS Runtime](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/Web%20Fundamentals/Basics#javascript-runtime)
+   - [Call Stack](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/Web%20Fundamentals/Basics#callstack)
+   - [Memory Heap](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/Web%20Fundamentals/Basics#memory-heap)
+   - [Web API](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/Web%20Fundamentals/Basics#web-api)
+   - Callback Queue
+   - Event Loop
+   - Micro task queue
    - Macro Vs Micro task queue
 5. Web APIs in browser and C++ API in Nodejs
 6. Sync vs Async Works
