@@ -155,3 +155,31 @@ Features supported by Web API
 For the same reason, you will not be able to acess DOM api in other JS Runtime like Node.
 
 For Node, there is a separate `C++` API that helps us with things like making network call, settting timers, etc.
+
+### Callback Queue
+
+The responsibility of callback queue is to store the callback for any async tasks.
+There are series of operations that happen before any task reaches the callback queue:
+
+1. As we read previously, web API Takes care of executing async operations.
+2. Once the async execution is completed, the callback function is passed to the callbakc Queue.
+3. The event loop continuously checks the callstack and as soon as it's empty, it moves the task in callback queue to the call stack for execution.
+
+As the name suggests, callback queue is implemented using a Queue data strucutre, which makes sure that the first task to be passed to the queue get's executed (in this case, moved to the call stack) first.
+
+### Event Loop
+
+We briefly touched upon Event Loop previously [here](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/Web%20Fundamentals/Basics#event-loop)
+Event loop is nothing but a mechanism implemented by JS Engine whose job is to move task from callback queue to the call stack.
+But, the event loop can do so only when the call stack is empty, hence event loops has to keep checking for the call stack to get empty to move the tasks from the callback queue.
+NOTE: This varies slightly when it comes to micro task quque (which is different from callback queue), about which we will read in a moment.
+
+### Micro Task Queue
+
+As we read before, the event loop has to wait for the call stack to be empty before moving the tasks from callback quque to the call stack.
+
+While it works perfectly for most cases, for some this is not optimal. In some cases, we can not afford to wait for all the tasks in callstack to complete before execution the async operation. Take an example of API calls, user would want to see the response as soon as the response is ready and not wait for other sync operations to get completed.
+
+Hence, for such cases, a different type of queue calld Micro Task Queue or simply Micro Queue is used, which is differnet from a callback queue. Tasks in microtask quque is proiritzed by the JS Engine.
+
+Instead of waiting for the entire synchronous operations on a call stack to complete, as soon as the current task in execution is completed, the task in microtask quque gets prioritsed and is moved to the callstack.
