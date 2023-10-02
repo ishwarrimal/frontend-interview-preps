@@ -183,3 +183,18 @@ While it works perfectly for most cases, for some this is not optimal. In some c
 Hence, for such cases, a different type of queue calld Micro Task Queue or simply Micro Queue is used, which is differnet from a callback queue. Tasks in microtask quque is proiritzed by the JS Engine.
 
 Instead of waiting for the entire synchronous operations on a call stack to complete, as soon as the current task in execution is completed, the task in microtask quque gets prioritsed and is moved to the callstack.
+
+### Overall Execution steps:
+
+1. Firs, every task (sync or async) is executed line by line, it is initiated in the call stack.
+2. Functions (sync or async) are added to the call stack as they're encoutered.
+3. Synchronous code executes sequentially.
+4. When it encouters async code like Await/Promise or setTimeout, the callback provided is registered and the operation is offloaded to the web api (or c++ api in case of Node)
+5. The function that initiated the async operation is removed from the call stack.
+6. The calls tack continues with the other sync code if available.
+7. When the async operation completed, a callack function assosiated with that operation is placed in the callback queue or the microtask queue (in case of promise)
+8. Event loop continously checks for the call stack to be empty or finish execting it's current work before placing the task from the queue to thee call stack.
+9. Event loop continously prioritizes the microtask queue.
+10. After processing all available microtasks, the event loop checks the callback queue.
+11. This process continues as long as there are tasks in either queue.
+12. Once both the microtask queue and the callback queue are empty, the JavaScript program has completed its execution.
