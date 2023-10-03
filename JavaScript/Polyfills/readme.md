@@ -3,7 +3,8 @@
 Polyfills in JavaScript are code snippets or scripts that provide modern functionalities to older browsers or environments that lack support for those features.
 Some new features doesn't work on older browser, we write polyfill of such functionality to provide support in older browser.
 
-**Why do you need to know to write polyfill? **
+**Why do you need to know to write polyfill?**
+
 It gives you better understanding of the prgramming.
 
 ## Promise
