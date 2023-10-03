@@ -198,3 +198,23 @@ Instead of waiting for the entire synchronous operations on a call stack to comp
 10. After processing all available microtasks, the event loop checks the callback queue.
 11. This process continues as long as there are tasks in either queue.
 12. Once both the microtask queue and the callback queue are empty, the JavaScript program has completed its execution.
+
+## Browser vs Other JS Runtime Environment
+
+As we read above, not all the features that we use in our web app are provided by the language natively, rather there are external API's provided by Browser that helps us in executin those code, some of which are:
+
+1. **DOM (Document Object Model) API**
+2. **HTML5 Canvas API**
+3. **Web Audio API**
+4. etc.
+
+But when it comes to Nodejs and other JS runtime, how are things like Async work and other things handled? Since there is no browser involved, who provides the support for additional work?
+
+_Note: Node.js includes the V8 JavaScript engine, which is the same engine used by the Google Chrome web browser to execute the JS code._
+
+Apart form the JS Engine like V8, the Runtime provides other APIs which in case of Nodejs are C++ APIs (Nodejs is written in C++) to help run Async tasks and perform other non native works like:
+
+1. **File System (fs) Module**
+2. **HTTP Module**
+3. **OS Module**
+4. etc.
