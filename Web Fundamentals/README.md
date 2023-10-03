@@ -16,7 +16,7 @@ In web fundamentals, we will be covering following topics:
    - [Event Loop](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/Web%20Fundamentals/Basics#event-loop-1)
    - [Micro task queue](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/Web%20Fundamentals/Basics#micro-task-queue)
    - [Overall Execution Steps](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/Web%20Fundamentals/Basics#overall-execution-steps)
-5. Web APIs in browser and C++ API in Nodejs
+5. [Browser vs Other JS Runtime Environment](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/Web%20Fundamentals/Basics#browser-vs-other-js-runtime-environment)
 6. Sync vs Async Works
 7. Web Storage
    - Session Storage
