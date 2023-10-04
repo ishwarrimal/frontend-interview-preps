@@ -10,4 +10,4 @@ We will be covering the following topics in CSS
 4. Position Property
 5. Flexbox
 6. Grid
-7. Centering an element in a div.
+7. [Centering an element in a div](./CSS%20Basics/readme.md#how-to-center-a-div).
