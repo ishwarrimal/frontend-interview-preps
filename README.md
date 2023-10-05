@@ -2,30 +2,30 @@
 
 Topics I will be covering:
 
-1. [**JavaScript**](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/JavaScript) : Basic and Advance.
-2. [**React**](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/React) : Commonly asked questions and core concepts.
-3. [**CSS**](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/CSS) : Commonly asked questions and a few concepts.
-4. [**Web Fundamentals**](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/Web%20Fundamentals) : A lot of important topics.
+1. [**JavaScript**](./JavaScript/) : Basic and Advance.
+2. [**React**](./React/) : Commonly asked questions and core concepts.
+3. [**CSS**](./CSS/) : Commonly asked questions and a few concepts.
+4. [**Web Fundamentals**](./Web%20Fundamentals/) : A lot of important topics.
 
 ## About Me
 
 Hi, I am _Ishwar Rimal_
-I have close to **8 years** of experience in the software industry. I've been wokring mostly at startups and have recently joined a product based MNC.
-I have been working predominantly in the frontend tech stacks with some basics hands on experience on backend as well.
+I have close to **8 years** of experience in the software industry. I've been working mostly at startups and have recently joined a product-based MNC.
+I have been working predominantly in the frontend tech stacks with some basic hands-on experience on the backend as well.
 
-Recently I've given quite a few interviews and have prepared a interview guide for myself, which I think will be helpful for everyone.
+Recently I've given quite a few interviews and have prepared an interview guide for myself, which I think will be helpful for everyone.
 
-With my experience as a candiate and also an interviewer who has been taking interviews from more than 5 years, I have curated a lot of contents from all over the internet and created this course.
+With my experience as a candidate and also an interviewer who has been taking interviews for more than 5 years, I have curated a lot of content from all over the internet and created this course.
 
 ## How this Course is structured
 
 There are 5 different folders in this repo:
 
-1. [**CSS**](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/CSS)
+1. [**CSS**](./CSS/)
 2. **DSA**
-3. [**JavaScript**](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/JavaScript)
-4. [**React**](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/React)
-5. [**Web Fundamentals**](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/Web%20Fundamentals)
+3. [**JavaScript**](./JavaScript/)
+4. [**React**](./React/)
+5. [**Web Fundamentals**](./Web%20Fundamentals/)
    Each folder contains information about the content.
 
 # Found some issue in the repo?
@@ -36,7 +36,7 @@ You can either contribute and resolve the issue yourself, or you can patiently a
 
 # Contributing Guide
 
-Currently accepting contributions only for following:
+Currently accepting contributions only for the following:
 
 1. Typo fix.
 2. Fix in the existing code, if there is a bug.
@@ -45,9 +45,9 @@ Currently accepting contributions only for following:
 5. Polyfill for existing or new topics.
 6. DSA.
 
-Not accepting contributions for following:
+Not accepting contributions for the following:
 
-1. Writing explainations for the existing/new topic. (Reason: The way of expalination can vary from person to person and can lead to inconstency.)
+1. Writing explanations for the existing/new topic. (Reason: The way of explanation can vary from person to person and can lead to inconsistency.)
 
 Welcome to the Frontend Interview Preparation Guide repository! I am excited that you're interested in contributing to this resource. Whether you're an experienced developer or just getting started, your contributions are valuable in helping others excel in their interviews.
 
