@@ -17,6 +17,9 @@ Recently I've given quite a few interviews and have prepared a interview guide f
 
 With my experience as a candiate and also an interviewer who has been taking interviews from more than 5 years, I have curated a lot of contents from all over the internet and created this course.
 
+## Some Feedback this repo got  
+- A special thanks to Ishwar Rimal for his outstanding contribution! His Frontend Interview Repository has been my secret weapon during interview preparations. Ishwar, your dedication to knowledge sharing is truly inspiring, and it's made a world of difference in my career.
+
 ## How this Course is structured
 
 There are 5 different folders in this repo:
