@@ -41,7 +41,7 @@ NOTE: Currently accepting contributions only for following:
 
 Not accepting contributions for following:
 
-1. Writing explainations for the existing topic. (Reason: The way of expalination can vary from person to person and can lead to inconstency.)
+1. Writing explainations for the existing/new topic. (Reason: The way of expalination can vary from person to person and can lead to inconstency.)
 
 Welcome to the Frontend Interview Preparation Guide repository! I am excited that you're interested in contributing to this resource. Whether you're an experienced developer or just getting started, your contributions are valuable in helping others excel in their interviews.
 
