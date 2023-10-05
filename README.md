@@ -28,9 +28,15 @@ There are 5 different folders in this repo:
 5. [**Web Fundamentals**](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/Web%20Fundamentals)
    Each folder contains information about the content.
 
+# Found some issue in the repo?
+
+Create a new issue.  
+Please use a clear and descriptive title that summarizes the issue.  
+You can either contribute and resolve the issue yourself, or you can patiently await someone else to address it. It's important to note that simply opening a new issue is also appreciated and recognized.
+
 # Contributing Guide
 
-NOTE: Currently accepting contributions only for following:
+Currently accepting contributions only for following:
 
 1. Typo fix.
 2. Fix in the existing code, if there is a bug.
