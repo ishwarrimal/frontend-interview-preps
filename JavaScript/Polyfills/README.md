@@ -127,20 +127,34 @@ Let's see how to write Promise.all in Javascript
 ```
 Now let's write polyfill for Promise.all
 ```javascript
+function isPromise(promise) {
+  if (typeof promise === 'object' && typeof promise.then === 'function') {
+    return true;
+  }
+  return false;
+}
 function promiseAll(promises){
   const resolvedPromiseResult=[];
   let resolvedPromiseCount=0;
   return new Promise((resolve,reject)=>{
     promises.forEach((promise,index) => {
-      promise.then((response)=>{
-        resolvedPromiseResult[index]=response;
-        resolvedPromiseCount+=1;
-        if(resolvedPromiseCount===promises.length){
-          resolve(resolvedPromiseResult)
-        }
-      }).catch((err)=>{
-        reject(err)
-      });
+    if(isPromise(promise)){
+        promise.then((response)=>{
+          resolvedPromiseResult[index]=response;
+          resolvedPromiseCount+=1;
+          if(resolvedPromiseCount===promises.length){
+            resolve(resolvedPromiseResult)
+          }
+        }).catch((err)=>{
+          reject(err)
+        });
+    }else{
+      resolvedPromiseResult[index]=promise;
+      resolvedPromiseCount+=1;
+      if(resolvedPromiseCount===promises.length){
+        resolve(resolvedPromiseResult)
+      }
+    }
     });
   });
 }
@@ -166,4 +180,15 @@ myPromiseAllRejected.then((response)=>{
 }).catch(err=>{
   console.log(err) //Some error! 
 })
+
+// Non promise case
+
+const promise1 = Promise.resolve(3);
+const promise3 = 42
+const promise2 = new Promise((resolve, reject) => {
+  setTimeout(reject, 100, 'foo');
+});
+promiseAll([promise1, promise2, promise3]).then((values) => {
+  console.log(values);
+});
 ```
