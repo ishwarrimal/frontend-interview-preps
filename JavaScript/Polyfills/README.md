@@ -127,19 +127,13 @@ Let's see how to write Promise.all in Javascript
 ```
 Now let's write polyfill for Promise.all
 ```javascript
-function isPromise(promise) {
-  if (typeof promise === 'object' && typeof promise.then === 'function') {
-    return true;
-  }
-  return false;
-}
 function promiseAll(promises){
   const resolvedPromiseResult=[];
   let resolvedPromiseCount=0;
   return new Promise((resolve,reject)=>{
     promises.forEach((promise,index) => {
-    if(isPromise(promise)){
-        promise.then((response)=>{
+      //Promise.resolve to handle non promise case
+      Promise.resolve(promise).then((response)=>{
           resolvedPromiseResult[index]=response;
           resolvedPromiseCount+=1;
           if(resolvedPromiseCount===promises.length){
@@ -148,16 +142,10 @@ function promiseAll(promises){
         }).catch((err)=>{
           reject(err)
         });
-    }else{
-      resolvedPromiseResult[index]=promise;
-      resolvedPromiseCount+=1;
-      if(resolvedPromiseCount===promises.length){
-        resolve(resolvedPromiseResult)
-      }
-    }
     });
   });
 }
+
 // All promises resolved case
 
 const promiseOne= Promise.resolve(4);
