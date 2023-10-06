@@ -1,5 +1,27 @@
 # JavaScript - Basics
 
+[Table of Contents](#javascript---basics)
+
+- [Hoisting](#hoisting)
+- [Let vs Const vs Var](#let-vs-const-vs-var)
+- [Scope](#scope)
+- [Strict Mode](#strict-mode)
+- [Data Types](#data-types)
+  - [When to use Map and Set?](#when-to-use-map-and-set)
+- [Regular Function vs Arrow Functions](#regular-function-vs-arrow-functions)
+- [Arguments in a Function](#arguments-in-a-function)
+- [Event Listeners](#event-listeners)
+- [Event Propagation](#event-propagation)
+- [Event Delegation](#event-delegation)
+- [DOM Manipulation](#dom-manipulation)
+- [EVAL](#eval)
+- [Template Literal](#template-literal)
+- [IIFE](#iife)
+- [Error Handling - try catch](#error-handling---try-catch)
+- [Memoization](#memoization)
+
+[Go Back ↩](../README.md)
+
 ## Hoisting
 
 Hoisting is a concept in JavaScript where variable and function declarations are moved to the top of their containing scope during the compilation phase, before the code is actually executed.
@@ -37,7 +59,7 @@ Hoisting is a concept in JavaScript where variable and function declarations are
    ```
    In this case, the variable sub is initiazlied with function, but during hoisting, the value of sub is undefined, hence calling () on undefined gives an error.
 
-# Let vs Const vs Var
+## Let vs Const vs Var
 
 Let and Const are intruduced in ES6.
 
@@ -54,7 +76,7 @@ Let and Const are intruduced in ES6.
     - Hoisted with declaration only; accessing before declaration results in a ReferenceError due to the temporal dead zone.
     - Must be assigned a value at the time of declaration and cannot be reassigned afterward.
 
-# Scope
+## Scope
 
 Context in which variables are declared and accessed
 
@@ -71,7 +93,7 @@ Context in which variables are declared and accessed
 5.  **Global Object Access**:
     - Variables declared without `var`, `let`, or `const` become properties of the global object (e.g., `window` in browsers).
 
-# Strict Mode
+## Strict Mode
 
 When you enable strict mode in your JavaScript code, the JavaScript interpreter becomes less forgiving and enforces a stricter set of rules. It was introduced in ES5.
 
@@ -84,7 +106,7 @@ When you enable strict mode in your JavaScript code, the JavaScript interpreter 
 "use strict";
 ```
 
-# Data Types
+## Data Types
 
 1. **Primitive Types**
    Number, String, Boolean, null, undefined,
@@ -148,7 +170,7 @@ y.add(1); //Allowed
 
 Adding duplicate value is allowed in set, but it overwrites the previous value.
 
-# Regular Function vs Arrow Functions
+## Regular Function vs Arrow Functions
 
 Arrow function was introduced in ES6.
 
@@ -170,7 +192,7 @@ Arrow function was introduced in ES6.
 6.  **No Prototype**:
     - Arrow Function: Does not have its own `prototype` property, hence cannot be used as a prototype constructor.
 
-# Arguments in a Function
+## Arguments in a Function
 
 1. **Parameters**
    - Parameters are placeholders in the function declaration that define the expected input values.
@@ -227,7 +249,7 @@ Arrow function was introduced in ES6.
    performOperation(1, 2, add); // 3
    ```
 
-# Event Listeners
+## Event Listeners
 
 In JavaScript, event listeners are functions that "listen" for specific events to occur on a DOM element (such as a button, input, or any HTML element).
 
@@ -238,7 +260,7 @@ myBtn.addEventListener("click", function () {
 });
 ```
 
-# Event Propagation
+## Event Propagation
 
 Event Propagation refers to the order in which events are handled and propagated through the DOM hierarchy in JavaScript. Every (almost) event propagates.
 There are two phases of event propagation:
@@ -265,7 +287,7 @@ ele.addEventListener(
 );
 ```
 
-# Event Delegation
+## Event Delegation
 
 Sometimes you would want to add event listener to the parent instead of individual child element. You use event delegation for that.
 
@@ -288,7 +310,7 @@ The idea is to take advantage of event bubbling: when an event occurs on a child
 
 Event delegation is particularly useful in scenarios where new elements are dynamically added to the DOM or when working with lists, tables, or other structures with repetitive elements.
 
-# DOM Manipulation
+## DOM Manipulation
 
 DOM (Document Object Model) manipulation involves programmatically changing the structure, content, or style of a web page using JavaScript.
 This is the main purpose of JavaScript.
@@ -322,7 +344,7 @@ changeButton.addEventListener("click", function () {
 });
 ```
 
-# EVAL
+## EVAL
 
 `eval` is a built-in JavaScript function that allows you to evaluate and execute a string of JavaScript code in the current _scope_.
 Example:
@@ -350,7 +372,7 @@ const addFunction = new Function("x", "y", "return x + y;");
 const result = addFunction(10, 20); // Evaluates to 30
 ```
 
-# Template Literal
+## Template Literal
 
 Template literals provide a more readable and convenient way to create complex strings by allowing you to embed variables directly into the string content without the need for string concatenation or escaping characters.
 
@@ -383,7 +405,7 @@ const myDiv = `<div><p>My name is ${name}</p></div>`;
 document.querySelector("body").innerHTM = myDiv;
 ```
 
-# IIFE
+## IIFE
 
 IIFE stands for Immediately Invoked Function Expression.
 It's a JavaScript design pattern that involves defining a function expression and immediately invoking it. IIFEs are often used to create a private scope for variables, prevent variable name clashes, and encapsulate code.
@@ -399,7 +421,7 @@ It's a JavaScript design pattern that involves defining a function expression an
 - Prevents polluting global scope.
 - Used by popular libraries like jQuery, Underscore.js, etc.
 
-# Error Handling - try catch
+## Error Handling - try catch
 
 - Detect, manage, and recover from unexpected or exceptional situations that may arise during the execution of a program.
 - The `try...catch` statement is used to catch and handle errors in JavaScript code.
@@ -437,7 +459,7 @@ try {
 }
 ```
 
-# Memoization
+## Memoization
 
 - Used to cache the already computed value.
 - For next execution, if the value exists in cache, if not, compute the value and store in cache.
@@ -466,3 +488,5 @@ console.log(memoizedSquare(7)); // Outputs: Calculating square of 7 \n 49
 console.log(memoizedSquare(5)); // Outputs: 25 (Cached result)
 console.log(memoizedSquare(10)); // Outputs: Calculating square of 10 \n 100
 ```
+
+#### [Go Top ⬆️](#javascript---basics) | [Go Back ↩](../README.md)

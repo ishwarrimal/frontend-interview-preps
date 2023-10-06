@@ -7,6 +7,15 @@ Some new features doesn't work on older browser, we write polyfill of such funct
 
 It gives you better understanding of the prgramming.
 
+[Table of Contents](#polyfills)
+
+- [Promise](#promise)
+- [Promise All](#promise-all)
+- Call, Bind, Apply
+- ForEach, Map, Reduce
+
+[Go Back ↩](../README.md)
+
 ## Promise
 
 Let's see how you write an actual promise in JavaScript
@@ -30,7 +39,7 @@ class MyPromise {
     this.thenCB;
     this.catchCB;
     this.finallyCB;
-    const res = (dataValue) => {
+    const res = dataValue => {
       if (this.thenCB) {
         this.state = "Fulfilled";
         this.thenCB(dataValue);
@@ -41,7 +50,7 @@ class MyPromise {
         this.finallyCB();
       }
     };
-    const rej = (errorValue) => {
+    const rej = errorValue => {
       if (this.catchCB) {
         this.state = "Rejected";
         this.catchCB(errorValue);
@@ -92,12 +101,12 @@ let executorFunction = (resolve, reject) => {
 
 let MPromise = new MyPromise(executorFunction);
 
-MPromise.then((data) => {
+MPromise.then(data => {
   console.log(`Data recieved in then is -> ${data}`);
   return "Ish";
 })
-  .catch((err) => console.log(`Error recieved in catch is -> ${err}`))
-  .finally((data) => console.log(`Data recieved in finally -> ${data}`));
+  .catch(err => console.log(`Error recieved in catch is -> ${err}`))
+  .finally(data => console.log(`Data recieved in finally -> ${data}`));
 ```
 
 This is a simple promise polyfill that takes care of most of the cases except for **chaining then and catch**
