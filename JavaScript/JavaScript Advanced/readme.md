@@ -1,5 +1,47 @@
 # JavaScript Advanced
 
+[Table of Contents](#javascript-advanced)
+
+- [Mutability vs Immutability](#mutability-vs-immutability)
+  - [Immutable types](#immutable-types)
+  - [Mutable types](#mutable-types)
+- [Callback and Callback Hell](#callback-and-callback-hell)
+  - [Callback hell](#callback-hell)
+- [Promises](#promise)
+  - [Creating a Promise](#creating-a-promise)
+    - [Three phases:](#three-phases)
+    - [Three methods](#three-methods)
+  - [Chained Promise](#chained-promise)
+  - [Important Note](#important-note)
+  - [Other Major Promise methods:](#other-major-promise-methods)
+- [Async Await](#async-await)
+  - [Difference between async await and promise](#difference-between-async-await-and-promise)
+- [Prototype / proto](#prototype)
+- [Inheritance](#inheritance)
+- [Constuctor Function](#constuctor-function)
+  - [Achieving inheritance using constructor funciton](#achieving-inheritance-using-constructor-funciton)
+  - [But why did we even create the function `getName` in the prototype and not directly inside the Construcor?](#but-why-did-we-even-create-the-function-getname-in-the-prototype-and-not-directly-inside-the-construcor)
+  - [How does a constructor function work internally?](#how-does-a-constructor-function-work-internally)
+- [Classes](#class)
+- [`this` and identifying it's value](#this)
+  - [Overwriting this -> call/bind/apply](#this)
+- [Pure functions](#pure-functions)
+- [Proxy](#proxy)
+- [Symbol](#symbol)
+  - [Symbol.iterator](#symboliterator)
+- [Memory Leaks](#memory-leaks)
+- [Garbage collection](#garbage-collection)
+  - [Triggers](#triggers)
+- [Currying](#currying)
+- [Cascading](#cascading)
+- [Object freeze vs seal](#object-freeze-vs-seal)
+  - [`Object.freeze()`](#objectfreeze)
+  - [`Object.seal()`](#objectseal)
+- [Object.defineProperty](#objectdefineproperty)
+- [Generator Functions](#generator-functions)
+
+[Go Back ↩](../README.md)
+
 ## Mutability vs Immutability
 
 **Mutability** : A _mutable_ value is one that can be changed without creating an entirely new value. **Immutability** : An immutable value is one whose content cannot be changed without creating an entirely new value.
@@ -57,7 +99,7 @@ console.log(arr);
 
 In the above case, both will print `[1,2,3,4]`
 
-# Callback and Callback Hell
+## Callback and Callback Hell
 
 - A function that is passed as an argument to another function.
 - Can be executed with or without arguments.
@@ -81,7 +123,7 @@ function processData(data) {
 fetchData(processData);
 ```
 
-## Callback hell
+### Callback hell
 
 - Multiple nested callbacks make the code difficult to handle.
 - Series of async operation depending on each other.
@@ -101,7 +143,7 @@ asyncFunction1(function (result1) {
 
 This causes multiple issues in terms of readability, error handnling and scalability, hence we make use of another concept called `promise` to handle such situation.
 
-# Promise
+## Promise
 
 - A _promise_ is a proxy of value that is not necessarily know at the time of creation of the promise. (what is proxy? Will discuss later)
 - It can be in 3 states: Pending, Fulfilled, Rejected.
@@ -137,10 +179,10 @@ Usage:
 
 ```javascript
 myPromise()
-  .then((data) => {
+  .then(data => {
     console.log("Data:", data);
   })
-  .catch((error) => {
+  .catch(error => {
     console.error("Error:", error.message);
   });
 ```
@@ -186,7 +228,7 @@ myPromise
 
 Even though promise is a better alternative to callbacks, in ES6, a new concept called `Async Await` was introduced.
 
-# Async Await
+## Async Await
 
 1.  **Synchronous Look**: Provides a synchronous-like syntax for handling asynchronous operations.
 2.  **Awaiting Promise**: Pauses execution until a promise is resolved, then returns its value.
@@ -221,7 +263,7 @@ Example:
 //With Promise
 function doSomething() {
   console.log(1);
-  somePromise.then((x) => console.log(2)).catch(); //Some promise that resolves with 2
+  somePromise.then(x => console.log(2)).catch(); //Some promise that resolves with 2
   console.log(3);
 }
 doSomething();
@@ -245,7 +287,7 @@ console.log(4);
 1, 4, 2, 3;
 ```
 
-# Prototype
+## Prototype
 
 - Prototypes are the mechanism by which JavaScript objects inherit features from one another.
 - Every object in JavaScript has a built-in property, which is called its **prototype**
@@ -356,12 +398,12 @@ me.greet(); //Hello
 
 2. Constructor (Will discuss more in detail later)
 
-# Inheritance
+## Inheritance
 
 - Inheritance in JavaScript refers to the mechanism by which objects can inherit properties and methods from other objects.
 - By now we're aware that JavaScript supports only Prototype Based Inheritance (ES6 introduced class, after which JS supports even class based inheritance).
 
-# Constuctor Function
+## Constuctor Function
 
 Constructor Functions can be used to create objects and achieve inheritance (prototypical inheritance) as discussed above.
 
@@ -466,7 +508,7 @@ function MyNew(constructorFn) {
 
 (Overwhelmed? I can't simplify this more in text, maybe my youtube video on the same will be helpful)
 
-# Class
+## Class
 
 - ES6 introduced class to JavaScript
 - You can make use of class to create an object.
@@ -605,7 +647,7 @@ const user = { name: "Ish" };
 sayHi.call(user); // "this" refers to the "user" object
 ```
 
-# Pure functions
+## Pure functions
 
 1.  **Output Deterministic**: Pure functions always produce the same output for the same input, making them predictable.
 2.  **No Side Effects**: Pure functions do not modify external state or have observable side effects.
@@ -630,7 +672,7 @@ console.log(total); // Outputs: 10
 
 As you can see above, every time you call the funciton `addToTotal` , it updates the external value, hence causing side effect.
 
-# Proxy
+## Proxy
 
 A promise is a **proxy** of a value that is not yet recieved.
 Proxy is a built-in object that allows you to intercept and customize the fundamental operations of another object, known as the target object.
@@ -667,7 +709,7 @@ console.log(person.name); // I am Ish
 
 - **Use Cases**: Proxies are useful for implementing features like **data validation**, logging, access control, and more.
 
-# Symbol
+## Symbol
 
 In JavaScript, a Symbol is a primitive data type introduced in ECMAScript 6 (ES6) that represents a unique and immutable value.
 Symbols are often used as keys for object properties to avoid naming conflicts and ensure that property names won't accidentally collide.
@@ -713,7 +755,7 @@ for (const num of range) {
 5;
 ```
 
-# Memory Leaks
+## Memory Leaks
 
 Memory leaks in JavaScript can occur when references to objects are retained, preventing the JavaScript garbage collector from properly reclaiming memory that is no longer needed.
 
@@ -724,7 +766,7 @@ Memory leaks in JavaScript can occur when references to objects are retained, pr
 5.  **Timers and Intervals**: Not clearing or disposing of timers or intervals can cause objects associated with them to remain in memory.
 6.  **DOM References**: Keeping references to DOM elements that are no longer needed can lead to memory leaks, especially in single-page applications.
 
-# Garbage collection
+## Garbage collection
 
 - Removing unreachable objects from memory to free up resources
 - GC happens automatically in JavaScript.
@@ -899,3 +941,5 @@ console.log(generator.next().value); // Outputs: 2
 console.log(generator.next().value); // Outputs: 3
 console.log(generator.next().value); // Outputs: undefined
 ```
+
+[Go back ↩](../README.md)
