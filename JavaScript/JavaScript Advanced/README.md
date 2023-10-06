@@ -942,4 +942,4 @@ console.log(generator.next().value); // Outputs: 3
 console.log(generator.next().value); // Outputs: undefined
 ```
 
-[Go back ↩](../README.md)
+#### [Go Top ⬆️](#javascript-advanced) | [Go Back ↩](../README.md)

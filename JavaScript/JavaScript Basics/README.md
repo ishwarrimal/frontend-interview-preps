@@ -489,4 +489,4 @@ console.log(memoizedSquare(5)); // Outputs: 25 (Cached result)
 console.log(memoizedSquare(10)); // Outputs: Calculating square of 10 \n 100
 ```
 
-[Go Back ↩](../README.md)
+#### [Go Top ⬆️](#javascript---basics) | [Go Back ↩](../README.md)
