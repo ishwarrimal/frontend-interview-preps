@@ -12,6 +12,6 @@ class User {
 }
 
 const user = new User("Ishwar", "s3cr3tP@ssw0rd");
-console.log(user.username); // Output: "JohnDoe"
+console.log(user.username); // Output: "Ishwar"
 console.log(user.getPassword()); // Output: "s3cr3tP@ssw0rd"
 console.log(user._password); // undefined
