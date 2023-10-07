@@ -113,3 +113,70 @@ This is a simple promise polyfill that takes care of most of the cases except fo
 Please folllow this video [Writing Polyfill for Promise in JavaScript](https://www.youtube.com/watch?v=lKdFKuttdfM) to get a better understanding.
 
 ## Promise All
+Let's see how to write Promise.all in Javascript
+
+```javascript
+ const promiseOne= Promise.resolve(4);
+ const promiseTwo= Promise.resolve(true);
+ const myPromiseAll= Promise.all([promiseOne,promiseTwo]);
+ myPromiseAll.then((response)=>{
+	console.log(response)// [4,true]
+	}).catch((error)=>{
+	console.log(error)
+	})
+```
+Now let's write polyfill for Promise.all
+```javascript
+function promiseAll(promises){
+  const resolvedPromiseResult=[];
+  let resolvedPromiseCount=0;
+  return new Promise((resolve,reject)=>{
+    promises.forEach((promise,index) => {
+      //Promise.resolve to handle non promise case
+      Promise.resolve(promise).then((response)=>{
+          resolvedPromiseResult[index]=response;
+          resolvedPromiseCount+=1;
+          if(resolvedPromiseCount===promises.length){
+            resolve(resolvedPromiseResult)
+          }
+        }).catch((err)=>{
+          reject(err)
+        });
+    });
+  });
+}
+
+// All promises resolved case
+
+const promiseOne= Promise.resolve(4);
+const promiseTwo= Promise.resolve(5);
+const myPromiseAll= promiseAll([promiseOne,promiseTwo]);
+
+myPromiseAll.then((response)=>{
+  console.log(response);
+}).catch(err=>{
+  console.log(err);
+});
+
+// One of the promise got rejected case
+
+const promiseThree= Promise.reject("Some error!");
+const myPromiseAllRejected=promiseAll([promiseOne,promiseThree,promiseTwo]);
+
+myPromiseAllRejected.then((response)=>{
+  console.log(response)
+}).catch(err=>{
+  console.log(err) //Some error! 
+})
+
+// Non promise case
+
+const promise1 = Promise.resolve(3);
+const promise3 = 42
+const promise2 = new Promise((resolve, reject) => {
+  setTimeout(reject, 100, 'foo');
+});
+promiseAll([promise1, promise2, promise3]).then((values) => {
+  console.log(values);
+});
+```
