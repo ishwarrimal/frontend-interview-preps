@@ -37,7 +37,7 @@ Hoisting is a concept in JavaScript where variable and function declarations are
    console.log(x); //undefined
    x = 10; //initialization remains in the same place
    ```
-   In case of `let` or `const`
+   In the case of `let` or `const`
    ```javascript
    console.log(y); //Uncaught ReferenceError: y is not defined
    let y = 10;
@@ -50,18 +50,18 @@ Hoisting is a concept in JavaScript where variable and function declarations are
      console.log(x + y);
    }
    ```
-   When it comes to funciton, funciton is declared and initialized and is hoisted.
+   When it comes to function, function is declared and initialized and is hoisted.
    ```javascript
    console.log(sub(1, 2)); //Uncaught TypeError: sub is not a function
    var sub = function (x, y) {
      console.log(x, y);
    };
    ```
-   In this case, the variable sub is initiazlied with function, but during hoisting, the value of sub is undefined, hence calling () on undefined gives an error.
+   In this case, the variable sub is initialized with function, but during hoisting, the value of sub is undefined, hence calling () on undefined gives an error.
 
 ## Let vs Const vs Var
 
-Let and Const are intruduced in ES6.
+Let and Const are introduced in ES6.
 
 1.  `var`:
     - Function-scoped and globally-scoped variable declaration.
@@ -78,7 +78,7 @@ Let and Const are intruduced in ES6.
 
 ## Scope
 
-Context in which variables are declared and accessed
+The context in which variables are declared and accessed
 
 1.  **Global Scope**:
     - Variables declared outside of any function or block;
@@ -98,9 +98,9 @@ Context in which variables are declared and accessed
 When you enable strict mode in your JavaScript code, the JavaScript interpreter becomes less forgiving and enforces a stricter set of rules. It was introduced in ES5.
 
 1.  Variables without var doesn't create a global variable
-2.  Value of this inside a regular function is `undefined` contrary to a global context.
+2.  The value of this inside a regular function is `undefined` contrary to a global context.
 3.  Disallow `eval`
-4.  not allow undeclared variables
+4.  Do not allow undeclared variables
 
 ```javascript
 "use strict";
@@ -109,11 +109,11 @@ When you enable strict mode in your JavaScript code, the JavaScript interpreter 
 ## Data Types
 
 1. **Primitive Types**
-   Number, String, Boolean, null, undefined,
-   symbol, bigint -> introduced in ES6
-2. **Non premitive / Reference Daa Types**
-   Object, Array, Function, Date, RegExp
-   Set, Map -> Introuduced in ES6
+   - Number, String, Boolean, null, undefined,
+   - Symbol, BigInt -> Introduced in ES6
+2. **Non Primitive / Reference Data Types**
+   - Object, Array, Function, Date, RegExp
+   - Set, Map -> Introduced in ES6
 
 ```javascript
 typeof 42; // "number"
@@ -138,8 +138,8 @@ typeof new Set(); // "object"
 
 **Map**
 
-- Map is a key value pair just like Object, where key can be of any type.
-- Order is preserved in Map unlike Object.
+- Map is a key value pair just like Object, where the key can be of any type.
+- Order is preserved in Map, unlike Object.
 - No need to handle hasOwnProperty
 - Easy to iterate
 - Lookup is O(1)
@@ -154,12 +154,12 @@ var y = new Map();
 y.set(10, 'apple'); //This is allowed
 ```
 
-**SET**
+**Set**
 
-- Set is similar to array, but can have only unique elements
+- Set is similar to an array, but can have unique elements
 
 ```javascript
-//Regualr array
+//Regular array
 var x = [1, 1]; //This is allowed
 
 //Using Set
@@ -168,11 +168,11 @@ y.add(1);
 y.add(1); //Allowed
 ```
 
-Adding duplicate value is allowed in set, but it overwrites the previous value.
+Adding duplicate values is allowed in the set, but it overwrites the previous value.
 
 ## Regular Function vs Arrow Functions
 
-Arrow function was introduced in ES6.
+The arrow function was introduced in ES6.
 
 1.  **Syntax**:
     - Regular Function: Declared using the `function` keyword followed by a name and parameters.
@@ -190,7 +190,7 @@ Arrow function was introduced in ES6.
     - Regular Function: Requires an explicit `return` statement for multi-line blocks.
     - Arrow Function: Implicitly returns single expressions without the need for a `return` statement.
 6.  **No Prototype**:
-    - Arrow Function: Does not have its own `prototype` property, hence cannot be used as a prototype constructor.
+    - Arrow Function: This does not have its own `prototype` property, hence cannot be used as a prototype constructor.
 
 ## Arguments in a Function
 
@@ -215,7 +215,7 @@ Arrow function was introduced in ES6.
    }
    addValues(1,2,3) // 6
    ```
-   The `arguments` object is not an array, but is an array-like object that holds all the arguments passed to a function, but it does not inherit array methods like `forEach`, `map`, or `filter`.
+   The `arguments` object is not an array but is an array-like object that holds all the arguments passed to a function, but it does not inherit array methods like `forEach`, `map`, or `filter`.
 6. **Rest Parameters**:
    - Introduced in ES6, rest parameters allow functions to accept an arbitrary number of arguments as an array.
    ```javascript
@@ -233,7 +233,7 @@ Arrow function was introduced in ES6.
    let values = [1,2,3]
    addValues(...values) // 6
    ```
-   Note: This is just a trivial example to show the use of spread operator.
+   Note: This is just a trivial example to show the use of the spread operator.
 8. **Order Matters**:
    - Arguments are matched to parameters based on their order, so the first argument corresponds to the first parameter, and so on.
 9. **Callback Functions**:
@@ -269,7 +269,6 @@ There are two phases of event propagation:
 
 - In this phase, the event starts at the target element and bubbles up through the DOM hierarchy to the outermost ancestor element.
 - This phase allows you to set up event listeners on the target element or its descendants to respond to events as they propagate upward. -> _evet delegation_
--
 
 2. **Capturing**
 
@@ -289,7 +288,7 @@ ele.addEventListener(
 
 ## Event Delegation
 
-Sometimes you would want to add event listener to the parent instead of individual child element. You use event delegation for that.
+Sometimes you would want to add an event listener to the parent instead of the individual child element. You use event delegation for that.
 
 ```javascript
 <ul id="list">
@@ -330,7 +329,7 @@ Consider the code below
 </html>
 ```
 
-Let's see a JS code that changes the title on click of the button
+Let's see a JS code that changes the title with a click of the button
 
 ```javascript
 // Get references to the elements
@@ -364,8 +363,8 @@ However, it's important to note that using `eval` has some potential downsides a
 2.  **Performance Impact**: The use of `eval` can have performance implications, as the JavaScript engine can't optimize the code containing `eval` as effectively as regular code.
 3.  **Maintainability**: Code that heavily relies on `eval` can become difficult to read, debug, and maintain.
     It's advised never to use eval.
-    **Are there any alternative to eval?**
-    There are many alternatives to eval, one of the most practical alternative is to use function constructor.
+    **Are there any alternatives to eval?**
+    There are many alternatives to eval, one of the most practical alternatives is to use a function constructor.
 
 ```javascript
 const addFunction = new Function("x", "y", "return x + y;");
@@ -378,7 +377,7 @@ Template literals provide a more readable and convenient way to create complex s
 
 - Introduced in ES6
 - More readable.
-- Easy to append concatinate strings.
+- Easy to append concatenate strings.
 
 ```javascript
 let name = "Ish";
@@ -412,7 +411,7 @@ It's a JavaScript design pattern that involves defining a function expression an
 
 ```javascript
 (function () {
-  // Code inside the IIFE is enclosed within its own scope
+  // Code inside the IIFE is enclosed within its scope
   const message = "Hello from the IIFE!";
   console.log(message);
 })();
@@ -421,13 +420,13 @@ It's a JavaScript design pattern that involves defining a function expression an
 - Prevents polluting global scope.
 - Used by popular libraries like jQuery, Underscore.js, etc.
 
-## Error Handling - try catch
+## Error Handling - try-catch
 
 - Detect, manage, and recover from unexpected or exceptional situations that may arise during the execution of a program.
 - The `try...catch` statement is used to catch and handle errors in JavaScript code.
-- It consists of a `try` block where you place the code that might generate error.
+- It consists of a `try` block where you place the code that might generate an error.
 - If an error occurs within the `try` block, the control is transferred to the corresponding `catch` block.
-- The `catch` block contains code that runs when an error is caught. It usually includes error handling logic.
+- The `catch` block contains code that runs when an error is caught. It usually includes error-handling logic.
 - The `catch` block takes an optional parameter, conventionally named `error`, which represents the error object associated with the caught error.
 - You can include an optional `finally` block after the `try` and `catch` blocks.
 - The code in the `finally` block runs regardless of whether an error occurred or not. It is often used for cleanup tasks.
@@ -435,14 +434,14 @@ It's a JavaScript design pattern that involves defining a function expression an
 
 ```javascript
 try {
-  //Some code that throws error
+  //Some code that throws an error
 } catch (error) {
   console.error("Error caught:", error.name, error.message);
 }
 ```
 
 You can throw **custom errors** in JavaScript by using the `throw` statement.
-Example below demonstrates a proper use case.
+The example below demonstrates a proper use case.
 
 ```javascript
 function divide(a, b) {
@@ -462,7 +461,7 @@ try {
 ## Memoization
 
 - Used to cache the already computed value.
-- For next execution, if the value exists in cache, if not, compute the value and store in cache.
+- For the next execution, if the value exists in the cache, if not, compute the value and store it in the cache.
 
 ```javascript
 function  memoizeSquare(fn) {
