@@ -1,6 +1,6 @@
 # Ultimate Frontend Interview Preparation Guide
 
-Topics I will be covering:
+Topics we will be covering:
 
 1. [**JavaScript**](./JavaScript/) : Basic and Advance.
 2. [**React**](./React/) : Commonly asked questions and core concepts.
