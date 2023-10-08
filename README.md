@@ -7,15 +7,16 @@ Topics we will be covering:
 3. [**CSS**](./CSS/) : Commonly asked questions and a few concepts.
 4. [**Web Fundamentals**](./Web%20Fundamentals/) : A lot of important topics.
 
-## About Me
+## About
 
-Hi, I am _Ishwar Rimal_
+Hi, I am _Ishwar Rimal_ and I maintain this repo.
 I have close to **8 years** of experience in the software industry. I've been working mostly at startups and have recently joined a product-based MNC.
-I have been working predominantly in the frontend tech stacks with some basic hands-on experience on the backend as well.
 
-Recently I've given quite a few interviews and have prepared an interview guide for myself, which I think will be helpful for everyone.
+Recently after giving a few interviews and preparing an interview guide for myself, I thought of making it public for everyone to access and get benefitted, and it's turning out to be useful to a lot of people.
 
-With my experience as a candidate and also an interviewer who has been taking interviews for more than 5 years, I have curated a lot of content from all over the internet and created this course.
+This repo is open to everyone for contribution.
+
+I am looking for a couple of folks to help me maintain this repo. Feel free to reach out if you're interested.
 
 ## Some Feedback this repo got  
 - A special thanks to Ishwar Rimal for his outstanding contribution! His Frontend Interview Repository has been my secret weapon during interview preparations. Ishwar, your dedication to knowledge sharing is truly inspiring, and it's made a world of difference in my career.
@@ -50,7 +51,8 @@ Currently accepting contributions only for the following:
 
 Not accepting contributions for the following:
 
-1. Writing explanations for the existing/new topic. (Reason: The way of explanation can vary from person to person and can lead to inconsistency.)
+1. Writing explanations for the existing/new topic. 
+(Reason: The way of explanation can vary from person to person and can lead to inconsistency.)
 
 Welcome to the Frontend Interview Preparation Guide repository! I am excited that you're interested in contributing to this resource. Whether you're an experienced developer or just getting started, your contributions are valuable in helping others excel in their interviews.
 
