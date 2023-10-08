@@ -139,13 +139,13 @@ When the above code is executed, the following happens:
 - The memory heap is a region of memory where objects, variables, and function closures are allocated and stored.
 - JavaScript objects are allocated in the heap, and references to these objects are managed on the stack.
 
-### Web API
+### Browser API
 
 Ever wondered how `document.getElementById` or APIs like this work in the browser?  
 This is not part of the JavaScript language itself, but rather it's supported by web browsers as part of the browser's runtime environment.  
 This allows JavaScript to interact with the browser and the web page's Document Object Model (DOM).
 
-Features supported by Web API
+Features supported by Browser API
 
 - DOM
 - Make network requests

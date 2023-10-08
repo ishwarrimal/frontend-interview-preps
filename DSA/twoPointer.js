@@ -1,11 +1,11 @@
-// mostly applied for a sorted array or LL
-//The idea is to have two pointers, one at first and the other at last and either increment the left or decremene the right
+// Mostly applied on a sorted array or LL
+// The idea is to have two pointers, one at first and the other at last and either increment the left or decrement the right
 //1. Pair of elements whose sum equals target
 //2. 3sum === 0
 //3. 3sum closest to the target
 //4. Triplets with Smaller Sum
 
-//1. Pair of elements whose sum equals target
+//1. Pair of elements whose sum equals to the target
 function getPair(arr, target) {
   let left = 0;
   let right = arr.length - 1;
