@@ -49,10 +49,9 @@ Currently accepting contributions only for the following:
 5. Polyfill for existing or new topics.
 6. DSA.
 
-Not accepting contributions for the following:
+Only maintainers will be able to contribute to the following:
 
 1. Writing explanations for the existing/new topic. 
-(Reason: The way of explanation can vary from person to person and can lead to inconsistency.)
 
 Welcome to the Frontend Interview Preparation Guide repository! I am excited that you're interested in contributing to this resource. Whether you're an experienced developer or just getting started, your contributions are valuable in helping others excel in their interviews.
 
