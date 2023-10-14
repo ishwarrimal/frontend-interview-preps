@@ -180,3 +180,97 @@ promiseAll([promise1, promise2, promise3]).then((values) => {
   console.log(values);
 });
 ```
+## forEach
+
+Let's see how to use forEach in Javascript
+```javascript
+forEach(callBackFn)
+
+const numList=[1,2,3,4,5];
+//Using arrow function as callbackFn in forEach
+numList.forEach((num)=>{
+  console.log(num)
+});
+
+//CallBackFn will receive 3 parameters
+/*
+1. Element of array
+2. Index of the element
+3. Array itself
+*/
+numList.forEach((num,index,numList)=>{
+  console.log(num,index,numList)
+});
+
+//With function expression as callbackFn in forEach
+function numParser(num){
+  console.log("Number parser",num)
+}
+numList.forEach(numParser)
+
+```
+Let's write using other syntax
+
+```javascript
+forEach(callBackFn,thisArg)
+
+class Incrementor {
+  constructor() {
+    this.sum = 0;
+    this.count = 0;
+  }
+  add(array) {
+    array.forEach(function countEntry(entry) {
+      this.sum += entry;
+      this.count+=1;
+    }, this);
+  }
+}
+
+cont obj= new Incrementor();
+obj.add([1,2,3])
+console.log(obj.sum) //6
+console.log(obj.count) //3
+```
+Now let's write polyfill for forEach method
+
+```javascript
+
+Array.prototype.customForEach=function (callbackFn,thisArg){
+  const arrayLength= this.length;
+  for(let i=0;i<arrayLength;i++){
+    callbackFn.call(thisArg,this[i],i,this)
+  }
+}
+
+const integerList=[1,2,3,4,5];
+
+integerList.customForEach((num)=>{
+  console.log(num)// 1 2 3 4 5
+});
+
+function numParser(num){
+  console.log("Number parser",num)
+}
+
+integerList.customForEach(numParser)
+
+class Incrementor {
+  constructor() {
+    this.sum = 0;
+    this.count = 0;
+  }
+  add(array) {
+    array.customForEach(function countEntry(entry) {
+      this.sum += entry;
+      this.count+=1;
+    }, this);// `this` argument is passed
+  }
+}
+
+cont obj= new Incrementor();
+obj.add([1,2,3])
+console.log(obj.sum) //6
+console.log(obj.count) //3
+
+```
