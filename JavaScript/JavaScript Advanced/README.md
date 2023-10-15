@@ -18,9 +18,9 @@
   - [Difference between async await and promise](#difference-between-async-await-and-promise)
 - [Prototype / proto](#prototype)
 - [Inheritance](#inheritance)
-- [Constuctor Function](#constuctor-function)
-  - [Achieving inheritance using constructor funciton](#achieving-inheritance-using-constructor-funciton)
-  - [But why did we even create the function `getName` in the prototype and not directly inside the Construcor?](#but-why-did-we-even-create-the-function-getname-in-the-prototype-and-not-directly-inside-the-construcor)
+- [Constructor Function](#constructor-function)
+  - [Achieving inheritance using constructor function](#achieving-inheritance-using-constructor-function)
+  - [But why did we even create the function `getName` in the prototype and not directly inside the Constructor?](#but-why-did-we-even-create-the-function-getname-in-the-prototype-and-not-directly-inside-the-constructor)
   - [How does a constructor function work internally?](#how-does-a-constructor-function-work-internally)
 - [Classes](#class)
 - [`this` and identifying it's value](#this)
@@ -65,14 +65,14 @@ let x = 10;
 let y = x;
 ```
 
-In the above case, both x and y refer to a differnet memory location with value 10 in it.
+In the above case, both x and y refer to a different memory location with value 10 in it.
 
 ### Mutable types
 
 1. **Object**
 2. **Array**
 
-In mutable types, updating the variable acutlly updates the value.
+In mutable types, updating the variable actually updates the value.
 
 ```javascript
 let arr = [1, 2, 3];
@@ -141,7 +141,7 @@ asyncFunction1(function (result1) {
 });
 ```
 
-This causes multiple issues in terms of readability, error handnling and scalability, hence we make use of another concept called `promise` to handle such situation.
+This causes multiple issues in terms of readability, error handling and scalability, hence we make use of another concept called `promise` to handle such situation.
 
 ## Promise
 
@@ -340,7 +340,7 @@ If I try to access the prototype of the object person, I get following results:
 14.  set __proto__: ƒ __proto__()
 ```
 
-You can view the prototype of any object using `person.__proto__` (which is depricated, we can instead make use of Object.getPrototypeOf(person))
+You can view the prototype of any object using `person.__proto__` (which is deprecated, we can instead make use of Object.getPrototypeOf(person))
 
 **Prototype of a function**
 
@@ -377,7 +377,7 @@ console.log(person.constructor === Person); // Outputs: true
 ```
 
 Hence the object created using constructor function has information about it's constructor.
-**Note**: We will discuss more about this while discussing constructor funciton
+**Note**: We will discuss more about this while discussing constructor function
 
 **Shadowing properties:**
 Only check the prototype if the property doesn't exist in the current object.
@@ -403,7 +403,7 @@ me.greet(); //Hello
 - Inheritance in JavaScript refers to the mechanism by which objects can inherit properties and methods from other objects.
 - By now we're aware that JavaScript supports only Prototype Based Inheritance (ES6 introduced class, after which JS supports even class based inheritance).
 
-## Constuctor Function
+## Constructor Function
 
 Constructor Functions can be used to create objects and achieve inheritance (prototypical inheritance) as discussed above.
 
@@ -421,12 +421,12 @@ const Ish = new Person("Ish");
 console.log(Object.getPrototypeOf(Ish))
 //Output ->
 {constructor: ƒ}
-//which epands to
+//which expands to
 1.  constructor: ƒ Person(name)
 2.  [[Prototype]]: Object
 ```
 
-We can check the constructor of the Ish using `Ish.constructor` which returns me `Person` cosntructor.
+We can check the constructor of the Ish using `Ish.constructor` which returns me `Person` constructor.
 
 ```javascript
 console.log(Ish.constructor)
@@ -436,7 +436,7 @@ console.log(Ish.constructor)
 }
 ```
 
-### Achieving inheritance using constructor funciton
+### Achieving inheritance using constructor function
 
 Let's write a code to achieve this:
 
@@ -462,14 +462,14 @@ let's check few things below
 
 ```javascript
 const myCat = new Cat("Fluffy");
-console.log(myCat.type); // Flyffy
+console.log(myCat.type); // Fluffy
 console.log(myCat.name); // Catty
 //Yaeeey
 
 console.log(myCat.getName()); //Uncaught TypeError: myCat.getName is not a function 🤷🏼‍♂️
 ```
 
-As we can see above, `myCat.type` is giving me correct type, and even `myCat.name` is giving me corrent name, which it is getting from it's prototype.
+As we can see above, `myCat.type` is giving me correct type, and even `myCat.name` is giving me correct name, which it is getting from it's prototype.
 But why is `getName` not a function?
 
 Because even though we did `Animal.call()` inside Cat, it is still not inheriting the prototype of the `Animal` constructor.
@@ -481,10 +481,10 @@ Cat.prototype = Object.create(Animal.prototype);
 
 Using the above code, we are assigning the prototype of Animal constructor to the prototype of `Cat` constructor.
 
-### But why did we even create the function `getName` in the prototype and not directly inside the Construcor?
+### But why did we even create the function `getName` in the prototype and not directly inside the Constructor?
 
-Every object created using the Constructor Function gets a copy of all the properties persent in the constructor. This may not be a good idea in some cases.
-Like it makes sense that every object get's a differnet name, but why a different `getName` function? We can just make use of the same function `reference` in each and every object isn't it?
+Every object created using the Constructor Function gets a copy of all the properties present in the constructor. This may not be a good idea in some cases.
+Like it makes sense that every object get's a different name, but why a different `getName` function? We can just make use of the same function `reference` in each and every object isn't it?
 Yes, we're doing the exact same thing.
 
 ### How does a constructor function work internally?
@@ -513,7 +513,7 @@ function MyNew(constructorFn) {
 - ES6 introduced class to JavaScript
 - You can make use of class to create an object.
 
-**Fratures**
+**Features**
 
 1. **Syntactic Sugar**: Classes are syntactic sugar over constructor functions and prototypes.
 2. **Constructor Method**: The `constructor` method initializes object properties when a new instance is created.
@@ -546,7 +546,7 @@ class Cat extends Animal {
 }
 
 const myCat = new Cat("Fluffy");
-console.log(myCat.type); // Flyffy
+console.log(myCat.type); // Fluffy
 console.log(myCat.name); // Catty
 console.log(myCat.getName()); //Catty
 ```
@@ -565,7 +565,7 @@ Properties declared inside the constructor method will be copied to every instan
 3.  When you call a method on an instance, JavaScript looks up the prototype chain to find the method in the prototype. It doesn't copy the method to the instance itself.
 4.  This behavior is what allows for memory-efficient sharing of methods among instances.
 
-**NOTE** We achieved the same in Constructor Function by defining the methods in the prorotype of the construcor rather than directly defining inside it.
+**NOTE** We achieved the same in Constructor Function by defining the methods in the prototype of the constructor rather than directly defining inside it.
 
 ## `this`
 
@@ -580,7 +580,7 @@ Here are a few key points to understand about `this` in JavaScript:
 console.log(this === window); // In a browser, true
 ```
 
-2.  **Function Context**: In a regular function (not an arrow function), "this" is determined by how the function is called. It can be influenced by the object the function is a property of (the calling object) or by how the function is invoked using methods like "call", "apply", or "bind". By default `this` refers to the global window object in a regular funciton.
+2.  **Function Context**: In a regular function (not an arrow function), "this" is determined by how the function is called. It can be influenced by the object the function is a property of (the calling object) or by how the function is invoked using methods like "call", "apply", or "bind". By default `this` refers to the global window object in a regular function.
 
 ```javascript
 let name = "Global Ish";
@@ -634,7 +634,7 @@ person.getName(); // Hello, my name is Global Ish
 
 This might be a bit tricky to comprehend. It was very confusing for me.
 
-As stated above, arrow function inherit the "this" value from the surrounding code. In this case, the sorrounding code is person object, which in turn is in the global scope.
+As stated above, arrow function inherit the "this" value from the surrounding code. In this case, the surrounding code is person object, which in turn is in the global scope.
 Remember from the main definition: `this` in JavaScript refers to the context within which a function(not object) is executed
 
 7.  **Explicit Binding**: Functions like "call", "apply", and "bind" can be used to explicitly set the value of "this" for a function.
@@ -670,11 +670,11 @@ addToTotal(10); // Side effect: Modifies "total" variable
 console.log(total); // Outputs: 10
 ```
 
-As you can see above, every time you call the funciton `addToTotal` , it updates the external value, hence causing side effect.
+As you can see above, every time you call the function `addToTotal` , it updates the external value, hence causing side effect.
 
 ## Proxy
 
-A promise is a **proxy** of a value that is not yet recieved.
+A promise is a **proxy** of a value that is not yet received.
 Proxy is a built-in object that allows you to intercept and customize the fundamental operations of another object, known as the target object.
 
 - **Creating a Proxy**: You can create a Proxy using the `Proxy` constructor by providing the target object and a handler object that defines the custom behavior for various operations.
@@ -694,7 +694,6 @@ console.log(person.name); //Ish
 
 ```javascript
 const  target  = {
-	name:  "Ish",
 	age:  30,
 };
 const  person  =  new  Proxy(target, {
@@ -702,7 +701,7 @@ const  person  =  new  Proxy(target, {
 	get(target, property) {
 		return  `I am ${target[property]}`;
 	}
-)
+})
 person.name = "Ish"
 console.log(person.name); // I am Ish
 ```
@@ -863,7 +862,7 @@ delete person.name; // Won't delete the 'name' property
 ## Object.defineProperty
 
 Define or modify properties of an object with more control.
-Every property of an object can have 3 peroperty attributes, which can be used to provide some property.
+Every property of an object can have 3 property attributes, which can be used to provide some property.
 
 1. **`writable`**:
 
