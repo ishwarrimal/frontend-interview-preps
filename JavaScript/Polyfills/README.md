@@ -239,7 +239,9 @@ Now let's write polyfill for forEach method
 Array.prototype.customForEach=function (callbackFn,thisArg){
   const arrayLength= this.length;
   for(let i=0;i<arrayLength;i++){
-    callbackFn.call(thisArg,this[i],i,this)
+    if (this[i]) {
+      callbackFn.call(thisArg, this[i], i, this);
+    }
   }
 }
 
