@@ -237,6 +237,9 @@ Now let's write polyfill for forEach method
 ```javascript
 
 Array.prototype.customForEach=function (callbackFn,thisArg){
+  /* 
+    Below `this` referring to an array on which customForEach method is called
+  */
   const arrayLength= this.length;
   for(let i=0;i<arrayLength;i++){
     if (this[i]) {
