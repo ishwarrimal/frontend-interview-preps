@@ -185,7 +185,7 @@ Thanks go to these wonderful people :
     <tr>
       <td align="center" valign="top" width="20%"><img src="https://avatars.githubusercontent.com/u/17489662?v=4" width="100px;" alt="Kent C. Dodds"/><br /><sub><b>Ish</b></sub></a><br /></td>
       <td align="center" valign="top" width="20%"><img src="https://avatars.githubusercontent.com/u/39924419?v=4" width="100px;" alt="Jeroen Engels"/><br /><sub><b>Sai Kumar Kola</b></sub></a><br /></td>
-      <td align="center" valign="top" height="10%" width="20%"><img src="https://avatars.githubusercontent.com/u/97459166?v=4 width="100px;" alt="Jake Bolam"/><br /><sub><b>Abhijeet Hiwale</b></sub></a><br /></td>
+      <td align="center" valign="top" width="20%"><img src="https://avatars.githubusercontent.com/u/97459166?v=4 width="80px;" alt="Jake Bolam"/><br /><sub><b>Abhijeet Hiwale</b></sub></a><br /></td>
       <td align="center" valign="top" width="20%"><img src="https://avatars.githubusercontent.com/u/13873668?v=4" width="100px;" alt="Tyler Benning"/><br /><sub><b>Vinod Godti</b></sub></a><br /></td>
       <td align="center" valign="top" width="20%"><img src="https://avatars.githubusercontent.com/u/107752425?v=4" width="100px;" alt="Jeff Wen"/><br /><sub><b>Rakesh Sangem/b></sub></a><br /></td>
     </tr>
