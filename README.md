@@ -174,6 +174,9 @@ We appreciate your interest in contributing to the Frontend Interview Preparatio
 
 If you have any questions or need further assistance, feel free to reach out to me or open an issue.
 
+## Contributors ✨
+
+Thanks go to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
