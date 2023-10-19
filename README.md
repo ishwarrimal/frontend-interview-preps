@@ -183,7 +183,7 @@ Thanks go to these wonderful people :
 <table>
   <tbody>
     <tr>
-      <td align="center" valign="top" href="https://github.com/ishwarrimal" width="20%"><img src="https://avatars.githubusercontent.com/u/17489662?v=4" width="100px;" alt="Kent C. Dodds"/><br /><sub><b>Ish</b></sub></a><br /></td>
+      <td align="center" valign="top" width="20%"><a href="https://github.com/ishwarrimal"><img src="https://avatars.githubusercontent.com/u/17489662?v=4" width="100px;" alt="Kent C. Dodds"/><br /><sub><b>Ish</b></sub></a><br /></td>
       <td align="center" valign="top" width="20%"><img src="https://avatars.githubusercontent.com/u/39924419?v=4" width="100px;" alt="Jeroen Engels"/><br /><sub><b>Sai Kumar Kola</b></sub></a><br /></td>
       <td align="center" valign="top" width="20%"><img src="https://avatars.githubusercontent.com/u/97459166?v=4" width="100px;" alt="Jake Bolam"/><br /><sub><b>Abhijeet Hiwale</b></sub></a><br /></td>
       <td align="center" valign="top" width="20%"><img src="https://avatars.githubusercontent.com/u/13873668?v=4" width="100px;" alt="Tyler Benning"/><br /><sub><b>Vinod Godti</b></sub></a><br /></td>
