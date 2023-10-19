@@ -6,6 +6,7 @@ Topics we will be covering:
 2. [**React**](./React/) : Commonly asked questions and core concepts.
 3. [**CSS**](./CSS/) : Commonly asked questions and a few concepts.
 4. [**Web Fundamentals**](./Web%20Fundamentals/) : A lot of important topics.
+5. [**DSA**](./DSA/) : Code for data structures and related concepts.
 
 ## About
 
@@ -26,11 +27,12 @@ I am looking for a couple of folks to help me maintain this repo. Feel free to r
 There are 5 different folders in this repo:
 
 1. [**CSS**](./CSS/)
-2. **DSA**
-3. [**JavaScript**](./JavaScript/)
-4. [**React**](./React/)
-5. [**Web Fundamentals**](./Web%20Fundamentals/)
-   Each folder contains information about the content.
+2. [**JavaScript**](./JavaScript/)
+3. [**React**](./React/)
+4. [**Web Fundamentals**](./Web%20Fundamentals/)
+5. [**DSA**](./DSA/)
+
+Each folder contains information about the content.
 
 # Found some issue in the repo?
 
@@ -57,19 +59,22 @@ Welcome to the Frontend Interview Preparation Guide repository! I am excited tha
 
 ## Table of Contents
 
-1. [Getting Started](#getting-started)
-   - [Fork the Repository](#fork-the-repository)
-   - [Clone Your Fork](#clone-your-fork)
-   - [Create a Branch](#create-a-branch)
-2. [Contributing Guidelines](#contributing-guidelines)
-   - [Folder Structure](#folder-structure)
-   - [Adding Content](#adding-content)
-   - [Editing Content](#editing-content)
-   - [Code Formatting](#code-formatting)
-   - [Commit Messages](#commit-messages)
-3. [Submitting Pull Requests](#submitting-pull-requests)
-4. [Code of Conduct](#code-of-conduct)
-5. [Acknowledgments](#acknowledgments)
+- [About](#about)
+- [Some Feedback this repo got](#some-feedback-this-repo-got)
+- [How this Course is structured](#how-this-course-is-structured)
+- [Table of Contents](#table-of-contents)
+- [Getting Started](#getting-started)
+  - [Fork the Repository](#fork-the-repository)
+  - [Clone Your Fork](#clone-your-fork)
+  - [Create a Branch](#create-a-branch)
+- [Contributing Guidelines](#contributing-guidelines)
+  - [Folder Structure](#folder-structure)
+  - [Adding Content](#adding-content)
+  - [Editing Content](#editing-content)
+  - [Code Formatting](#code-formatting)
+  - [Commit Messages](#commit-messages)
+- [Submitting Pull Requests](#submitting-pull-requests)
+- [Acknowledgments](#acknowledgments)
 
 ## Getting Started
 
@@ -97,7 +102,7 @@ Now, you're ready to start contributing!
 
 ### Folder Structure
 
-This repository is organized into folders for different topics like JavaScript, React, CSS, and Web Fundamentals. Please make sure to place your contributions in the appropriate folder. If a folder doesn't exist for your specific topic, you can create it.
+This repository is organized into folders for different topics like JavaScript, React, CSS, Web Fundamentals, and DSA. Please make sure to place your contributions in the appropriate folder. If a folder doesn't exist for your specific topic, you can create it.
 
 ```
 - JavaScript/
@@ -120,6 +125,7 @@ This repository is organized into folders for different topics like JavaScript, 
   - README.md
 - Web Fundamentals/
   - README.md
+- DSA/
 ```
 
 ### Adding Content
