@@ -183,7 +183,7 @@ Thanks go to these wonderful people ([emoji key](https://allcontributors.org/doc
 <table>
   <tbody>
     <tr>
-      <td align="center" valign="top" width="20%"><a href="https://kentcdodds.com"><img src="https://avatars.githubusercontent.com/u/17489662?v=4" width="100px;" alt="Kent C. Dodds"/><br /><sub><b>Ish</b></sub></a><br /><a href="#question-kentcdodds" title="Answering Questions">💬</a> <a href="https://github.com/all-contributors/all-contributors/commits?author=kentcdodds" title="Documentation">📖</a> <a href="https://github.com/all-contributors/all-contributors/pulls?q=is%3Apr+reviewed-by%3Akentcdodds" title="Reviewed Pull Requests">👀</a> <a href="#talk-kentcdodds" title="Talks">📢</a></td>
+      <td align="center" valign="top" width="20%"><img src="https://avatars.githubusercontent.com/u/17489662?v=4" width="100px;" alt="Kent C. Dodds"/><br /><sub><b>Ish</b></sub></a><br /></td>
       <td align="center" valign="top" width="20%"><a href="https://github.com/jfmengels"><img src="https://avatars.githubusercontent.com/u/39924419?v=4" width="100px;" alt="Jeroen Engels"/><br /><sub><b>Sai Kumar Kola
 </b></sub></a><br /><a href="https://github.com/all-contributors/all-contributors/commits?author=jfmengels" title="Documentation">📖</a> <a href="https://github.com/all-contributors/all-contributors/pulls?q=is%3Apr+reviewed-by%3Ajfmengels" title="Reviewed Pull Requests">👀</a> <a href="#tool-jfmengels" title="Tools">🔧</a></td>
       <td align="center" valign="top" width="20%"><a href="https://jakebolam.com"><img src="https://avatars.githubusercontent.com/u/97459166?v=4 width="100px;" alt="Jake Bolam"/><br /><sub><b>Abhijeet Hiwale
