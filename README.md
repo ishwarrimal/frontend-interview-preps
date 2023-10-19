@@ -176,7 +176,7 @@ If you have any questions or need further assistance, feel free to reach out to 
 
 ## Contributors ✨
 
-Thanks go to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+Thanks go to these wonderful people :
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
@@ -184,17 +184,11 @@ Thanks go to these wonderful people ([emoji key](https://allcontributors.org/doc
   <tbody>
     <tr>
       <td align="center" valign="top" width="20%"><img src="https://avatars.githubusercontent.com/u/17489662?v=4" width="100px;" alt="Kent C. Dodds"/><br /><sub><b>Ish</b></sub></a><br /></td>
-      <td align="center" valign="top" width="20%"><a href="https://github.com/jfmengels"><img src="https://avatars.githubusercontent.com/u/39924419?v=4" width="100px;" alt="Jeroen Engels"/><br /><sub><b>Sai Kumar Kola
-</b></sub></a><br /><a href="https://github.com/all-contributors/all-contributors/commits?author=jfmengels" title="Documentation">📖</a> <a href="https://github.com/all-contributors/all-contributors/pulls?q=is%3Apr+reviewed-by%3Ajfmengels" title="Reviewed Pull Requests">👀</a> <a href="#tool-jfmengels" title="Tools">🔧</a></td>
-      <td align="center" valign="top" width="20%"><a href="https://jakebolam.com"><img src="https://avatars.githubusercontent.com/u/97459166?v=4 width="100px;" alt="Jake Bolam"/><br /><sub><b>Abhijeet Hiwale
-</b></sub></a><br /><a href="https://github.com/all-contributors/all-contributors/commits?author=jakebolam" title="Documentation">📖</a> <a href="#tool-jakebolam" title="Tools">🔧</a> <a href="#infra-jakebolam" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#maintenance-jakebolam" title="Maintenance">🚧</a> <a href="https://github.com/all-contributors/all-contributors/pulls?q=is%3Apr+reviewed-by%3Ajakebolam" title="Reviewed Pull Requests">👀</a> <a href="#question-jakebolam" title="Answering Questions">💬</a></td>
-      <td align="center" valign="top" width="20%"><a href="https://github.com/tbenning"><img src="https://avatars.githubusercontent.com/u/13873668?v=4" width="100px;" alt="Tyler Benning"/><br /><sub><b>Vinod Godti
-</b></sub></a><br /><a href="#maintenance-tbenning" title="Maintenance">🚧</a> <a href="https://github.com/all-contributors/all-contributors/commits?author=tbenning" title="Code">💻</a> <a href="#design-tbenning" title="Design">🎨</a></td>
-      <td align="center" valign="top" width="20%"><a href="https://sinchang.me"><img src="https://avatars.githubusercontent.com/u/107752425?v=4" width="100px;" alt="Jeff Wen"/><br /><sub><b>Rakesh Sangem
-/b></sub></a><br /><a href="#maintenance-sinchang" title="Maintenance">🚧</a> <a href="https://github.com/all-contributors/all-contributors/pulls?q=is%3Apr+reviewed-by%3Asinchang" title="Reviewed Pull Requests">👀</a></td>
+      <td align="center" valign="top" width="20%"><img src="https://avatars.githubusercontent.com/u/39924419?v=4" width="100px;" alt="Jeroen Engels"/><br /><sub><b>Sai Kumar Kola</b></sub></a><br /></td>
+      <td align="center" valign="top" width="20%"><img src="https://avatars.githubusercontent.com/u/97459166?v=4 width="100px;" alt="Jake Bolam"/><br /><sub><b>Abhijeet Hiwale</b></sub></a><br /></td>
+      <td align="center" valign="top" width="20%"><img src="https://avatars.githubusercontent.com/u/13873668?v=4" width="100px;" alt="Tyler Benning"/><br /><sub><b>Vinod Godti</b></sub></a><br /></td>
+      <td align="center" valign="top" width="20%"><img src="https://avatars.githubusercontent.com/u/107752425?v=4" width="100px;" alt="Jeff Wen"/><br /><sub><b>Rakesh Sangem/b></sub></a><br /></td>
     </tr>
-
-    
   </tbody>
 </table>
 
