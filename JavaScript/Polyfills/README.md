@@ -180,7 +180,7 @@ promiseAll([promise1, promise2, promise3]).then((values) => {
   console.log(values);
 });
 ```
-## forEach
+## ForEach
 
 Let's see how to use forEach in Javascript
 ```javascript
@@ -238,7 +238,7 @@ Now let's write polyfill for forEach method
 
 Array.prototype.customForEach=function (callbackFn,thisArg){
   /* 
-    Below `this` referring to an array on which customForEach method is called
+    this keyword is referring to an array on which customForEach method is called
   */
   const arrayLength= this.length;
   for(let i=0;i<arrayLength;i++){
