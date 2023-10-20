@@ -279,6 +279,79 @@ console.log(obj.sum) //6
 console.log(obj.count) //3
 
 ```
+## Map
+
+Let`s see how to use map in Javascript
+```javascript
+map(callBackFn)
+
+const numList = [1, 2, 3, 4, 5];
+//Using arrow function as callbackFn in map
+console.log(numList.map((num) => num * 2)); // 2 4 6 8 10
+
+//CallBackFn will receive 3 parameters
+/*
+1. Element of array
+2. Index of the element
+3. Array itself
+*/
+const transformedNumList=numList.map((num,index,numList)=>{
+  console.log(num,index,numList)
+  return num + 2
+})
+
+console.log(transformedNumList)//3 4 5 6 7
+
+let users = [
+  {firstName : "John", lastName: "Doe"},
+  {firstName : "Michel", lastName: "Longbottom"},
+  {firstName : "Jacob", lastName: "Black"}
+];
+
+//Using function expression as callbackFn in map
+const userFullNames = users.map(function(element){
+    return `${element.firstName} ${element.lastName}`;
+});
+console.log(userFullNames);
+
+```
+Let's use map method using other syntax
+```javascript
+map(callBackfn,thisArg)
+
+const arr = [5,6,7,8,9];
+
+arr.map(function(element, index, array){
+	console.log(this) // 40
+}, 40);
+
+```
+Now we are going to implement polyfill for the Map method
+
+```Javascript
+Array.prototype.customMap = function (callbackFn, thisArg) {
+  /*
+   this keyword is referring to an array on which customMap method is called 
+  */
+  const arrayLength = this.length;
+  let arr = [];
+  for (let i = 0; i < arrayLength; i++) {
+    //check for non empty slots in an array
+    if (this[i]) {
+      arr[i] = callbackFn.call(thisArg, this[i], i, this);
+    }
+  }
+  return arr;
+};
+
+const numList = [1, 2, 3, 4, 5];
+console.log(numList.customMap((num) => num * 2)); // 2 4 6 8 10
+
+const arr = [5,6,7,8,9];
+arr.customMap(function(element, index, array){
+	console.log(this) // 40
+}, 40);
+```
 ## Reduce
 
 Let's see how to use reduce in Javascript
