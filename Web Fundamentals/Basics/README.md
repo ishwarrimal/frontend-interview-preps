@@ -218,3 +218,21 @@ Apart form the JS Engine like V8, the Runtime provides other APIs which in case 
 2. **HTTP Module**
 3. **OS Module**
 4. etc.
+
+## Browser Storages
+Web storage or browser storage is a mechanism that allws web applications to store data locally in user's browser. 
+There are two types of web storages:
+1. Session Storage : used for storing data only for a single session.
+2. Local Storage : used for storing data for a longer period of time.
+
+### Session Storage
+* This is used for storing data that is used only for a single session.
+* Typically used to store data like shopping cart data, progress in a game, etc.
+### Local Storage
+* This is used to storate data for a longer period of time.
+* Typically used to store data like user preferences like preferred langauge.
+
+Things like **user credentials** is a subjective matter.  
+For a highly sensitive web application, session storage is preferred as the user needs to login on a every new session, whereas for a less sensitive application, local storage is used.
+
+It's important to remember that this storage is provided by the browser and there is no configuration to be done by a user/developer to use this, hence it's super useful for maintaining the state of a web applications.
