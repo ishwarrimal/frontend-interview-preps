@@ -123,6 +123,7 @@ This repository is organized into folders for different topics like JavaScript, 
 - Web Fundamentals/
   - README.md
 - DSA/
+  - README.md
 ```
 
 ### Adding Content
