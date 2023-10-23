@@ -20,7 +20,7 @@ In web fundamentals, we will be covering following topics:
 6. [Browser Storage](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/Web%20Fundamentals/Basics#browser-storages)
    - [Session Storage](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/Web%20Fundamentals/Basics#session-storage)
    - [Local Storage](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/Web%20Fundamentals/Basics#local-storage)
-7. IndexedDB
+7. I[ndexedDB](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/Web%20Fundamentals/Basics#indexeddb)
 8. Cookies - Server side Vs Client side
 9. CORS
 10. HTTP Caching
