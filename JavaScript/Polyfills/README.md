@@ -333,6 +333,9 @@ Array.prototype.customMap = function (callbackFn, thisArg) {
   /*
    this keyword is referring to an array on which customMap method is called 
   */
+  if (!Array.isArray(this)) {
+    throw new TypeError('customMap can only be called on an array');
+  }
   const arrayLength = this.length;
   let arr = [];
   for (let i = 0; i < arrayLength; i++) {
