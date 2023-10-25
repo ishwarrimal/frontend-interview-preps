@@ -510,7 +510,9 @@ There are 2 phases in which all of these happens. Read about them [here](https:/
 
 4.  **Depth-First Search**: React's diffing algorithm performs a depth-first traversal of the virtual DOM tree. It starts at the root and compares elements as it goes deeper into the tree. This approach helps React identify differences in the tree structure efficiently.
 
-5.  **Element Key Assumption**: React assumes that the "key" prop is stable across renders for the same element. If the key of an element changes between renders, React treats it as a new element, which can result in unnecessary updates.
+5.  **Element Key Assumption**: React assumes that the "key" prop is stable across renders for the same element. If the key of an element changes between renders, React treats it as a new element, which can result in unnecessary updates.  
+
+**NOTE** During the reconciliation, if the new and the old element are of different type (old was `<a>` new is `<href>`, old was `<p>` new is `<span>`), then the old child is unmounted (state is released) and new component is mounted (state is re initialized) and the entire subtree is re constructed. Whereas, if the type is same (prev `<p>`, new `<p>`) with a slight change in the attributes, then only the attributes are updated. React uses the same render tree. No unmount/remount happens.
 
 ## Flux
 

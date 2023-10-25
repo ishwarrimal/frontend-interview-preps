@@ -1,7 +1,7 @@
 const _password = Symbol("password");
 class User {
-  constructor(unsername, password) {
-    this.username = this.username;
+  constructor(username, password) {
+    this.username = username;
     this[_password] = password;
   }
 
@@ -13,4 +13,4 @@ class User {
 const user = new User("Ishwar", "s3cr3tP@ssw0rd");
 console.log(user.username); // Output: "JohnDoe"
 console.log(user.getPassword()); // Output: "s3cr3tP@ssw0rd"
-console.log(user[_password]); // Output: undefined (Symbol is not accessible without a reference)
+console.log(User[_password]); // Output: undefined (Symbol is not accessible without a reference)
