@@ -6,4 +6,6 @@ In DSA, we have covered the following topics:
 2. [Sliding Window](./slidingWindow.js)
 3. [Two Pointer](./twoPointer.js)
 4. [Miscellaneous](./miscDSA.js)
-5. [Implementation-of-stack] (./stack.js)
+5. [Implementation-of-stack](./implement_stack.js)
+
+
