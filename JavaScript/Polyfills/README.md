@@ -279,3 +279,87 @@ console.log(obj.sum) //6
 console.log(obj.count) //3
 
 ```
+## Reduce
+
+Let's see how to use reduce in Javascript
+
+```javascript
+reduce(callbackFn)
+
+const numbersArray = [15, 16, 17, 18, 19];
+const sum=numbersArray.reduce(
+    (accumulator, currentValue) => accumulator + currentValue
+  )
+console.log(sum)//85
+
+```
+Let's see how to use reduce with other syntax
+
+```javascript
+reduce(callbackFn,initialValue) - Most of the cases this syntax is used
+
+const numbersArray = [15, 16, 17, 18, 19];
+const sum=numbersArray.reduce(
+    (accumulator, currentValue) => accumulator + currentValue,
+   10
+  )
+console.log(sum)//95
+
+const objects = [{ x: 3 }, { x: 4 }, { x: 5 }];
+const objectSum = objects.reduce(
+  (accumulator, currentValue) => accumulator + currentValue.x,
+  0
+);
+console.log(objectSum);//12
+
+```
+Now let's write polyfill for reduce method
+
+```javascript
+Array.prototype.customReduce = function (reducerFn, initialValue) {
+  /* 
+    this keyword is referring to an array on which customReduce method is called
+  */
+  if (!Array.isArray(this) || this.length === 0) {
+    throw new Error("Empty array or not an array!");
+  }
+  const arrayLength = this.length;
+  let startIndex;
+  let accumulator;
+  if (initialValue) {
+    accumulator = initialValue;
+    startIndex = 0;
+  } else {
+    accumulator = this[0];
+    startIndex = 1;
+  }
+  for (let i = startIndex; i < arrayLength; i++) {
+    //Empty slot(sparse Array) is skipped by reducer
+    //Undefined case is not skipped by reducer
+    if (this[i] || typeof this[i] === "undefined") {
+      accumulator = reducerFn(accumulator, this[i], i, this);
+    }
+  }
+  return accumulator;
+};
+
+const numbersArray = [15, 16, 17, 18, 19];
+
+const sum=numbersArray.customReduce(
+    (accumulator, currentValue) => accumulator + currentValue
+  )
+console.log(sum)//85
+
+const sumWithInitialVal=numbersArray.customReduce(
+    (accumulator, currentValue) => accumulator + currentValue,
+   10
+  )
+console.log(sumWithInitialVal)//95
+
+const objects = [{ x: 3 }, { x: 4 }, { x: 5 }];
+const objectSum = objects.customReduce(
+  (accumulator, currentValue) => accumulator + currentValue.x,
+  0
+);
+console.log(objectSum);//12
+```
