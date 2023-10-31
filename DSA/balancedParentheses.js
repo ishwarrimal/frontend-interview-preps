@@ -6,6 +6,28 @@
  * This means that every opening parenthesis will have a closing one.
  * For example, {[]} is balanced, but {[}] is not.
  *
+ * Basic approach:
+ * For any open parenthesis we will push it to the stack
+ * For any closed parenthesis we will pop out an element from the stack
+ * We also check for the stack - it should be empty
+ *
+ * For closed parenthesis - we will pop and compare it with the current element
+ * If both makes a pair then it's a case of balanced parentheses.
+ * Example 1. - "{}"
+ *      For { -> we push it to the stack,
+ *          stack becomes [ "{" ], p becomes 1 and top becomes 0;
+ *
+ *      For } ->  we have to pop out the stack top
+ *          stack[top] = "{" we now compare it with the "}",
+ *          as it is a pair it is a balanced parentheses case.
+ *
+ * Example 2. ->  "["
+ *      For [ -> we push it to the stack,
+ *          stack becomes [ "[" ], p becomes 1 and top becomes 0;
+ *      Since we only got one parenthesis, we come out of the loop
+ *      For a valid parentheses, the stack must be empty, but here it contains an element
+ *      which means it's not balanced.
+ *
  * @param {string} expression - the input expression.
  * @returns {boolean} - returns true or false
  */
