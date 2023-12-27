@@ -274,3 +274,7 @@ makeAPICall().then().catch();
 ```
 
 Browser makes use of various techniques to efficiently handle both sync and async work as to fully utilizing the single threaded mechanism of JavaScript. Read more in the [JavaScript Runtime](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/Web%20Fundamentals/Basics#javascript-runtime) topic above.
+
+### JWT-based Authentication
+
+[Read Here](https://ishwar-rimal.medium.com/decoding-the-json-web-token-aka-jwt-5b3654d0477b)
