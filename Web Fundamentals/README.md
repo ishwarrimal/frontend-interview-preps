@@ -35,7 +35,7 @@ In web fundamentals, we will be covering following topics:
 15. Web Sockets
 16. Authentication
     - Token based vs Session Based
-    - Working of JWT in detail
+    - [Working of JWT in detail](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/Web%20Fundamentals/Basics#jwt-based-authentication)
 17. Web Security
     - XSS
     - CSRF
