@@ -22,7 +22,7 @@ In web fundamentals, we will be covering following topics:
    - [Local Storage](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/Web%20Fundamentals/Basics#local-storage)
 7. [IndexedDB](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/Web%20Fundamentals/Basics#indexeddb)
 8. [Sync vs Async Works](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/Web%20Fundamentals/Basics#sync-vs-async-works)
-9. Cookies - Server side Vs Client side
+9. Cookies - Server side vs. client side
 10. CORS
 11. HTTP Caching
 
