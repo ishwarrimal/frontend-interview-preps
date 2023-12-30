@@ -83,7 +83,7 @@ If you want to learn more aobut this, I recommend reading this blog by google [i
 ## Event Loop
 
 When talking about Event Loop, usually the interviewer wants to know about the overall working of the JS Runtime and not just the Event Loop part of it.  
-Event loop in particulra is a fundamental concept that is responsible for the execution of asynchronous code by continuously checking the callback qu...(Ruko Jara, Sabar Karo) but before going deeper into that, let's first understand what is a JavaScript runtime.
+Event loop in particular is a fundamental concept that is responsible for the execution of asynchronous code by continuously checking the callback qu...(Ruko Jara, Sabar Karo) but before going deeper into that, let's first understand what is a JavaScript runtime.
 
 ## JavaScript Runtime
 
@@ -254,3 +254,27 @@ It's important to remember that this storage is provided by the browser and ther
 |Data Structure| Key Value | Flexible |
 | Retrieval | Simple and Slow | Complex query and fast
 | Data Persistance | Lost when cache is cleared | Stored even for offline use
+### Sync vs Async Works
+
+Any work that stops the execution of the code and wait's for it to get completed before moving to the next line of code can be called sync work.
+Example
+
+```javascript
+console.log("123");
+alert("Apple");
+let sum = 1 + 2;
+```
+
+Whereas, in case of async work the execution is initiated and then is set aside for later, meanwhile the remaining code is executed. Once the async work is completed the execution moves back to that work.
+Example:
+
+```javascript
+await makeAPICall();
+makeAPICall().then().catch();
+```
+
+Browser makes use of various techniques to efficiently handle both sync and async work as to fully utilizing the single threaded mechanism of JavaScript. Read more in the [JavaScript Runtime](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/Web%20Fundamentals/Basics#javascript-runtime) topic above.
+
+### JWT-based Authentication
+
+[Read Here](https://ishwar-rimal.medium.com/decoding-the-json-web-token-aka-jwt-5b3654d0477b)

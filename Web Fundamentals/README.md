@@ -20,42 +20,43 @@ In web fundamentals, we will be covering following topics:
 6. [Browser Storage](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/Web%20Fundamentals/Basics#browser-storages)
    - [Session Storage](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/Web%20Fundamentals/Basics#session-storage)
    - [Local Storage](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/Web%20Fundamentals/Basics#local-storage)
-7. I[ndexedDB](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/Web%20Fundamentals/Basics#indexeddb)
-8. Cookies - Server side Vs Client side
-9. CORS
-10. HTTP Caching
+7. [IndexedDB](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/Web%20Fundamentals/Basics#indexeddb)
+8. [Sync vs Async Works](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/Web%20Fundamentals/Basics#sync-vs-async-works)
+9. Cookies - Server side vs. client side
+10. CORS
+11. HTTP Caching
 
 - Different Caching Strategies
 
-11. Workers:
+12. Workers:
     - Web Worker vs Service Worker
-12. PWA
-13. XMLHttpRequest - API Calls
-14. Web Sockets
-15. Authentication
+13. PWA
+14. XMLHttpRequest - API Calls
+15. Web Sockets
+16. Authentication
     - Token based vs Session Based
-    - Working of JWT in detail
-16. Web Security
+    - [Working of JWT in detail](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/Web%20Fundamentals/Basics#jwt-based-authentication)
+17. Web Security
     - XSS
     - CSRF
     - SQL Injection
     - CSP
-17. Internationalization
-18. Accessibility
-19. Bundling App - Webpack
-20. Deployment
-21. Freezing the browser
+18. Internationalization
+19. Accessibility
+20. Bundling App - Webpack
+21. Deployment
+22. Freezing the browser
     - setInterval with 0 vs while true
-22. SPA vs MPA
-23. Micro Frontend
-24. Performance
+23. SPA vs MPA
+24. Micro Frontend
+25. Performance
     - Compression
     - Optimizing images
     - Lazy Loading
     - Code Splitting
     - Async/Defer external resources
     - Prefetch / Preload / dns Prefetch
-25. Web Vitals:
+26. Web Vitals:
     - LCP
     - FID
     - CLS
