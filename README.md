@@ -10,7 +10,7 @@ Topics we will be covering:
 
 ## About
 
-Hi, I am _Ishwar Rimal_ and I maintain this repo.
+Hi, I am _Ishwar Rimal_ and I maintain this repo. [Read more about me](https://github.com/ishwarrimal).  
 I have close to **8 years** of experience in the software industry. I've been working mostly at startups and have recently joined a product-based MNC.
 
 Recently after giving a few interviews and preparing an interview guide for myself, I thought of making it public for everyone to access and get benefitted, and it's turning out to be useful to a lot of people.
