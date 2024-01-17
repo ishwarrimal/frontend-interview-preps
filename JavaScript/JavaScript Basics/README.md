@@ -211,7 +211,7 @@ The arrow function was introduced in ES6.
    ```javascript
    function addValues(){
        let arg = [...arguments]
-       arg.reduce((val, acc) => val+acc))
+       return arg.reduce((val, acc) => val+acc)
    }
    addValues(1,2,3) // 6
    ```
@@ -220,7 +220,7 @@ The arrow function was introduced in ES6.
    - Introduced in ES6, rest parameters allow functions to accept an arbitrary number of arguments as an array.
    ```javascript
    function addValues(...arg){
-       arg.reduce((val, acc) => val+acc))
+       return arg.reduce((val, acc) => val+acc)
    }
    addValues(1,2,3) // 6
    ```
@@ -228,7 +228,7 @@ The arrow function was introduced in ES6.
    - The spread operator (`...`) can be used to pass an array's elements as separate arguments to a function.
    ```javascript
    function addValues(...arg){
-       arg.reduce((val, acc) => val+acc))
+       return arg.reduce((val, acc) => val+acc)
    }
    let values = [1,2,3]
    addValues(...values) // 6
