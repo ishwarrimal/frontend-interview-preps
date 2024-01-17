@@ -223,8 +223,8 @@ myPromise
 ### Other Major Promise methods:
 
 1. **Promise.all**: Waits for all promises to resolve or any to reject, returning an array of results.
-2. **Promise.race**: Waits for the first promise to resolve, ignoring rejections until all fail.
-3. **Promise.any**: Resolves or rejects with the value of the first promise to settle (either resolve or reject).
+2. **Promise.race**: Resolves or rejects with the value of the first promise to settle (either resolve or reject).
+3. **Promise.any**: Waits for the first promise to resolve, ignoring rejections until all fail.
 
 Even though promise is a better alternative to callbacks, in ES6, a new concept called `Async Await` was introduced.
 
