@@ -854,9 +854,9 @@ delete person.name; // Won't delete the 'name' property
 
 | Operation | Freeze      | Seal        |
 | --------- | ----------- | ----------- |
-| Create    | Not Allowed | Allowed     |
+| Create    | Not Allowed | Not Allowed     |
 | Read      | Allowed     | Allowed     |
-| Update    | Not Allowed | Not Allowed |
+| Update    | Not Allowed | Allowed |
 | Delete    | Not Allowed | Not Allowed |
 
 ## Object.defineProperty
