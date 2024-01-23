@@ -34,7 +34,7 @@ If no resolution happens in the above 3 stages, the following steps are performe
 
 - Contact the root DNS servers to resolve the TLD - top-level domains (like .com, .org, .net) and get the authoritative DNS server for the top-level domain (TLD)
 
-- Contact the TLD DNS server to resolve the Autohrative DNS; The TLD DNS server responds with the IP address of the authoritative DNS server for the specific domain (e.g., google.com).
+- Contact the TLD DNS server to resolve the Authorative DNS; The TLD DNS server responds with the IP address of the authoritative DNS server for the specific domain (e.g., google.com).
 
 - The authoritative DNS server for the domain provides the IP address associated with the requested domain (e.g., the IP address of Google's servers). This information is sent back to the DNS resolver.
 
@@ -72,7 +72,7 @@ When the browser recieves content from the server, following steps take place (N
 
 - **Layout** : Calcualte the exact position and geometry of the element on the web page based on the provided styles. It determines where the element should be placed on the screen.
 
-- **Painting** : Paing the element on the screen.
+- **Painting** : Paint the element on the screen.
 
 - **Compositing**: Compositing, which combines various layers or elements to create the final image, takes into account the stacking order within stacking contexts (z-index)
 
