@@ -21,6 +21,7 @@ I am looking for a couple of folks to help me maintain this repo. Feel free to r
 
 ## Some Feedback this repo got  
 - A special thanks to Ishwar Rimal for his outstanding contribution! His Frontend Interview Repository has been my secret weapon during interview preparations. Ishwar, your dedication to knowledge sharing is truly inspiring, and it's made a world of difference in my career.
+- Read more [here](https://github.com/ishwarrimal/frontend-interview-preps/blob/main/feedbacks.md)
 
 ## How this Course is structured
 
