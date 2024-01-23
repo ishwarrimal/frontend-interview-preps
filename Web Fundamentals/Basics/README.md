@@ -226,8 +226,10 @@ There are two types of web storages:
 2. Local Storage : used for storing data for a longer period of time.
 
 ### Session Storage
-* This is used for storing data that is used only for a single session.
+* This is used for storing data that is used only for a single session / tab.
 * Typically used to store data like shopping cart data, progress in a game, etc.
+* when a tab is reloaded or refreshed, browser will create a new session for the tab.
+* When the tab is duplicated, the new tab will create its own new session.
 * Size is 5MB
 ### Local Storage
 * This is used to storate data for a longer period of time.
