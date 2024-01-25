@@ -8,6 +8,9 @@ Topics we will be covering:
 4. [**Web Fundamentals**](./Web%20Fundamentals/) : A lot of important topics.
 5. [**DSA**](./DSA/) : Code for data structures and miscellaneous concepts.
 
+## Note
+Your feedback will help me improve this repo, so request you to share your feedback with me over email or write a LinkedIn post and tag me or raise a PR with your feedback on `feedbacks.md` file directly.
+
 ## About
 
 Hi, I am _Ishwar Rimal_ and I maintain this repo. [Read more about me](https://github.com/ishwarrimal).  
