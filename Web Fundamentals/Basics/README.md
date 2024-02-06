@@ -20,7 +20,7 @@ Let's learn about each in brief:
 
 ## DNS Resolution
 
-DNS Resolution is a process of converting the human redable domain name into numerical IP Address of your remote server.
+DNS Resolution is a process of converting the human readable domain name into numerical IP Address of your remote server.
 
 This can happen in 3 places:
 
