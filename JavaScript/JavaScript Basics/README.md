@@ -401,7 +401,7 @@ document.querySelector("body").appendChild(div);
 
 //After
 const myDiv = `<div><p>My name is ${name}</p></div>`;
-document.querySelector("body").innerHTM = myDiv;
+document.querySelector("body").innerHTML = myDiv;
 ```
 
 ## IIFE
