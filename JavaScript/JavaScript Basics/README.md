@@ -50,7 +50,10 @@ Hoisting is a concept in JavaScript where variable and function declarations are
      console.log(x + y);
    }
    ```
-   When it comes to function, function is declared and initialized and is hoisted.
+   When it comes to **function declaration** like the example above, it is declared, initialized, and hoisted.
+
+   Now, let's see a case of **function expression**, where we assign a function to a variable.
+   
    ```javascript
    console.log(sub(1, 2)); //Uncaught TypeError: sub is not a function
    var sub = function (x, y) {
@@ -65,16 +68,17 @@ Let and Const are introduced in ES6.
 
 1.  `var`:
     - Function-scoped and globally-scoped variable declaration.
-    - Hoisted with both declaration and initialization, leading to potential unexpected behavior.
+    - Hoisted with both declaration and initialization, leading to potential unexpected behaviour.
     - Can be re-declared within the same scope without errors.
 2.  `let`:
     - Block-scoped variable declaration that allows reassignment.
-    - Hoisted with declaration only; accessing before declaration results in a ReferenceError due to the temporal dead zone.
+    - Hoisted with declaration only; accessing before initialization results in a ReferenceError due to the temporal dead zone.
     - Cannot be re-declared within the same scope.
 3.  `const`:
-    - Block-scoped variable declaration cannot be redeclared within the same scope.
+    - It is a block-scoped variable declaration that does not allow reassignment.
     - Hoisted with declaration only; accessing before declaration results in a ReferenceError due to the temporal dead zone.
-    - Must be assigned a value at the time of declaration and cannot be reassigned afterward.
+    - Must be assigned a value at the time of declaration and cannot be reassigned afterwards.
+    - Just like let, const can not be re-declared within the same scope.
 
 ## Scope
 
@@ -98,10 +102,11 @@ The context in which variables are declared and accessed
 When you enable strict mode in your JavaScript code, the JavaScript interpreter becomes less forgiving and enforces a stricter set of rules. It was introduced in ES5.
 
 1.  Variables without var doesn't create a global variable
-2.  The value of this inside a regular function is `undefined` contrary to a global context.
+2.  The value of `this` inside a regular function is `undefined` contrary to a global context.
 3.  Disallow `eval`
-4.  Do not allow undeclared variables
+4.  Do not allow undeclared variables  
 
+To enforce strict mode, you need to add the following line at the beginning of your code.
 ```javascript
 "use strict";
 ```
@@ -156,7 +161,7 @@ y.set(10, 'apple'); //This is allowed
 
 **Set**
 
-- Set is similar to an array, but can have unique elements
+- Set is similar to an array, but you can add only unique elements to it.
 
 ```javascript
 //Regular array
@@ -165,7 +170,7 @@ var x = [1, 1]; //This is allowed
 //Using Set
 var y = new Set();
 y.add(1);
-y.add(1); //Allowed
+y.add(1); //allowed byt it overwrites the previous value.
 ```
 
 Adding duplicate values is allowed in the set, but it overwrites the previous value.
@@ -210,7 +215,7 @@ The arrow function was introduced in ES6.
    - Functions have an `arguments` object that holds all passed arguments, even if they are not explicitly defined as parameters.
    ```javascript
    function addValues(){
-       let arg = [...arguments]
+       let arg = [...arguments] // we convert the array-like object to an array for ease of use
        return arg.reduce((val, acc) => val+acc)
    }
    addValues(1,2,3) // 6
