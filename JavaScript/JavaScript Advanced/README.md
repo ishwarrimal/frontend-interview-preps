@@ -225,7 +225,7 @@ myPromise
 ### Other Major Promise methods:
 
 1. **Promise.all**: Waits for all promises to resolve or any to reject, returning an array of results.
-2. **Primise.allSettled**: Waits for all the promises despite their status (resolved or rejected) to get settled. Returns an array of objects that describes the status of each promise.
+2. **Promise.allSettled**: Waits for all the promises despite their status (resolved or rejected) to get settled. Returns an array of objects that describes the status of each promise.
 3. **Promise.race**: Resolves or rejects with the value of the first promise to settle (either resolve or reject).
 4. **Promise.any**: Waits for the first promise to resolve, ignoring rejections until all fail.
 
