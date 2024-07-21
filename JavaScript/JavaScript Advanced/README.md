@@ -44,7 +44,9 @@
 
 ## Mutability vs Immutability
 
-**Mutability** : A _mutable_ value is one that can be changed without creating an entirely new value. **Immutability** : An immutable value is one whose content cannot be changed without creating an entirely new value.
+**Mutability** : A _mutable_ value is one that can be changed without creating an entirely new value.  
+**Immutability** : An immutable value is one whose content cannot be changed without creating an entirely new value.  
+
 All primitive types in JavaScript are immutable.
 
 ### Immutable types
@@ -101,7 +103,7 @@ In the above case, both will print `[1,2,3,4]`
 
 ## Callback and Callback Hell
 
-- A function that is passed as an argument to another function.
+- A function that is passed as an argument to another function is called a callback.
 - Can be executed with or without arguments.
 - It allows other code to run in the meantime and prevents any blocking.
 - Mostly used to perform asynchronous work.
@@ -112,7 +114,7 @@ Here's a simple example to illustrate the concept:
 function fetchData(callback) {
   setTimeout(function () {
     const data = { name: "John", age: 30 };
-    callback(data);
+    callback(data); // this calls the passed processData function
   }, 1000); // Simulating an asynchronous operation
 }
 
@@ -145,17 +147,17 @@ This causes multiple issues in terms of readability, error handling and scalabil
 
 ## Promise
 
-- A _promise_ is a proxy of value that is not necessarily know at the time of creation of the promise. (what is proxy? Will discuss later)
-- It can be in 3 states: Pending, Fulfilled, Rejected.
+- A _promise_ is a proxy of value that is not necessarily known at the time of creation of the promise. (what is a proxy? Will discuss later)
+- It can be in 3 states: Pending, Fulfilled, and Rejected.
 - Promises can be chained.
 - It has 3 methods: `then`, `catch` and `finally`
 
 ### Creating a Promise
 
 - Syntax: `new Promise(executorFunction)`
-- ExecutorFunction thats two parameters: `resolve` and `reject`
-- Resolve is used when the operation is success.
-- Reject is used when the operation failed.
+- ExecutorFunction expects two parameters: `resolve` and `reject`
+- Resolve is used when the operation is successful.
+- Reject is used when the operation fails.
 
 A sample example:
 
@@ -223,8 +225,9 @@ myPromise
 ### Other Major Promise methods:
 
 1. **Promise.all**: Waits for all promises to resolve or any to reject, returning an array of results.
-2. **Promise.race**: Resolves or rejects with the value of the first promise to settle (either resolve or reject).
-3. **Promise.any**: Waits for the first promise to resolve, ignoring rejections until all fail.
+2. **Primise.allSettled**: Waits for all the promises despite their status (resolved or rejected) to get settled. Returns an array of objects that describes the status of each promise.
+3. **Promise.race**: Resolves or rejects with the value of the first promise to settle (either resolve or reject).
+4. **Promise.any**: Waits for the first promise to resolve, ignoring rejections until all fail.
 
 Even though promise is a better alternative to callbacks, in ES6, a new concept called `Async Await` was introduced.
 
@@ -436,7 +439,7 @@ console.log(Ish.constructor)
 }
 ```
 
-### Achieving inheritance using constructor function
+### Achieving inheritance using the constructor function
 
 Let's write a code to achieve this:
 
@@ -479,7 +482,7 @@ To do that, we need to inherit even the prototype of the Animal.
 Cat.prototype = Object.create(Animal.prototype);
 ```
 
-Using the above code, we are assigning the prototype of Animal constructor to the prototype of `Cat` constructor.
+Using the above code, we are assigning the prototype of the Animal constructor to the prototype of `Cat` constructor.
 
 ### But why did we even create the function `getName` in the prototype and not directly inside the Constructor?
 
@@ -506,7 +509,7 @@ function MyNew(constructorFn) {
 
 **NOTE** If the constructor does not explicitly return an object, the newly created object is returned. If the constructor returns an object, that object takes precedence over the default object created in step 1.
 
-(Overwhelmed? I can't simplify this more in text, maybe my youtube video on the same will be helpful)
+Overwhelmed? I can't simplify this more in text, maybe my [YouTube Video](https://youtu.be/p7ug90Rktuk) on the same will be helpful
 
 ## Class
 
@@ -637,7 +640,7 @@ This might be a bit tricky to comprehend. It was very confusing for me.
 As stated above, arrow function inherit the "this" value from the surrounding code. In this case, the surrounding code is person object, which in turn is in the global scope.
 Remember from the main definition: `this` in JavaScript refers to the context within which a function(not object) is executed
 
-7.  **Explicit Binding**: Functions like "call", "apply", and "bind" can be used to explicitly set the value of "this" for a function.
+6.  **Explicit Binding**: Functions like "call", "apply", and "bind" can be used to explicitly set the value of "this" for a function.
 
 ```javascript
 function sayHi() {
