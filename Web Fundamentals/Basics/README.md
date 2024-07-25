@@ -2,7 +2,7 @@
 
 ## What are states?
 
-I have explained this in detail here: [What the hell is state in web application](https://ishwar-rimal.medium.com/what-the-hell-is-state-in-web-applications-f529aa4cf6e1) Please go through it.
+I have explained this in detail here: [What the hell is a state in web application](https://ishwar-rimal.medium.com/what-the-hell-is-state-in-web-applications-f529aa4cf6e1) Please go through it.
 
 ## Working of a browser
 
@@ -267,7 +267,7 @@ alert("Apple");
 let sum = 1 + 2;
 ```
 
-Whereas in the case of async work, the execution is initiated and then is set aside for later, meanwhile the remaining code is executed. Once the async work is completed the execution moves back to that work.
+Whereas in the case of async work, the execution is initiated and then set aside for later, meanwhile the remaining code is executed. Once the async work is completed the execution moves back to that work.
 Example:
 
 ```javascript
@@ -280,3 +280,45 @@ The browser makes use of various techniques to efficiently handle both sync and 
 ### JWT-based Authentication
 
 [Read Here](https://ishwar-rimal.medium.com/decoding-the-json-web-token-aka-jwt-5b3654d0477b)
+
+### Cookies
+
+Cookies are small text files stored in a user's device by the web browser when they're browsing the website. Cookies typically are used to store information about the user's interaction with the website, such as login data, preferences, etc.
+
+#### Types of Cookies
+1. **Session Cookies**: These cookies are deleted when the user closes the browser. These are used to store small temporary information such as the content of the shopping cart.
+2. **Persistent Cookies**: These cookies remain on the user's device until they expire or are deleted. These are used to store long-term information such as login details, etc.
+3. **First-Party Cookies**: These cookies are set by the website the user is visiting. These are used to store information about the user's interaction with the page.
+4. **Third-Party Cookies**: These cookies are set by third-party services, such as advertising services. It is used to track users' activity across multiple websites.
+5. **Secure Cookies**: These cookies are encrypted and can be accessed only over a secure connection.
+6. **HttpOnly Cookies**: These cookies are set and read only by the servers and clients have no control over them. This is mostly used to prevent XSS attacks.
+
+#### How Cookies Work
+1. When a user visits a website, it sets a cookie for the user on their device.
+2. The cookie is sent to the server with information about user interaction.
+3. The server uses the data in the cookie to personalize the experience for the user.
+
+#### Cookie vulnerability
+1. Cross-Site Scripting (XSS)
+2. Cross-Site Request Forgery (CSRF)
+3. Cookie theft.
+
+#### Client vs Server Side (httpOnly) cookies
+**Client Side Cookies** also known as JavaScript cookies are stored in the client's device and are accessed via client-side scripts. These cookies are set and retrieved using JavaScript code. These are mostly used to store details like:
+1. Storing user's preferences, like language, theme or font size.
+2. Tracking user's behaviour, such as click.
+
+**Server Side Cookies** Also known as HttpOnly cookies, these are set by the server using the response header. A client-side script can not access this cookie though they are stored in the client's device. Server-side cookies are mostly used for storing authentication information.
+
+
+### CORS
+Cross-Origin Resource Sharing also known as CORS  is a security feature implemented in web browser to prevent web pages from making request to domains other than from where the page was loaded from. This security restriction is also known as Same Origin Policy.
+This though intended to prevent security lapses, creates a problem when you're genuinely trying to access a server from a different origin for cases like API call, loading resources, etc.  
+Before making an actual API call, the browser makes a **Option** or **Preflight** call to the domain to see if the request is allowed or not and based on that the further quest is made.
+
+Key headers associated with CORS are:
+1. **Acess-Control-Allow-Origin**: Defines a list of domains that are allowed to make request to the given resources.
+2. **Access-Control-Allow-Methods**: Defines a list of HTTP methods that are allowed to be used while making the request.
+3. **Access-Control-Allow-Headers**: Defines a list of headerst that are accepted while making the request.
+4. **Access-Control-Max-Age**: specifies the maximum age of the CORS configuration
+
