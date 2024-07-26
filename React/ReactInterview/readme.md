@@ -4,32 +4,32 @@ React is a JavaScript library for building user interfaces. It was developed by 
 
 ## Why React?
 
-React has following advantage over traditional way of building web apps.
+React has the following advantages over traditional ways of building web apps.
 
-1.  **Component based architecture**
+1.  **Component-based architecture**
     - Modular code.
     - Reusability.
-    - Easeir to test and maintain.
+    - Easier to test and maintain.
 2.  **JSX**
-    - Closely resembels HTML.
-    - Better way to handle UI Logic.
+    - Closely resembles HTML.
+    - A better way to handle UI Logic.
 3.  **Virtual DOM**
     - Efficiently update the DOM.
-    - Minimise expensive dom manipulation by first updating the virtual DOM.
-4.  **Unidirection data flow**
-    - Data flows from parent to the children.
+    - Minimise expensive DOM manipulation by first updating the virtual DOM.
+4.  **Unidirectional data flow**
+    - Data flows from parents to the children.
 5.  **State Management**
-    - State management for larger applicaiton is very difficult in traditional applications.
-    - Easier to manage the state of the applcation with React.
+    - State management for larger applications is very difficult in traditional applications.
+    - Easier to manage the state of the application with React.
 6.  **Developer Ecosystem**
-    - Numerous tutorials available.
+    - Numerous tutorials are available.
     - Numerous libraries available.
 7.  **React Native**
-    - Use react skills to build mobile app using React Native.
+    - Use React skills to build mobile apps using React Native.
 
 ## JSX vs JS
 
-Not a valid comparison as JSX is only limited to React ecosystem while JS is a programming language supported by all the browser and JS Runtime like Nodejs.
+Not a valid comparison as JSX is only limited to the React ecosystem while JS is a programming language supported by all browsers and JS Runtime like Nodejs.
 
 JSX is a syntax extension that simplifies the creation of user interfaces in React by allowing developers to write HTML-like code within their JavaScript files.
 
@@ -47,9 +47,9 @@ const element = <h1>Hello, JSX!</h1>;
 **JavaScript (JS):**
 
 1.  **Syntax:** JavaScript is a programming language that provides the core functionality for web development. It's used to handle logic, data manipulation, and interactions in a web application.
-2.  **Programming Logic:** JavaScript is used to implement the logic and behavior of your web application. This includes handling user input, making API requests, managing data, and more.
+2.  **Programming Logic:** JavaScript is used to implement the logic and behaviour of your web application. This includes handling user input, making API requests, managing data, and more.
 3.  **Manipulating the DOM:** JavaScript is used to directly manipulate the Document Object Model (DOM) of a web page. It can be used to add, modify, or remove elements from the page in response to user actions or other events.
-4.  **Integration with JSX:** While JSX is used to define the structure of UI components, JavaScript is used to provide the functionality and behavior of those components. JSX and JavaScript are often used together within React components.
+4.  **Integration with JSX:** While JSX is used to define the structure of UI components, JavaScript is used to provide the functionality and behaviour of those components. JSX and JavaScript are often used together within React components.
 
 ```javascript
 const name = "JS";
@@ -64,7 +64,7 @@ Hooks are nothing but functions that allow you to access and use certain interna
 
 ### useState
 
-This hook allows functional components to manage state. It provides a way to declare state variables and their initial values, as well as methods to update those values.
+This hook allows functional components to manage the state. It provides a way to declare state variables and their initial values, as well as methods to update those values.
 
 ```javascript
 import React, { useState } from "react";
@@ -81,8 +81,8 @@ function Counter() {
 
 ### useEffect
 
-This hook is used to perform a side effect when certain thig like mounting or state update happens for a component.
-We use this hook to perform operations(side effect) such as data fetching, DOM Manipulation, etc once some operation happen.
+This hook is used to perform a side effect when certain things like mounting or state updates happen for a component.
+We use this hook to perform operations(side effect) such as data fetching, DOM Manipulation, etc once some operation happens.
 Syntax:
 
 ```javascript
@@ -90,26 +90,26 @@ import React, { useEffect } from "react";
 function MyComponent() {
   //some state declaration
   useEffect(callback, dependencies);
-  //callback is a callback funciton
-  // dependencies are list of dependency variables
+  //callback is a callback function
+  // dependencies are a list of dependency variables
 }
 ```
 
-**Note:** Dependencies are optional, if no dependency is provided, this effect will get triggered with every re render of component.
+**Note:** Dependencies are optional, if no dependency is provided, this effect will get triggered with every re-render of the component.
 
 **How is lifecycle handled by useEffect?**
 
 - _`ComponentDidMount`_
 
-useEffect with or without dependencies are equivalent to `componentDidUpdate`. No matter what dependencies are, this will get triggerred at least once. If you want this effect to run just once, provide `[]` empty array as a dependency.
+useEffect with or without dependencies are equivalent to `componentDidUpdate`. No matter what the dependencies are, this will get triggered at least once. If you want this effect to run just once, provide `[]` empty array as a dependency.
 
 - _`ComponentDidUpdate`_
 
-useEffect with list of dependency is considered equivalent to `componentDidUpdate`. That is whenever the the dependency variable is updated, this effect gets triggered. (If dependency is omitted, the effect will run with every re render)
+useEffect with a list of dependencies is considered equivalent to `componentDidUpdate`. That is whenever the the dependency variable is updated, this effect gets triggered. (If dependency is omitted, the effect will run with every re-render)
 
 - _`ComponentDidUnmount`_
 
-The return function placed inside a useEffect is considered equivalient to `componentDidUnmount`. That is whenever the component gets unmounted (removed) from the DOM, this method get's triggered.
+The return function placed inside a useEffect is considered equivalent to `componentDidUnmount`. That is whenever the component gets unmounted (removed) from the DOM, this method gets triggered.
 
 There is also an equivalent of `shouldComponentUpate` [readMore](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/React/ReactInterview#purecomponents)
 
@@ -144,7 +144,7 @@ function DataFetching() {
 ### useMemo
 
 - Used to memoize a value.
-- Used as a **performance enhanement** by memoizing the result of expensive computation.
+- Used as a **performance enhancement** by memoizing the result of an expensive computation.
 - It prevents unnecessary recalculations of values that don't change between renders.
 
 Syntax:
@@ -186,7 +186,7 @@ function ExampleComponent() {
 
 Similar to useMemo, useCallback is used to memoize a function.
 
-**Why do we need to memoize a function anyways?**
+**Why do we need to memoize a function anyway?**
 Functions defined within the component are **recreated** on each render. [Read more...](https://ishwar-rimal.medium.com/execution-sequence-of-hooks-in-react-functional-components-b4a2ef69f9b0)
 
 ```javascript
@@ -208,8 +208,8 @@ function ExampleComponent() {
 
 ### useRef
 
-- useRef is a quite interesting hook which usually is not utilized to it's full potential.
-- useRef is used to define a local variable in a component, but unlike useState, updating the useRef variable doesn't cause re render of the component.
+- useRef is quite an interesting hook which usually is not utilized to its full potential.
+- useRef is used to define a local variable in a component, but unlike useState, updating the useRef variable doesn't cause re-render of the component.
 
 **Usage of useRef**
 
@@ -233,16 +233,16 @@ function FocusInput() {
 }
 ```
 
-In the above example, we make use of `inputRef` to access the input element and prodivde focus on that.
+In the above example, we make use of `inputRef` to access the input element and provide focus on that.
 
-2. The second use case of useRef is to preserve value of something across renders:
+2. The second use case of useRef is to preserve the value of something across renders:
    When it comes to preserving a value that is not affected by the re-render, we sometimes think of global variables, as it is not affected by the re-render. But using `useRef` we can achieve the same.
 
 ## Pure Components
 
 Pure Components in react are similar to [Pure Functions](https://github.com/ishwarrimal/frontend-interview-preps/blob/main/JavaScript/JavaScript%20Advanced/readme.md#pure-functions) in JavaScript
 
-- Pure components re-renders only when the state or the props changes.
+- Pure components re-render only when the state or the props changes.
 
 - Does a shallow comparison of the props and state to determine whether an update is needed.
 
@@ -268,7 +268,7 @@ const MemoizedExample = React.memo(function MemoizedExample(props) {
 
 **React.memo** Is a HOC to wrap a functional component. It optimizes the rendering performance of a component by preventing unnecessary re-renders.
 
-- You can pass second parament to React.memo which is a funciton.
+- You can pass the second parament to React.memo which is a function.
 
 - This function is commonly referred to as the "areEqual" function or the "props comparison" function.
 
@@ -295,9 +295,9 @@ const MemoizedComponent = React.memo(function MyComponent(props) {
 
 ## Higher Order Component
 
-- Higher-Order Component (HOC) is a design pattern used for enhancing the functionality or behavior of a component by wrapping it in another component.
-- Higher Order Component in react are similar to Higher Order Functions in JavaScript.
-- Higher-order functions are functions that can accept other functions as arguments or return functions as their results, similarly, Higher-order components are components that can accept other compoentnts as arguments or return components as their results.
+A higher-order Component (HOC) is a design pattern used for enhancing the functionality or behaviour of a component by wrapping it in another component.
+- Higher Order Components in react are similar to Higher Order Functions in JavaScript.
+- Higher-order functions are functions that can accept other functions as arguments or return functions as their results, similarly, Higher-order components are components that can accept other components as arguments or return components as their results.
 - Example of Higher Order Functions - Array.Map - Array.Reduce - etc
   Example in react:
 
@@ -328,11 +328,11 @@ const Greeting2WithLogger = withLogger(Greeting2);
 export { Greeting1WithLogger, Greeting2WithLogger };
 ```
 
-We use HOC mostly when same logic is resued/required in more than one component.
+We use HOC mostly when the same logic is reused/required in more than one component.
 
-In the above example, as you can see, the logic to `console log` is common for both the component, hence we use HOC for this.
+In the above example, as you can see, the logic to `console log` is common for both the components, hence we use HOC for this.
 
-Some usage of HOC includes:
+Some uses of HOC include:
 
 1.  **Code Reuse**: You can use HOCs to extract common logic from multiple components into a single reusable HOC.
 
@@ -350,9 +350,9 @@ As the name suggests, when you pass `render` function as a `props` to a Componen
 <MyComponent render={someRenderFunction} />
 ```
 
-- Similar to HOC, this is also a design pattern that focuses on reusability of code.
+- Similar to HOC, this is also a design pattern that focuses on the reusability of code.
 
-- A component after executing it's local logic, invokes the passed render function in the props to render a component.
+- A component after executing its local logic, invokes the passed render function in the props to render a component.
 
 ```javascript
 ...
@@ -396,7 +396,7 @@ As you can see in the above example, the logic to handle the increment and decre
 
 - **HOC (Higher-Order Component)**:
 
-  - HOCs are functions that accept a component as an argument and return a new component with added or modified behavior.
+  - HOCs are functions that accept a component as an argument and return a new component with added or modified behaviour.
 
   - They are implemented as wrapper components that encapsulate the logic and state management.
 
@@ -408,17 +408,17 @@ As you can see in the above example, the logic to handle the increment and decre
 
 ## Error Handling
 
-Apart from using the regular `try...catch`, react provides inbuild methods to handle the error states.
+Apart from using the regular `try...catch`, react provides inbuilt methods to handle the error states.
 React exposes two methods to handle the error state:
 
 1. componentDidCatch.
 2. getDerivedStateFromError.
 
-Thing to note here is that these methods are supported only in a `class` based component and is not yet supported in `function` based component.
+The thing to note here is that these methods are supported only in a `class` based component and are not yet supported in `function` based component.
 
-- This implementation is also called as creating an **error boundary.**
-- This component can catch error that occur in any of the child component.
-- You can have other functional component wrapped in this class component.
+- This implementation is also called creating an **error boundary.**
+- This component can catch errors that occur in any of the child components.
+- You can have other functional components wrapped in this class component.
   Example:
 
 ```javascript
@@ -448,7 +448,7 @@ Here's a summary of the sequence:
 
 1. An error occurs within a component wrapped by an error boundary.
 2. React calls the static `getDerivedStateFromError` method of the error boundary component, passing the error as an argument. If this method returns an object with updated state (e.g., setting `hasError` to `true`), the component's state is updated.
-3. After state is updated, React calls the instance method `componentDidCatch` of the error boundary component, passing both the error and the error info as arguments.
+3. After the state is updated, React calls the instance method `componentDidCatch` of the error boundary component, passing both the error and the error info as arguments.
 
 Both methods serve distinct purposes:
 
@@ -456,20 +456,20 @@ Both methods serve distinct purposes:
 
 - `componentDidCatch` is used for performing additional actions or side effects in response to the error. It can be used to log the error, send it to an error tracking service, or customize the rendering of an error message.
 
-**Why do we need to handle error in react?**
+**Why do we need to handle errors in react?**
 In React, When an error occurs and it's not handled gracefully, users may see a blank or broken page, leading to frustration and confusion.
 
 ## Virtual DOM
 
-- Virtual DOM or VDOM is a representation of the actual DOM that React maintains to optimize the render and re render of the UI.
+- Virtual DOM or VDOM is a representation of the actual DOM that React maintains to optimize the render and re-render of the UI.
 
 - It's a concept and data structure that React uses to optimize the process of updating the actual DOM when changes occur in a web application.
 
-- When the update in any state or props happen, React first updates the Virtual DOM and then goes on updating the actual DOM.
+- When the update in any state or props happens, React first updates the Virtual DOM and then goes on updating the actual DOM.
 
-- This might seem like an extra work compared to updating the DOM directly, but when the changes happen in a batch, this way turns out to be efficient than updating the actual DOM.
+- This might seem like extra work compared to updating the DOM directly, but when the changes happen in a batch, this way turns out to be more efficient than updating the actual DOM.
 
-- We will diecuss more about how React does optimizes the UI re render in the following topic on React Reconciliation and React fiber.
+- We will discuss more how React optimizes the UI re-render in the following topic on React Reconciliation and React fiber.
 
 ## React Reconciliation and React Fiber
 
@@ -478,29 +478,79 @@ React reconciler is a core process that React uses to efficiently update the UI 
 
 **What is react fiber?**
 In concrete terms, a fiber is a JavaScript object that contains information about a component, its input, and its output. This object is the internal representation of the Components, which contains of type, keys, child, sibling, etc, of the component.
-Using this, React can efficiently identifies the change in DOM and achieve performance optimization.
+Using this, React can efficiently identify the change in DOM and achieve performance optimization.
+
+```javascript
+	{
+	  stateNode: App,
+	  child: Button Fiber,
+	  return: Root Fiber,
+	  sibling: null,
+	  ...
+	}
+```
+
+**Sample react component**
+```javascript
+import { useState } from 'react';
+
+function App() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <button onClick={() => setCount(count + 1)}>Click me!</button>
+      <p>Count: {count}</p>
+    </div>
+  );
+}
+```
+**Fiber tree diagram**
+```bash
+      +---------------+
+      |  Root Fiber  |
+      +---------------+
+             |
+             |
+             v
+      +---------------+
+      |  App Fiber    |
+      +---------------+
+             |
+             |
+             v
+      +---------------+
+      |  Button Fiber |
+      +---------------+
+             |
+             |
+             v
+      +---------------+
+      |  Text Fiber   |
+      +---------------+
+```
 
 **When was react fiber introduced?**
 React fiber was introduced in React v16, which was released on September 26, 2017.
 
 **What was used by reconciler before react fiber?**
-Before react fiber, React used stack-based approach for reconciliation, was also called stack reconciler. This approach has **Limited Concurrency**, it use dot **Blocking Main Thread** and hence was slow.
+Before React fiber, React used a stack-based approach for reconciliation, which was also called stack reconciler. This approach has **Limited Concurrency**, it used to **Block Main Thread** and hence was slow.
 
 **How does React reconciliation work?**
 
-1. During the initial render, React creates a **Virtual DOM**. This is a replica of the actual DOM (This is not part of reconcilliation).
+1. During the initial render, React creates a **Virtual DOM**. This is a replica of the actual DOM (This is not part of reconciliation).
 2. When any **update** happens of the state or props, react re-renders the affected component and generates a new VDOM.
 3. React then compares the new VDOM with the older VDOM. React uses **Diffing Algorithm** to achieve this. (more on diffing algorithm here)
 4. React aims to find the minimum number of changes required to update the actual DOM to match the new virtual DOM.
-5. Once React has identified the difference, it efficiently updates the acutal DOM.
+5. Once React has identified the difference, it efficiently updates the actual DOM.
 
-There are 2 phases in which all of these happens. Read about them [here](https://medium.com/@ishwar-rimal/execution-sequence-of-hooks-in-react-functional-components-b4a2ef69f9b0)
+There are 2 phases in which all of these happen. Read about them [here](https://medium.com/@ishwar-rimal/execution-sequence-of-hooks-in-react-functional-components-b4a2ef69f9b0)
 
 ## More on Diffing Algorithm:
 
 - Diffing algorithm has time complexity of O(n) compared to traditional O(n3).
 
-- The Diffing algorithem works on following assumptions:
+- The Diffing algorithm works on the following assumptions:
 
 1.  **Tree Structure Assumption**: React assumes that the structure of the virtual DOM tree remains relatively stable between renders. This means that if a parent and child component have not changed, React can make the assumption that their children have not changed either, allowing it to skip unnecessary checks.
 
@@ -512,33 +562,33 @@ There are 2 phases in which all of these happens. Read about them [here](https:/
 
 5.  **Element Key Assumption**: React assumes that the "key" prop is stable across renders for the same element. If the key of an element changes between renders, React treats it as a new element, which can result in unnecessary updates.  
 
-**NOTE** During the reconciliation, if the new and the old element are of different type (old was `<a>` new is `<href>`, old was `<p>` new is `<span>`), then the old child is unmounted (state is released) and new component is mounted (state is re initialized) and the entire subtree is re constructed. Whereas, if the type is same (prev `<p>`, new `<p>`) with a slight change in the attributes, then only the attributes are updated. React uses the same render tree. No unmount/remount happens.
+**NOTE** During the reconciliation, if the new and the old element are of different types (old was `<a>` new is `<href>`, old was `<p>` new is `<span>`), then the old child is unmounted (state is released) and new component is mounted (state is reinitialized) and the entire subtree is reconstructed. Whereas, if the type is the same (prev `<p>`, new `<p>`) with a slight change in the attributes, then only the attributes are updated. React uses the same render tree. No unmount/remount happens.
 
 ## Flux
 
-- Flux is an architectural pattern for managing the flow of data in a web applicaiton.
-- Flux is based on unidirection flow of data.
+- Flux is an architectural pattern for managing the flow of data in a web application.
+- Flux is based on unidirectional flow of data.
 - In a complex web application, the state of the app is stored in one single place called "STORE".
-- All the components of the application susbscribe to the data in the "STORE"
+- All the components of the application subscribe to the data in the "STORE"
 - Follows the following sequence
 - User interacts with the UI.
-- It triggers an actions.
-- Actions notifies the "STORE" about the action.
+- It triggers an action.
+- Actions notify the "STORE" about the action.
 - Stores update their data and notify all the components about the update.
-- UI re-render based on the udpated data.
+- UI re-render based on the updated data.
 
 ## REDUX
 
 _Note: I assume that you know the syntax and usage of redux, if not please follow [this article](https://redux.js.org/introduction/examples)_
 
-- Redux is a state management library commonly used in React. It is based on flux architecure.
+- Redux is a state management library commonly used in React. It is based on flux architecture.
 - Redux is especially useful in complex React applications where multiple components need access to shared data.
 
 **Core Concepts of Redux (similar to that of flux):**
 
-1.  **Store:** The central piece of Redux is the store. It holds the entire state of your application in a single JavaScript object. Consider store as a global state, a source of truth for your application. (learn more aobut state [here](https://medium.com/@ishwar-rimal/what-the-hell-is-state-in-web-applications-f529aa4cf6e1) )
+1.  **Store:** The central piece of Redux is the store. It holds the entire state of your application in a single JavaScript object. Consider the store as a global state, a source of truth for your application. (learn more about state [here](https://medium.com/@ishwar-rimal/what-the-hell-is-state-in-web-applications-f529aa4cf6e1) )
 
-2.  **Actions:** Actions are plain JavaScript objects that describe events or changes in your application. The job of action is to inform reducer that some action has been triggered and also pass some relavant data. They have a `type` property that indicates the type of action and can also carry additional data.
+2.  **Actions:** Actions are plain JavaScript objects that describe events or changes in your application. The job of action is to inform the reducer that some action has been triggered and also pass some relevant data. They have a `type` property that indicates the type of action and can also carry additional data.
 
 3.  **Reducers:** Reducers are functions that specify how the application's state should change in response to actions. They take the current state and an action as input and return a new state. Reducers are pure functions, meaning they produce the same output for the same input and have no side effects.
 
@@ -546,25 +596,25 @@ _Note: I assume that you know the syntax and usage of redux, if not please follo
 
 5.  **Subscribe:** Your components subscribe to the store to listen for changes in the state. When the state changes, the subscribed components are notified, allowing them to update their views accordingly.
 
-**Why are Reducer pure funcitons?**
+**Why are Reducer pure functions?**
 
 1.  **Predictability**: This predictability is crucial in Redux because it ensures that given the same state and action, a reducer will consistently produce the same new state.
 2.  **Immutability:** Reducers typically return a new state object rather than modifying the existing one. This promotes immutability, a practice that helps prevent unintended side effects and makes it easier to track changes in the application's state over time.
 
-## Middlewares in redux
+## Middleware in Redux
 
 **Common use of middleware -> Updating store asynchronously**
 Suppose on clicking a button, you want to make an API call and then update the store based on the response, you do the following:
 
-1. Dispatch action from the view for the click of button.
-2. This action doesn't immediately update the store, i.e. doens't reach reducer immeidately.
-3. You make use of middleware like `redux-thunk` to make the api call and call the reducer once you receive the response.
+1. Dispatch action from the view at the click of a button.
+2. This action doesn't immediately update the store, i.e. doesn't reach the reducer immediately.
+3. You make use of middleware like `redux-thunk` to make the API call and call the reducer once you receive the response.
 
-Step 3 is an asychchronous process.
+Step 3 is an asynchronous process.
 
-- Middleware in general is a software layer or component that sits between different part of an application.
+- Middleware in general is a software layer or component that sits between different parts of an application.
 - Middleware allows you to intercept, modify, or augment actions and state changes.
-- Middleware sits between the dispatching of an action and the moment it reaches the reducers, giving you the ability to add custom behavior to your Redux application.
+- Middleware sits between the dispatching of an action and the moment it reaches the reducers, giving you the ability to add custom behaviour to your Redux application.
 - **Thunk** middleware is commonly used in Redux applications to handle asynchronous actions.
 - The primary use of thunk middleware is to delay the dispatching of an action until a certain condition is met or an asynchronous operation is completed. It enables you to have more control over the flow of your Redux actions and handle complex asynchronous logic.
 
@@ -592,7 +642,7 @@ export const fetchData = () => {
 
 ## useReducer
 
-useReducer is an inbuilt hook provided by `React` to handle the complex state management previously done using external library like `Redux`.
+useReducer is an inbuilt hook provided by `React` to handle the complex state management previously done using an external library like `Redux`.
 
 It is often used as an alternative to `useState` when you need to handle more advanced state management scenarios.
 
@@ -645,9 +695,9 @@ export default Counter;
 
 ## Context API
 
-- Context API comes into picture in situations where a data needs to be passed from one component to it's children and further below on it's hierarchy.
+- Context API comes into picture in situations where data needs to be passed from one component to its children and further below on its hierarchy.
 
-- `Props Drilling` is one of the naive way to achieve this, in which a component passes a data to it's child as a prop and that child passed it to it's child as it's prop and so on.
+- `Props Drilling` is one of the naive ways to achieve this, in which a component passes data to its child as a prop and that child passes it to its child as its prop and so on.
 
 ```javascript
 function  SomeComponent(){
@@ -665,9 +715,9 @@ function  SomeComponent(){
 }
 ```
 
-- Other way to achieve this is by using `redux`, in which you dispatch and subscribe to the central store from within a component.
+- Another way to achieve this is by using `redux`, in which you dispatch and subscribe to the central store from within a component.
 
-- `useContext` is a built in hook in react that helps you achieve this without having to use any other complex methods.
+- `useContext` is a built-in hook in react that helps you achieve this without having to use any other complex methods.
 
 Key features and components of the Context API include:
 
@@ -677,11 +727,11 @@ Key features and components of the Context API include:
 
 3.  **`Consumer`:** The `Consumer` component allows you to access the context data within your components. You can use the `Consumer` component either as a render prop or as a function component with a context value.
 
-4.  **`useContext `:** Within `Consumer` you have to make use of `useContex` hook to access the passed data.
+4.  **`useContext `:** Within `Consumer` you have to make use of the `useContex` hook to access the passed data.
 
 Example:
 
-(Again, this is not a tutorial, so I assume you know the syntax. This is just a preperation guide for interview)
+(Again, this is not a tutorial, so I assume you know the syntax. This is just a preparation guide for the interview)
 
 ```javascript
 import React, { createContext, useContext, useState } from "react";
@@ -723,13 +773,13 @@ function App() {
 export default App;
 ```
 
-**Note** : By using `useReducer` and `Context API` you can eliminate the use of `Redux` to manage state even in a complex applications.
+**Note**: By using `useReducer` and `Context API` you can eliminate the use of `Redux` to manage state even in a complex application.
 
 ## Controlled vs Uncontrolled Components.
 
-- There are no strict technical term for controlled or uncontrolled compoents, but it is highly recommendted to understand when a component becomes controlled and when it becomes uncontrolled.
+- There is no strict technical term for controlled or uncontrolled components, but it is highly recommended to understand when a component becomes controlled and when it becomes uncontrolled.
 
-- When a component handles it's own local state, then it can be called as `uncontrolled component` and in the case when a parent component handles the state of it's child componenet, then the child component can be called as a `controlled component`
+- When a component handles its own local state, then it can be called an `uncontrolled component` and in the case when a parent component handles the state of its child component, then the child component can be called a `controlled component`
 
 Controlled and uncontrolled components are usually easier to understand when managing form inputs in React.
 
@@ -754,7 +804,7 @@ Benefits: You can validate, manipulate, or perform actions based on the input va
 
 **Uncontrolled Components:**
 
-- When the value of the input field is managed by the DOM itself, then it becomes uncontrolled component.
+- When the value of the input field is managed by the DOM itself, then it becomes an uncontrolled component.
 - Uncontrolled components often use React `refs` to access the DOM element directly and read its value when needed.
 
 3.  **Example:**
@@ -779,7 +829,7 @@ Benefit: Uncontrolled components can be simpler to set up for simple scenarios w
 
 ## Built-in React Components
 
-React provides 4 built in components namely:
+React provides 4 built-in components namely:
 
 1.  `<StrictMode />`
 
@@ -794,22 +844,22 @@ More about these in the following section
 ## `<UseStrict />`
 
 - Similar to `strict mode` in JavaScript, this component helps you find bugs early during development.
-- You have to wrap your component within `<UseStrict /> ` to enale strict mode.
+- You have to wrap your component within `<UseStrict /> ` to enable strict mode.
 - There are 3 features enabled by UseStrict
 - [Video Reference](https://www.youtube.com/watch?v=UjWz2cWstZI&t=11s)
 
-1.  `re-render` the component to make sure that there are no imupurities:
+1.  `re-render` the component to make sure that there are no impurities:
 
-    - React expects all functional component to be a pure functions.
-    - During th re-render it checks if the output of first and the second render are same or not, if not, it gives warning as it's not the expeted behaviour
+    - React expects all functional components to be pure functions.
+    - During the re-render it checks if the output of the first and the second renders are same or not, if not, it gives a warning as it's not the expected behaviour
     - Read more [here](https://react.dev/reference/react/StrictMode#fixing-bugs-found-by-double-rendering-in-development)
 
 2.  re-run Effects an extra time to find bugs caused by missing Effect cleanup.
 
-    - During the second setup, it makes sure that the cleanup of first effect has taken place, if not, it will throw warning.
+    - During the second setup, it makes sure that the cleanup of the first effect has taken place, if not, it will throw a warning.
     - Read more [here](https://react.dev/reference/react/StrictMode#fixing-bugs-found-by-re-running-effects-in-development)
 
-3.  Check for the use of any depricated API. [read more](https://react.dev/reference/react/StrictMode#fixing-deprecation-warnings-enabled-by-strict-mode)
+3.  Check for the use of any deprecated API. [read more](https://react.dev/reference/react/StrictMode#fixing-deprecation-warnings-enabled-by-strict-mode)
 
 NOTE that this will be enabled only during development.
 
@@ -817,7 +867,7 @@ NOTE that this will be enabled only during development.
 
 - Often used via `<>...</>` syntax, lets you group elements without a wrapper node.
 
-- As react supports returning only one element, at cases when there are more than one elements, it requires you to wrap the elements within some other element like div.
+- As react supports returning only one element, in cases when there is more than one element, it requires you to wrap the elements within some other element like div.
 
 - To avoid using `<div>` or any other such element as a wrapper, you can use Fragment.
 
@@ -825,7 +875,7 @@ NOTE that this will be enabled only during development.
 
 - Lets you display an alternate UI (fallback) until its children have finished loading.
 
-Exampl:
+Example:
 
 ```javascript
 import { Suspense } from "react";
@@ -849,13 +899,13 @@ function Loading() {
 
 Note:
 
-`<Suspense />` is mostly used while lazy laoding the component.
+`<Suspense />` is mostly used while lazy loading the component.
 
 ## `<Profiler />`
 
-- This is one of the most useful component for developers to measure the performance of a React tree programatically.
+- This is one of the most useful components for developers to measure the performance of a React tree programmatically.
 
-- By default this is deisabled in Prod.
+- By default, this is disabled in Prod.
 
 Syntax:
 
@@ -875,13 +925,13 @@ funciton  onRender(id, phase, actualDuration, baseDuration, startTime, commitTim
 
 ```
 
-On every render, the `onRender` function gets called with the follwowing parameters:
+On every render, the `onRender` function gets called with the following parameters:
 
-- `id`: The string `id` prop of the `<Profiler>` tree that has just committed. This lets you identify which part of the tree was committed if you are using multiple profilers.
+- `id`: The string `id` prop of the `<Profiler>` tree that has just been committed. This lets you identify which part of the tree was committed if you are using multiple profiles.
 
 - `phase`: `"mount"`, `"update"` or `"nested-update"`. This lets you know whether the tree has just been mounted for the first time or re-rendered due to a change in props, state, or hooks.
 
-- `actualDuration`: The number of milliseconds spent rendering the `<Profiler>` and its descendants for the current update. This indicates how well the subtree makes use of memoization (e.g. [`memo`](https://react.dev/reference/react/memo) and [`useMemo`](https://react.dev/reference/react/useMemo)). Ideally this value should decrease significantly after the initial mount as many of the descendants will only need to re-render if their specific props change.
+- `actualDuration`: The number of milliseconds spent rendering the `<Profiler>` and its descendants for the current update. This indicates how well the subtree makes use of memoization (e.g. [`memo`](https://react.dev/reference/react/memo) and [`useMemo`](https://react.dev/reference/react/useMemo)). Ideally, this value should decrease significantly after the initial mount as many of the descendants will only need to re-render if their specific props change.
 
 - `baseDuration`: The number of milliseconds estimating how much time it would take to re-render the entire `<Profiler>` subtree without any optimizations. It is calculated by summing up the most recent render durations of each component in the tree. This value estimates a worst-case cost of rendering (e.g. the initial mount or a tree with no memoization). Compare `actualDuration` against it to see if memoization is working.
 
