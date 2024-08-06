@@ -841,11 +841,11 @@ React provides 4 built-in components namely:
 
 More about these in the following section
 
-## `<UseStrict />`
+## `<StrictMode />`
 
 - Similar to `strict mode` in JavaScript, this component helps you find bugs early during development.
-- You have to wrap your component within `<UseStrict /> ` to enable strict mode.
-- There are 3 features enabled by UseStrict
+- You have to wrap your component within `<StrictMode /> ` to enable strict mode.
+- There are 3 features enabled by StrictMode
 - [Video Reference](https://www.youtube.com/watch?v=UjWz2cWstZI&t=11s)
 
 1.  `re-render` the component to make sure that there are no impurities:
