@@ -12,6 +12,7 @@ Topics we will be covering:
 1. [**Programming interview questions**](https://simpleprogrammer.com/programming-interview-questions/) : Top 109 Scary Coding Interview Questions SOLVED with Answers
 2. [**Elegant solutions for some common questions**](https://www.softwaretestinghelp.com/coding-interview-questions/): Top 30 Programming / Coding Interview Questions & Answers
 3. [**Top 20 Programming questions**](https://content.techgig.com/hiring/20-most-frequently-asked-programming-interview-questions/articleshow/74608663.cms): Top 20 Programming questions asked in an interview
+4. [**Everything about cultural fit round**](https://www.keka.com/cultural-fit-interview-questions-and-answers)
 
 ## Note
 Your feedback will help me improve this repo, so request you to share your feedback with me over email or write a LinkedIn post and tag me or raise a PR with your feedback on `feedbacks.md` file directly.
