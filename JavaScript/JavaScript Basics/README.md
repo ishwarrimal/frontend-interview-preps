@@ -50,9 +50,9 @@ Hoisting is a concept in JavaScript where variable and function declarations are
      console.log(x + y);
    }
    ```
-   When it comes to **function declaration" like the example above, it is declared and initialized and is hoisted.
+   When it comes to **function declaration** like the example above, it is declared and initialized and is hoisted.
 
-   Let's see for the case of **function expression", where we assign a function to a variable:
+   Let's see for the case of **function expression**, where we assign a function to a variable:
    
    ```javascript
    console.log(sub(1, 2)); //Uncaught TypeError: sub is not a function
