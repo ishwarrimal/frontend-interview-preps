@@ -201,8 +201,6 @@ myPromise()
 - catch : In case of a failed promise, control comes to the catch block.
 - finally : In every case, finally will always be executed at last.
 
-NOTE: Each `.then()` returns a newly generated promise object, which can optionally be used for chaining; for example:
-
 ### Chained Promise
 
 ```javascript
