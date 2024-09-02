@@ -483,6 +483,15 @@ Cat.prototype = Object.create(Animal.prototype);
 
 Using the above code, we are assigning the prototype of the Animal constructor to the prototype of `Cat` constructor.
 
+But wait, we're not done yet. If you check the constructor of `myCat` it'll point to Animal, but we want it to be of the Cat.  
+Our last step is to assign the constructor back to the Cat prototype.
+
+```javascript
+Cat.prototype.constructor = Cat
+```
+
+And now we've achieved proper inheritance.
+
 ### But why did we even create the function `getName` in the prototype and not directly inside the Constructor?
 
 Every object created using the Constructor Function gets a copy of all the properties present in the constructor. This may not be a good idea in some cases.
