@@ -73,7 +73,7 @@ In the above case, both x and y refer to a different memory location with value 
 
 1. **Object**
 2. **Array**
-
+   
 In mutable types, updating the variable actually updates the value.
 
 ```javascript
@@ -100,6 +100,8 @@ console.log(arr);
 ```
 
 In the above case, both will print `[1,2,3,4]`
+
+Note: Even functions are mutable (functions are basically object in JavaScript)
 
 ## Callback and Callback Hell
 
