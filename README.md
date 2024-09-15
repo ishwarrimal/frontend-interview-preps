@@ -7,6 +7,7 @@ Topics we will be covering:
 3. [**CSS**](./CSS/) : Commonly asked questions and a few concepts.
 4. [**Web Fundamentals**](./Web%20Fundamentals/) : A lot of important topics.
 5. [**DSA**](./DSA/) : Code for data structures and miscellaneous concepts.
+6. [**Projects**](./projects/) : Common machine coding questions asked during the interview.
 
 ## Helpful resources:
 1. [**Programming interview questions**](https://simpleprogrammer.com/programming-interview-questions/) : Top 109 Scary Coding Interview Questions SOLVED with Answers
