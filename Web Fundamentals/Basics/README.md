@@ -72,7 +72,7 @@ When the browser receives content from the server, the following steps take plac
 
 - **Layout**: Calculate the exact position and geometry of the element on the web page based on the provided styles. It determines where the element should be placed on the screen.
 
-- **Painting**: Paint the element on the screen.
+- **Painting**: In this phase, paint records are created, which is used by the browser to ultimately paint the elements on the screen during the compositing phase. Example of painting record: `{action: draw rect, pos: 0 0 300 300, backgroundColor: red}`
 
 - **Compositing**: Compositing, which combines various layers or elements to create the final image, takes into account the stacking order within stacking contexts (z-index)
 
