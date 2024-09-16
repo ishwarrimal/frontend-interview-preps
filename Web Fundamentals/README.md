@@ -24,7 +24,8 @@ In web fundamentals, we will be covering following topics:
 8. [Sync vs Async Works](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/Web%20Fundamentals/Basics#sync-vs-async-works)
 9. Cookies - Server side vs. client side
 10. CORS
-11. HTTP Caching
+11. SSL - How HTTPS works
+12. HTTP Caching
 
 - Different Caching Strategies
 
