@@ -35,7 +35,8 @@ In web fundamentals, we will be covering following topics:
 14. XMLHttpRequest - API Calls
 15. Web Sockets
 16. Authentication
-    - Token based vs Session Based
+    - Token based vs Session/Cookie Based
+      - In token-based, the state in maintained in the client, whereas in cookie/session based, the state is maintained in server and the server sets the HTTP cookie in the client.
     - [Working of JWT in detail](https://github.com/ishwarrimal/frontend-interview-preps/tree/main/Web%20Fundamentals/Basics#jwt-based-authentication)
 17. Web Security
     - XSS
