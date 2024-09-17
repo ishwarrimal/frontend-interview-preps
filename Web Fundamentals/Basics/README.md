@@ -321,4 +321,23 @@ Key headers associated with CORS are:
 2. **Access-Control-Allow-Methods**: Defines a list of HTTP methods that are allowed to be used while making the request.
 3. **Access-Control-Allow-Headers**: Defines a list of headerst that are accepted while making the request.
 4. **Access-Control-Max-Age**: specifies the maximum age of the CORS configuration
+5. 
+
+
+### Web Vitals:
+
+1. **LCP (Largest Contentful Paint)**
+Measures the time it takes for the largest content element (e.g. image, video, or text block) to render on the screen.  
+
+2. **FID (First Input Delay)**
+Measures the time it takes for the browser to respond to the user's first interaction (e.g. click, tap, or key press).
+
+3. **CLS (Cumulative Layout Shift)**
+Measures the sum of all layout shifts that occur on a page, affecting the user's experience and visual stability.
+
+5. **TTFB (Time to First Byte)**
+Measures the time it takes for the browser to receive the first byte of the HTML response from the server.
+
+5. **FCP (First Contentful Paint)**
+Measures the time it takes for the browser to render the first piece of content (e.g. text, image, or SVG) on the screen.
 
